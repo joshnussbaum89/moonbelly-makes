@@ -1,6 +1,19 @@
 :root {
   --font-header: 'Bodoni Moda', serif;
   --font-primary: 'Source Sans Pro', sans-serif;
+
+  --color-white: #fffaff;
+  --color-black: #111111;
+  --color-purple: #422a76;
+  --color-light-purple: #a289d4;
+  --color-pink: #e892ce;
+  --color-green: #aee5be;
+
+  --size-small: 1.125rem;
+  --size-normal: 1.25rem;
+  --size-medium: 1.5rem;
+  --size-large: 2rem;
+  --size-extra-large: 2.625rem;
 }
 
 * {
@@ -15,15 +28,35 @@ body {
 
 body {
   font-family: var(--font-primary);
+  font-size: var(--size-small);
+  background-color: var(--color-white);
+  color: var(--color-purple);
 }
 
 h1,
 h2,
 h3,
 h4 {
+  margin: 0;
   font-family: var(--font-header);
   text-transform: lowercase;
-  margin: 0;
+  color: var(--color-black);
+}
+
+h1 {
+  font-size: var(--size-extra-large);
+}
+
+h2 {
+  font-size: var(--size-large);
+}
+
+h3 {
+  font-size: var(--size-medium);
+}
+
+h4 {
+  font-size: var(--size-normal);
 }
 
 a {

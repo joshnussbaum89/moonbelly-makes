@@ -8,6 +8,7 @@ export default function Home() {
         <meta name="description" content="decorate your life" />
       </Head>
       <h1>Moonbelly Makes</h1>
+      <p>Welcome</p>
     </>
   )
 }
