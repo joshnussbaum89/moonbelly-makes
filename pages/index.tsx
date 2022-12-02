@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Header from '../components/Header/Header'
 
 export default function Home() {
   return (
@@ -7,8 +8,7 @@ export default function Home() {
         <title>[NEXT] Moonbelly Makes - decorate your life</title>
         <meta name="description" content="decorate your life" />
       </Head>
-      <h1>Moonbelly Makes</h1>
-      <p>Welcome</p>
+      <Header />
     </>
   )
 }
