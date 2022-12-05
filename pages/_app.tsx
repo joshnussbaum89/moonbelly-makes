@@ -5,6 +5,7 @@ import type { AppProps } from 'next/app'
 import '../styles/globals.css'
 import localFont from '@next/font/local'
 import { Be_Vietnam_Pro } from '@next/font/google'
+import Layout from '../components/Global/Layout/Layout'
 
 const laguna = localFont({ src: '../public/fonts/laguna-bold-regular.otf' })
 const vietnam = Be_Vietnam_Pro({
@@ -26,7 +27,9 @@ export default function App({ Component, pageProps }: AppProps) {
           font-family: ${laguna.style.fontFamily};
         }
       `}</style>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   )
 }

@@ -1,0 +1,29 @@
+.navigation {
+  width: 100%;
+  max-width: var(--width-container);
+  height: 150px;
+  margin: auto;
+  padding: var(--padding-site-mobile);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--color-green);
+}
+
+@media (min-width: 768px) {
+  .navigation {
+    padding: var(--padding-site-desktop);
+  }
+}
+
+.navigation ul {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navigation img {
+  width: 100%;
+  max-width: 385px;
+  padding: 1rem;
+}

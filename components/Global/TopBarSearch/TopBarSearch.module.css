@@ -1,0 +1,17 @@
+.searchContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.searchContainer input {
+  border: 1px solid var(--color-black);
+  border-radius: 1rem;
+  padding: 0.25rem;
+}
+
+.searchContainer svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke: var(--color-white);
+}
