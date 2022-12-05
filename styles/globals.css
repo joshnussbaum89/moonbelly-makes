@@ -4,6 +4,7 @@
   --padding-site-mobile: 0 1.5rem;
   --padding-site-desktop: 0 3rem;
 
+  --size-extra-small: 1rem;
   --size-small: 1.125rem;
   --size-normal: 1.25rem;
   --size-medium: 1.5rem;
@@ -12,11 +13,13 @@
 
   --color-white: #fffaff;
   --color-black: #111111;
-  --color-grey: #e8e8e8;
+  --color-grey: #bebebe;
   --color-purple: #251842;
   --color-light-purple: #cfbcff;
   --color-green: #407d62;
   --color-light-green: #daeada;
+
+  --transition-normal: all 0.3s ease;
 }
 
 * {
