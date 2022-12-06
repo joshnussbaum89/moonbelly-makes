@@ -1,8 +1,8 @@
 :root {
   --width-container: 1300px;
 
-  --padding-site-mobile: 0 1.5rem;
-  --padding-site-desktop: 0 3rem;
+  --padding-site-mobile-x: 1.5rem;
+  --padding-site-desktop-x: 3rem;
 
   --size-extra-small: 1rem;
   --size-small: 1.125rem;

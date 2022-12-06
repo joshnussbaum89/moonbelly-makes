@@ -3,16 +3,18 @@
   max-width: var(--width-container);
   height: 150px;
   margin: auto;
-  padding: var(--padding-site-mobile);
+  padding-left: var(--padding-site-mobile-x);
+  padding-right: var(--padding-site-mobile-x);
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid var(--color-green);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 991px) {
   .navigation {
-    padding: var(--padding-site-desktop);
+    padding-left: var(--padding-site-desktop-x);
+    padding-right: var(--padding-site-desktop-x);
   }
 }
 

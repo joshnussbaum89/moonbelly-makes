@@ -1,16 +1,13 @@
-.topBar {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+.main {
+  width: 100%;
+  max-width: var(--width-container);
+  margin: auto;
   padding-left: var(--padding-site-mobile-x);
   padding-right: var(--padding-site-mobile-x);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--color-green);
 }
 
 @media (min-width: 991px) {
-  .topBar {
+  .main {
     padding-left: var(--padding-site-desktop-x);
     padding-right: var(--padding-site-desktop-x);
   }

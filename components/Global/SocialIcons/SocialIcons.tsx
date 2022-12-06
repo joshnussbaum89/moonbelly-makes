@@ -6,6 +6,7 @@ type Props = {
   darkMode?: boolean
 }
 
+// TODO: replace link URLs
 export default function SocialIcons({ darkMode = false }: Props) {
   return (
     <div
@@ -15,9 +16,15 @@ export default function SocialIcons({ darkMode = false }: Props) {
           : styles.iconContainer
       }
     >
-      <TbBrandYoutube />
-      <TbBrandInstagram />
-      <TbBrandTiktok />
+      <a href="https://www.youtube.com" target="_blank" rel="noreferrer">
+        <TbBrandYoutube />
+      </a>
+      <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+        <TbBrandInstagram />
+      </a>
+      <a href="https://www.tiktok.com" target="_blank" rel="noreferrer">
+        <TbBrandTiktok />
+      </a>
     </div>
   )
 }
