@@ -1,17 +1,18 @@
 .topBar {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  padding-left: var(--padding-site-mobile-x);
-  padding-right: var(--padding-site-mobile-x);
+  padding-left: var(--padding-site-container-regular);
+  padding-right: var(--padding-site-container-regular);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background-color: var(--color-green);
 }
 
 @media (min-width: 991px) {
   .topBar {
-    padding-left: var(--padding-site-desktop-x);
-    padding-right: var(--padding-site-desktop-x);
+    padding-left: var(--padding-site-container-large);
+    padding-right: var(--padding-site-container-large);
+    justify-content: space-between;
   }
 }

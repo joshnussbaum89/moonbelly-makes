@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import FeaturedPosts from '../components/HomePage/FeaturedPosts/FeaturedPosts'
 
 export default function Home() {
   return (
@@ -7,7 +8,10 @@ export default function Home() {
         <title>[NEXT] Moonbelly Makes - decorate your life</title>
         <meta name="description" content="decorate your life" />
       </Head>
-      <h1>Home</h1>
+      <FeaturedPosts />
+      {/* Email List CTA */}
+      {/* Recent Posts */}
+      {/* About Katrina */}
     </>
   )
 }

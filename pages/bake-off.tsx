@@ -1,3 +1,3 @@
 export default function BakeOff() {
-  return <h1>Bake Off</h1>
+  return <h2>Bake Off</h2>
 }

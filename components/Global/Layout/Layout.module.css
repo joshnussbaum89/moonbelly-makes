@@ -2,13 +2,6 @@
   width: 100%;
   max-width: var(--width-container);
   margin: auto;
-  padding-left: var(--padding-site-mobile-x);
-  padding-right: var(--padding-site-mobile-x);
-}
-
-@media (min-width: 991px) {
-  .main {
-    padding-left: var(--padding-site-desktop-x);
-    padding-right: var(--padding-site-desktop-x);
-  }
+  padding-left: var(--padding-site-container-regular);
+  padding-right: var(--padding-site-container-regular);
 }

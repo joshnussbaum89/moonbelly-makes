@@ -1,3 +1,3 @@
 export default function Diys() {
-  return <h1>Diys</h1>
+  return <h2>Diys</h2>
 }

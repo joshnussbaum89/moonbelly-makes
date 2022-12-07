@@ -1,9 +1,10 @@
 :root {
+  /* Containers */
   --width-container: 1300px;
+  --padding-site-container-regular: 1.5rem;
+  --padding-site-container-large: 3rem;
 
-  --padding-site-mobile-x: 1.5rem;
-  --padding-site-desktop-x: 3rem;
-
+  /* Font Sizes */
   --size-extra-small: 1rem;
   --size-small: 1.125rem;
   --size-normal: 1.25rem;
@@ -11,6 +12,7 @@
   --size-large: 2rem;
   --size-extra-large: 2.625rem;
 
+  /* Colors */
   --color-white: #fffaff;
   --color-black: #111111;
   --color-grey: #bebebe;
@@ -19,11 +21,13 @@
   --color-green: #407d62;
   --color-light-green: #daeada;
 
+  /* Transitions */
   --transition-normal: all 0.3s ease;
 }
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -34,6 +38,8 @@ body {
 
 body {
   font-size: var(--size-small);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-white);
   color: var(--color-purple);
 }
@@ -43,7 +49,7 @@ h2,
 h3,
 h4 {
   margin: 0;
-  color: var(--color-black);
+  color: var(--color-purple);
 }
 
 h1 {

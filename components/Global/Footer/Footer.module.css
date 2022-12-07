@@ -1,8 +1,11 @@
 .footer {
   max-width: var(--width-container);
   margin: auto;
-  padding-left: var(--padding-site-mobile-x);
-  padding-right: var(--padding-site-mobile-x);
+  padding-left: var(--padding-site-container-regular);
+  padding-right: var(--padding-site-container-regular);
+}
+
+.info {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
@@ -15,31 +18,36 @@
 }
 
 @media (min-width: 991px) {
-  .footer {
-    padding-left: var(--padding-site-desktop-x);
-    padding-right: var(--padding-site-desktop-x);
+  .info {
     grid-template-areas: 'copy logo icons';
     grid-template-columns: 232px 1fr 232px;
   }
 }
 
-.footer img {
+.info img {
   width: 100%;
   max-width: 335px;
   height: auto;
   grid-area: logo;
 }
 
-.footer div {
+.info div {
   grid-area: icons;
 }
 
 @media (min-width: 991px) {
-  .footer div {
+  .info div {
     justify-self: end;
   }
 }
 
-.footer p {
+.info p {
   grid-area: copy;
+  text-align: center;
+}
+
+@media (min-width: 991px) {
+  .info p {
+    text-align: left;
+  }
 }
