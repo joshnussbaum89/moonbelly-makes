@@ -1,7 +1,7 @@
 :root {
   /* Containers */
-  --width-container: 1300px;
-  --padding-site-container-regular: 1.5rem;
+  --width-container: 1200px;
+  --padding-site-container-regular: 1rem;
   --padding-site-container-large: 3rem;
 
   /* Font Sizes */

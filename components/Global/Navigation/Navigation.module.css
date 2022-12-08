@@ -11,20 +11,49 @@
 
 .wrapper {
   height: 100%;
-  display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid var(--color-green);
 }
 
-.wrapper ul {
+.wrapper a {
   display: flex;
-  align-items: center;
-  gap: 1.5rem;
 }
 
 .wrapper img {
   width: 100%;
   max-width: 385px;
-  padding: 1rem;
+  padding: 1.5rem;
+}
+
+.navigationMobile {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .navigationMobile {
+    display: none;
+  }
+}
+
+.navigationMobile svg {
+  width: 2rem;
+  height: 2rem;
+  stroke: var(--color-purple);
+}
+
+.navigationDesktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .navigationDesktop {
+    display: flex;
+  }
+}
+
+.navigationDesktop ul {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }

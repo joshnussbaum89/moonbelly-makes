@@ -9,10 +9,8 @@
   background-color: var(--color-green);
 }
 
-@media (min-width: 991px) {
+@media (min-width: 768px) {
   .topBar {
-    padding-left: var(--padding-site-container-large);
-    padding-right: var(--padding-site-container-large);
     justify-content: space-between;
   }
 }

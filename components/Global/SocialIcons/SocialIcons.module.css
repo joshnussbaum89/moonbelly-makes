@@ -4,6 +4,10 @@
   gap: 1.5rem;
 }
 
+.iconContainer a {
+  display: flex;
+}
+
 .iconContainer svg {
   width: 1.8rem;
   height: 1.8rem;
