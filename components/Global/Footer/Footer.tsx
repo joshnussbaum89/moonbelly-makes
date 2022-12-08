@@ -18,7 +18,9 @@ export default function Footer() {
           priority
         />
         <SocialIcons darkMode={true} />
-        <p>created and maintained by moonbelly makes © 2022</p>
+        <p>
+          created and maintained by moonbelly makes © {new Date().getFullYear()}
+        </p>
       </section>
     </footer>
   )

@@ -1,6 +1,6 @@
 .footer {
   max-width: var(--width-container);
-  margin: auto;
+  margin: 0 auto 3rem;
   padding-left: var(--padding-site-container-regular);
   padding-right: var(--padding-site-container-regular);
 }
@@ -26,7 +26,7 @@
 
 .info img {
   width: 100%;
-  max-width: 335px;
+  max-width: 338px;
   height: auto;
   grid-area: logo;
 }
@@ -43,6 +43,7 @@
 
 .info p {
   grid-area: copy;
+  font-size: var(--size-extra-small);
   text-align: center;
 }
 
