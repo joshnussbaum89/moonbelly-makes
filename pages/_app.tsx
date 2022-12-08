@@ -17,7 +17,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <style jsx global>{`
-        body {
+        body,
+        input,
+        button {
           font-family: ${vietnam.style.fontFamily};
         }
         h1,

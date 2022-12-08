@@ -7,25 +7,24 @@
     position: relative;
     display: flex;
     align-items: center;
-  } 
+  }
 }
 
 .searchContainer input {
-  min-width: 200px;
-  padding: 8px 5px 8px 10px;
-  color: var(--color-purple);
+  width: 200px;
+  padding: 0.5rem;
   font-size: var(--size-extra-small);
+  color: var(--color-purple);
   background-color: var(--color-white);
-  border: none;
-  border-radius: 18px;
-  outline: 1px solid var(--color-green);
+  border: 1px solid var(--color-green);
+  border-radius: 1.25rem;
   transition: var(--transition-normal);
 }
 
 .searchContainer input:focus {
-  min-width: 300px;
-  border-radius: 4px;
-  outline: 1px solid var(--color-purple);
+  width: 300px;
+  border: 1px solid var(--color-purple);
+  border-radius: 0.25rem;
 }
 
 .searchContainer input:focus + svg {
@@ -38,13 +37,13 @@
 
 .searchContainer svg {
   position: absolute;
-  right: 5px;
+  right: 0.5rem;
   width: 1.5rem;
   height: 1.5rem;
-  padding: 4px;
-  stroke: var(--color-white);
-  background-color: var(--color-green);
-  border: 1px solid var(--color-green);
+  padding: 0.25rem;
+  stroke: var(--color-purple);
+  background-color: var(--color-light-purple);
+  border: 1px solid var(--color-purple);
   border-radius: 50%;
   transition: var(--transition-normal);
 }

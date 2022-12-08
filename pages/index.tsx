@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import FeaturedPosts from '../components/HomePage/FeaturedPosts/FeaturedPosts'
+import Subscribe from '../components/Global/Subscribe/Subscribe'
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
         <meta name="description" content="decorate your life" />
       </Head>
       <FeaturedPosts />
-      {/* Email List CTA */}
+      <Subscribe />
       {/* Recent Posts */}
       {/* About Katrina */}
     </>
