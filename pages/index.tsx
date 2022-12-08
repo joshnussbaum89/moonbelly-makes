@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import FeaturedPosts from '../components/HomePage/FeaturedPosts/FeaturedPosts'
-import Subscribe from '../components/Global/Subscribe/Subscribe'
+import Subscribe from '../components/HomePage/Subscribe/Subscribe'
 
 export default function Home() {
   return (
