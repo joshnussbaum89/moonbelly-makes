@@ -2,7 +2,6 @@
   margin-bottom: 4rem;
   padding: 3rem;
   background-color: var(--color-light-green);
-  /* border: 2px solid var(--color-green); */
   border-radius: 0.25rem;
 }
 
@@ -92,7 +91,7 @@
 @media (min-width: 768px) {
   .form button:hover {
     color: var(--color-white);
-    background-color: var(--color-black);
+    background-color: var(--color-purple);
     cursor: pointer;
   }
 }
