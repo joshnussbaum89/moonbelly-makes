@@ -71,6 +71,10 @@ h5 {
   font-size: var(--size-normal);
 }
 
+p {
+  line-height: 1.5rem;
+}
+
 a {
   text-decoration: none;
 }

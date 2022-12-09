@@ -1,9 +1,11 @@
 .aside {
+  margin: auto;
+  max-width: 650px;
   text-align: center;
 }
 
-.aside h4 {
-  margin-bottom: 2rem;
+.aside p {
+  font-size: var(--size-extra-small);
 }
 
 .headshot {

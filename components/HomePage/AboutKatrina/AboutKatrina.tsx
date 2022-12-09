@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import WidgetTitle from '../../Global/WidgetTitle/WidgetTitle'
 
 import styles from './AboutKatrina.module.css'
 import katrinaHeadshot from '../../../public/katrina-headshot.png'
@@ -7,7 +8,7 @@ import katrinaSignature from '../../../public/katrina-signature.png'
 export default function AboutKatrina() {
   return (
     <aside className={styles.aside}>
-      <h4>About Katrina</h4>
+      <WidgetTitle titleCopy="About Katrina" />
       <Image
         src={katrinaHeadshot}
         className={styles.headshot}
@@ -23,7 +24,7 @@ export default function AboutKatrina() {
         className={styles.signature}
         alt="Katrina Atkin signature"
       />
-      <h4>About Moonbelly</h4>
+      <WidgetTitle titleCopy="About Moonbelly" />
       <h5 className={styles.subHeader}>Decorate Your Life</h5>
       <p>
         Moonbelly is driven by the aim to live an abundant, rich, beautiful,
