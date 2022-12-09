@@ -1,44 +1,11 @@
-.recentPostscontainer {
-  margin-bottom: 4rem;
-}
-
-.recentPostscontainer h2,
-.recentPostscontainer h3 {
-  text-align: center;
-}
-
-.recentPostscontainer h2 {
-  margin-bottom: 1rem;
-}
-
-.imagesContainer {
+.cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 1fr;
   gap: 3rem 1rem;
 }
 
-.image {
-  position: relative;
-}
-
-.image span,
-.image img {
-  border-radius: 4px;
-}
-
-.image span {
-  position: absolute;
-  top: 0.5rem;
-  left: 0.5rem;
-  padding: 4px;
-  font-size: var(--size-extra-small);
-  color: var(--color-purple);
-  background: var(--color-light-green);
-}
-
-.image img {
-  width: 100%;
-  height: 350px;
-  margin-bottom: 1rem;
-  object-fit: cover;
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

@@ -48,7 +48,8 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   margin: 0;
   color: var(--color-purple);
 }
@@ -65,7 +66,8 @@ h3 {
   font-size: var(--size-medium);
 }
 
-h4 {
+h4,
+h5 {
   font-size: var(--size-normal);
 }
 

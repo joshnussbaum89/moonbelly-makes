@@ -25,7 +25,8 @@ export default function App({ Component, pageProps }: AppProps) {
         h1,
         h2,
         h3,
-        h4 {
+        h4,
+        h5 {
           font-family: ${laguna.style.fontFamily};
         }
       `}</style>

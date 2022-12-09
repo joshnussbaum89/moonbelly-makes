@@ -1,0 +1,14 @@
+.recentPostscontainer {
+  margin-bottom: 4rem;
+}
+
+.recentPostscontainer h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.imagesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem 1rem;
+}

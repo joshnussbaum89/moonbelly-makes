@@ -1,0 +1,24 @@
+.aside {
+  text-align: center;
+}
+
+.aside h4 {
+  margin-bottom: 2rem;
+}
+
+.headshot {
+  width: 100%;
+  max-width: 325px;
+  height: auto;
+}
+
+.signature {
+  width: 50%;
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 4rem;
+}
+
+.subHeader {
+  font-size: var(--size-medium);
+}
