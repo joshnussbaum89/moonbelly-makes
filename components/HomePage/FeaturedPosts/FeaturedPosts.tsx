@@ -10,11 +10,13 @@ export default function FeaturedPosts() {
       <PostPreviewCard
         src={fabricFlowers}
         tag="DIYs"
+        path="/diys"
         title="Fabric Flower Wedding Bouquet, Part 1: the Project Commences"
       />
       <PostPreviewCard
         src={fabricBaby}
         tag="DIYs"
+        path="/diys"
         title="A Perfectly Tiny Puppy: Fabric Baby Toy"
       />
     </div>

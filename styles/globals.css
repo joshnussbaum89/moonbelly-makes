@@ -39,6 +39,7 @@ body {
 
 body {
   font-size: var(--size-small);
+  letter-spacing: 0.2px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-white);
@@ -51,6 +52,7 @@ h3,
 h4,
 h5 {
   margin: 0;
+  letter-spacing: 0.4px;
   color: var(--color-purple);
 }
 
