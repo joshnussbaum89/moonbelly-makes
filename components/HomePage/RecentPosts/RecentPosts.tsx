@@ -8,7 +8,7 @@ import deviledEggs from '../../../public/deviled-eggs.jpeg'
 export default function MostRecentPosts() {
   return (
     <section className={styles.recentPostscontainer}>
-      <h2>Recent Posts</h2>
+      <h2>Newest Projects</h2>
       <div className={styles.imagesContainer}>
         <PostPreviewCard
           src={thankYou}

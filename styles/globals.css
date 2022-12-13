@@ -22,7 +22,7 @@
   --color-light-green: #daeada;
 
   /* Transitions */
-  --transition-normal: all 0.3s ease-in-out;
+  --transition-normal: all 0.3s ease;
 }
 
 * {
@@ -79,6 +79,13 @@ p {
 
 a {
   text-decoration: none;
+  transition: var(--transition-normal);
+}
+
+@media (min-width: 768px) {
+  a:hover {
+    color: var(--color-light-purple);
+  }
 }
 
 ul {

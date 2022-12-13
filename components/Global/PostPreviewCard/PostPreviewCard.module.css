@@ -3,13 +3,14 @@
 }
 
 .card a {
+  width: 100%;
+  max-width: 100px;
   display: block;
-  margin: 0.7rem 0;
-  text-align: center;
+  margin: 0.7rem auto;
   font-size: var(--size-extra-small);
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: 2px;
-  color: var(--color-purple);
 }
 
 .card img {
