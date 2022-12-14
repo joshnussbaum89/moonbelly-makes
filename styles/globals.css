@@ -15,6 +15,7 @@
   /* Colors */
   --color-white: #fffaff;
   --color-black: #111111;
+  --color-black-transparent: #11111169;
   --color-grey: #bebebe;
   --color-purple: #251842;
   --color-light-purple: #cfbcff;
@@ -22,7 +23,7 @@
   --color-light-green: #daeada;
 
   /* Transitions */
-  --transition-normal: all 0.3s ease;
+  --transition-normal: all 0.4s ease;
 }
 
 * {
@@ -44,6 +45,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-white);
   color: var(--color-purple);
+  overflow: auto;
+}
+
+body[data-canvas-shown='true'] {
+  overflow: hidden;
+}
+
+body:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-black-transparent);
+  visibility: hidden;
+  opacity: 0;
+  transition: var(--transition-normal);
+}
+
+body[data-canvas-shown='true']:after {
+  visibility: visible;
+  opacity: 1;
 }
 
 h1,

@@ -5,7 +5,7 @@ import { TbMenu2, TbSearch } from 'react-icons/tb'
 import logo from '../../../../public/logo.svg'
 import styles from './MobileNavigation.module.css'
 
-export default function MobileNavigation() {
+export default function MobileNavigation({ handleShowMobileNav }) {
   return (
     <div className={styles.wrapper}>
       {/* Search */}
@@ -21,7 +21,7 @@ export default function MobileNavigation() {
         />
       </Link>
       {/* Hamburger */}
-      <TbMenu2 />
+      <TbMenu2 onClick={handleShowMobileNav} />
     </div>
   )
 }
