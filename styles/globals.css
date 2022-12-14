@@ -84,7 +84,7 @@ a {
 
 @media (min-width: 768px) {
   a:hover {
-    color: var(--color-light-purple);
+    transform: translateY(-2px);
   }
 }
 
