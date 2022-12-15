@@ -1,4 +1,4 @@
-.container {
+.offCanvasContainer {
   position: fixed;
   top: 0;
   z-index: 1;
@@ -8,26 +8,84 @@
   max-width: calc(100% - 25px);
   visibility: hidden;
   opacity: 0;
-  padding: 2rem;
+  padding: var(--padding-site-container-regular);
   background-color: var(--color-white);
   border-left: 2px solid var(--color-purple);
   transition: var(--transition-normal);
 }
 
-.container.active {
+.offCanvasContainer.active {
   right: 0;
   visibility: visible;
   opacity: 1;
+  transition: var(--transition-normal);
 }
 
-.container svg {
+.wrapper {
+  position: relative;
+  padding: 4rem 0;
+}
+
+.navItem {
+  font-size: var(--size-small);
+}
+
+.navItem:not(:last-child) {
+  border-bottom: 2px solid var(--color-purple);
+}
+
+.navItem div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: var(--transition-normal);
+  cursor: pointer;
+}
+
+.arrow.active {
+  transform: rotate(180deg);
+}
+
+.subNav {
+  max-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  padding: 0 1rem;
+  border: 2px solid transparent;
+  transition: var(--transition-normal);
+}
+
+.subNav.active {
+  max-height: 1000px;
+  visibility: visible;
+  opacity: 1;
+  padding: 1rem;
+  border-top: 2px solid var(--color-purple);
+  transition: var(--transition-normal);
+}
+
+.subNav li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 1.8rem;
   height: 1.8rem;
   cursor: pointer;
 }
 
-.subNav {
-  height: 0;
-  visibility: hidden;
-  opacity: 0;
+.socialIcons {
+  position: absolute;
+  left: 50%;
+  bottom: 4rem;
+  transform: translate(-50%, 0);
 }
