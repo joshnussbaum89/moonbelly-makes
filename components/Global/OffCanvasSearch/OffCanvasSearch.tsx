@@ -5,6 +5,7 @@ import styles from './OffCanvasSearch.module.css'
 export default function OffCanvasSearch({
   mobileSearchIsActive,
   handleShowMobileSearch,
+  searchRef,
 }) {
   return (
     <div
@@ -20,6 +21,7 @@ export default function OffCanvasSearch({
         id="search"
         name="search"
         placeholder="search moonbelly"
+        ref={searchRef}
       />
       <TbX onClick={handleShowMobileSearch} />
     </div>
