@@ -7,8 +7,8 @@ import styles from './OffCanvasNavigation.module.css'
 
 // TODO: break out into seperate components, needs to be dynamic => map through data and create <NavItem />
 export default function OffCanvasNavigation({
-  handleShowMobileNav,
   mobileNavIsActive,
+  handleShowMobileNav,
 }) {
   const [subNavOneIsShown, setSubNavOneIsShown] = useState(false)
   const [subNavTwoIsShown, setSubNavTwoIsShown] = useState(false)

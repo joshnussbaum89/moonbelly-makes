@@ -3,10 +3,13 @@ import DesktopNavigation from './Desktop/DesktopNavigation'
 
 import styles from './Navigation.module.css'
 
-export default function Navigation({ handleShowMobileNav }) {
+export default function Navigation({ handleShowMobileNav, handleShowMobileSearch }) {
   return (
     <nav className={styles.navigation}>
-      <MobileNavigation handleShowMobileNav={handleShowMobileNav} />
+      <MobileNavigation
+        handleShowMobileNav={handleShowMobileNav}
+        handleShowMobileSearch={handleShowMobileSearch}
+      />
       <DesktopNavigation />
     </nav>
   )

@@ -7,6 +7,7 @@
   width: 393px;
   max-width: calc(100% - 25px);
   visibility: hidden;
+  overflow: auto;
   opacity: 0;
   padding: var(--padding-site-container-regular);
   background-color: var(--color-white);

@@ -16,19 +16,12 @@
   font-size: var(--size-extra-small);
   color: var(--color-purple);
   background-color: var(--color-white);
-  border: 1px solid var(--color-green);
   border-radius: 1.25rem;
-  transition: var(--transition-normal);
 }
 
 .searchContainer input:focus {
   width: 300px;
-  border: 1px solid var(--color-purple);
   border-radius: 0.25rem;
-}
-
-.searchContainer input:focus + svg {
-  border: 1px solid var(--color-purple);
 }
 
 .searchContainer input::placeholder {
