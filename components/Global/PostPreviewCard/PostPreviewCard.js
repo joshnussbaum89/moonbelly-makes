@@ -3,7 +3,6 @@ import Link from 'next/link'
 
 import styles from './PostPreviewCard.module.css'
 
-// TODO: add types
 export default function PostPreviewCard({ src, tag, title, path }) {
   return (
     <div className={styles.card}>

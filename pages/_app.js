@@ -10,10 +10,7 @@ const vietnam = Be_Vietnam_Pro({ weight: '300', subsets: ['latin'] })
 // Styles
 import '../styles/globals.css'
 
-// Types
-import type { AppProps } from 'next/app'
-
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }) {
   return (
     <>
       <style jsx global>{`

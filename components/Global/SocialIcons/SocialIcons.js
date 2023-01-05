@@ -2,12 +2,8 @@ import { TbBrandYoutube, TbBrandInstagram, TbBrandTiktok } from 'react-icons/tb'
 
 import styles from './SocialIcons.module.css'
 
-type Props = {
-  darkMode?: boolean
-}
-
 // TODO: replace link URLs
-export default function SocialIcons({ darkMode = false }: Props) {
+export default function SocialIcons({ darkMode = false }) {
   return (
     <div
       className={
