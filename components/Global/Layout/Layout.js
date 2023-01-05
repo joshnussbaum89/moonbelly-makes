@@ -1,4 +1,4 @@
-// Hookes, Components
+// Hooks, Components
 import { useEffect, useRef, useState } from 'react'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
