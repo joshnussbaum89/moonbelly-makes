@@ -1,8 +1,14 @@
+// Components
 import Head from 'next/head'
 import RecentPosts from '../components/HomePage/RecentPosts/RecentPosts'
 import Subscribe from '../components/HomePage/Subscribe/Subscribe'
 import FeaturedContent from '../components/HomePage/FeaturedContent/FeaturedContent'
 
+/**
+ * Home page
+ *
+ * @returns Recent posts, subscribe CTA, featured content
+ */
 export default function Home() {
   return (
     <>

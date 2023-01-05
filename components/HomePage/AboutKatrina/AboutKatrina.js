@@ -1,10 +1,19 @@
+// Components
 import Image from 'next/image'
 import WidgetTitle from '../../Global/WidgetTitle/WidgetTitle'
 
+// Styles
 import styles from './AboutKatrina.module.css'
+
+// Images
 import katrinaHeadshot from '../../../public/katrina-headshot.png'
 import katrinaSignature from '../../../public/katrina-signature.png'
 
+/**
+ * AboutKatrina Component
+ *
+ * @returns About Katrina section for the side panel
+ */
 export default function AboutKatrina() {
   return (
     <aside className={styles.aside}>

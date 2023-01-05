@@ -1,10 +1,19 @@
+// Components
 import PostPreviewCard from '../../Global/PostPreviewCard/PostPreviewCard'
 
+// Styles
 import styles from './RecentPosts.module.css'
+
+// Images
 import chocolateMiniRolls from '../../../public/chocolate-mini-rolls.jpeg'
 import thankYou from '../../../public/thank-you.jpeg'
 import deviledEggs from '../../../public/deviled-eggs.jpeg'
 
+/**
+ * MostRecentPosts Component
+ *
+ * @returns Preview cards for most recent posts
+ */
 export default function MostRecentPosts() {
   return (
     <section className={styles.recentPostscontainer}>

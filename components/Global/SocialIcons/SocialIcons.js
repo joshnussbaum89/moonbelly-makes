@@ -1,8 +1,17 @@
+// Components
 import { TbBrandYoutube, TbBrandInstagram, TbBrandTiktok } from 'react-icons/tb'
 
+// Styles
 import styles from './SocialIcons.module.css'
 
-// TODO: replace link URLs
+/**
+ * Social Icons Component
+ *
+ * TODO: replace link URLs
+ *
+ * @param {boolean} darkMode
+ * @returns Social icons displayed black or white depending on darkMode prop
+ */
 export default function SocialIcons({ darkMode = false }) {
   return (
     <div

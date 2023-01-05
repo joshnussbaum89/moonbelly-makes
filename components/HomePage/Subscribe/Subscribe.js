@@ -1,5 +1,11 @@
+// Styles
 import styles from './Subscribe.module.css'
 
+/**
+ * Subscribe Component
+ *
+ * @returns "Subscribe with Moonbelly" CTA widget
+ */
 export default function Subscribe() {
   return (
     <section className={styles.subscribe}>

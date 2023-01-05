@@ -1,11 +1,20 @@
+// Hooks, Components
 import { useState } from 'react'
 import Link from 'next/link'
 import SocialIcons from '../SocialIcons/SocialIcons'
 import { TbChevronDown, TbX } from 'react-icons/tb'
 
+// Styles
 import styles from './OffCanvasNavigation.module.css'
 
-// TODO: break out into seperate components, needs to be dynamic => map through data and create <NavItem />
+/**
+ * OffCanvasNavigation Component (hidden until active)
+ *
+ * TODO: break out into seperate components, needs to be dynamic => map through data and create NavItem
+ *
+ * @param {boolean} mobileNavIsActive
+ * @param {function} handleShowMobileNav
+ */
 export default function OffCanvasNavigation({
   mobileNavIsActive,
   handleShowMobileNav,

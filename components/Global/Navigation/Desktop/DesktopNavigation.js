@@ -1,9 +1,16 @@
+// Components
 import Link from 'next/link'
 import Image from 'next/image'
 
+// Styles
 import logo from '../../../../public/logo.svg'
 import styles from './DesktopNavigation.module.css'
 
+/**
+ * DesktopNavigation Component
+ *
+ * @returns Desktop navigation (menu items, sub navigation modals, site logo)
+ */
 export default function DesktopNavigation() {
   return (
     <div className={styles.wrapper}>

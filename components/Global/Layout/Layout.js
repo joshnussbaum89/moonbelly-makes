@@ -1,11 +1,19 @@
+// Hookes, Components
 import { useEffect, useRef, useState } from 'react'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import OffCanvasNavigation from '../OffCanvasNavigation/OffCanvasNavigation'
 import OffCanvasSearch from '../OffCanvasSearch/OffCanvasSearch'
 
+// Styles
 import styles from './Layout.module.css'
 
+/**
+ * Layout Component
+ *
+ * @param {object} children
+ * @returns Site header, site footer, off canvas elements + children
+ */
 export default function Layout({ children }) {
   const [mobileNavIsActive, setMobileNavIsActive] = useState(false)
   const [mobileSearchIsActive, setMobileSearchIsActive] = useState(false)

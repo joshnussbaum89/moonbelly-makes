@@ -1,9 +1,18 @@
+// Components
 import Image from 'next/image'
 import SocialIcons from '../SocialIcons/SocialIcons'
 
-import logo from '../../../public/logo.svg'
+// Styles
 import styles from './Footer.module.css'
 
+// Images
+import logo from '../../../public/logo.svg'
+
+/**
+ * Footer Component
+ *
+ * @returns Footer to be displayed on every page
+ */
 export default function Footer() {
   return (
     <footer className={styles.footer}>
