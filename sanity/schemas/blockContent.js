@@ -1,15 +1,5 @@
 import {defineType, defineArrayMember} from 'sanity'
 
-/**
- * This is the schema definition for the rich text fields used for
- * for this blog studio. When you import it in schemas.js it can be
- * reused in other parts of the studio with:
- *  {
- *    name: 'someName',
- *    title: 'Some title',
- *    type: 'blockContent'
- *  }
- */
 export default defineType({
   title: 'Block Content',
   name: 'blockContent',
@@ -18,28 +8,24 @@ export default defineType({
     defineArrayMember({
       title: 'Block',
       type: 'block',
-      // Styles let you set what your user can mark up blocks with. These
-      // correspond with HTML tags, but you can set any title or value
-      // you want and decide how you want to deal with it where you want to
-      // use your content.
       styles: [
         {title: 'Normal', value: 'normal'},
-        {title: 'H1', value: 'h1'},
-        {title: 'H2', value: 'h2'},
         {title: 'H3', value: 'h3'},
         {title: 'H4', value: 'h4'},
         {title: 'Quote', value: 'blockquote'},
       ],
-      lists: [{title: 'Bullet', value: 'bullet'}],
-      // Marks let you mark up inline text in the block editor.
+      lists: [
+        {title: 'Bullet', value: 'bullet'},
+        {title: 'Numbered', value: 'number'},
+      ],
       marks: {
-        // Decorators usually describe a single property – e.g. a typographic
-        // preference or highlighting by editors.
         decorators: [
           {title: 'Strong', value: 'strong'},
           {title: 'Emphasis', value: 'em'},
+          {title: 'Underline', value: 'underline'},
+          {title: 'Strike Through', value: 'strike-through'},
+          {title: 'Code', value: 'code'},
         ],
-        // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
           {
             title: 'URL',
@@ -50,18 +36,61 @@ export default defineType({
                 title: 'URL',
                 name: 'href',
                 type: 'url',
+                validation: (Rule) =>
+                  Rule.uri({
+                    scheme: ['http', 'https', 'mailto', 'tel'],
+                  }).error(`URL must start with 'http', 'https', 'mailto' or 'tel'`),
               },
             ],
           },
         ],
       },
     }),
-    // You can add additional types here. Note that you can't use
-    // primitive types such as 'string' and 'number' in the same array
-    // as a block type.
+
+    // TODO: create a custom AlignImage component --> https://stackoverflow.com/questions/61280906/text-image-alignment-in-sanity-io-portable-text-rich-text-editor
     defineArrayMember({
       type: 'image',
       options: {hotspot: true},
+      validation: (Rule) => Rule.required().error('Please add an image'),
+      fields: [
+        {
+          type: 'text',
+          name: 'alt',
+          title: 'Alternative text',
+          description: `Some of your visitors cannot see images, be they blind, color-blind, low-sighted; alternative text is of great help for those people that can rely on it to have a good idea of what's on your page.`,
+          validation: (Rule) => Rule.required().error('Please add alternative text'),
+        },
+        // Column layout properties
+        {
+          title: 'Column Layout',
+          name: 'columnLayout',
+          type: 'string',
+          options: {
+            list: [
+              {title: 'One', value: 'one-column'},
+              {title: 'Two', value: 'two-column'},
+              {title: 'Three', value: 'three-column'},
+            ],
+          },
+        },
+        {
+          title: 'Alignment',
+          name: 'alignment',
+          type: 'string',
+          options: {
+            list: [
+              {title: 'Full Width', value: 'full-width'},
+              {title: 'Left', value: 'left'},
+              {title: 'Right', value: 'right'},
+              {title: 'Center', value: 'center'},
+            ],
+          },
+        },
+      ],
+      initialValue: () => ({
+        columnLayout: 'one-column',
+        alignment: 'full-width',
+      }),
     }),
   ],
 })
