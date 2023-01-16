@@ -23,6 +23,7 @@ export default function Subscribe() {
             name="email"
             id="email"
             placeholder="email address..."
+            required
           />
           <button type="submit">Subscribe</button>
         </form>

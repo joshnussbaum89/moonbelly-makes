@@ -1,6 +1,9 @@
+// Components
+import PageTitle from '../components/Global/PageTitle/PageTitle'
+
 /**
  * Recipes Page
  */
 export default function Recipes() {
-  return <h2>Recipes</h2>
+  return <PageTitle text="Recipes" />
 }

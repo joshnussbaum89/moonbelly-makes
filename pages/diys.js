@@ -1,6 +1,9 @@
+// Components
+import PageTitle from '../components/Global/PageTitle/PageTitle'
+
 /**
  * Diys Page
  */
 export default function Diys() {
-  return <h2>Diys</h2>
+  return <PageTitle text="Diys" />
 }

@@ -1,6 +1,9 @@
+// Components
+import PageTitle from '../components/Global/PageTitle/PageTitle'
+
 /**
  * About page
  */
 export default function About() {
-  return <h2>About</h2>
+  return <PageTitle text="About" />
 }
