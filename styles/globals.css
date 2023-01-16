@@ -127,7 +127,9 @@ input {
 }
 
 input:focus {
-  outline: 2px solid var(--color-light-purple);
+  /* TODO: research this, is it accessible? --> https://stackoverflow.com/questions/52589391/css-box-shadow-vs-outline*/
+  outline: 0;
+  box-shadow: 0 0 0 2px var(--color-light-purple);
 }
 
 input[type='search']::-webkit-search-decoration,
