@@ -1,7 +1,7 @@
 // Components
 import Head from 'next/head'
 import RecentPosts from '../components/HomePage/RecentPosts/RecentPosts'
-import Subscribe from '../components/HomePage/Subscribe/Subscribe'
+import Subscribe from '../components/Global/Subscribe/Subscribe'
 import FeaturedContent from '../components/HomePage/FeaturedContent/FeaturedContent'
 
 /**
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>[NEXT] Moonbelly Makes - decorate your life</title>
+        <title>Moonbelly Makes | Decorate Your Life</title>
         <meta name="description" content="decorate your life" />
       </Head>
       <RecentPosts />

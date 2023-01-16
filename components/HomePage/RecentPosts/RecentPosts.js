@@ -12,7 +12,7 @@ import deviledEggs from '../../../public/deviled-eggs.jpeg'
 /**
  * MostRecentPosts Component
  *
- * @returns Preview cards for most recent posts
+ * @returns Preview cards for most recent posts on home page hero 
  */
 export default function MostRecentPosts() {
   return (
