@@ -1,15 +1,17 @@
 // Styles
 import styles from './Posts.module.css'
 
-// Create dynamic URLs from post slug
-export async function getStaticPaths() {
-  // TODO: create paths from fetched posts
-}
+// // Create dynamic URLs from post slug
+// export async function getStaticPaths() {
+//   // TODO: create paths from fetched posts
+// }
 
-// Get post props
-export async function getStaticProps(context) {
-  // TODO: fetch all posts and create props
-}
+// // Get post props
+// export async function getStaticProps(context) {
+//   // TODO: fetch all posts and create props
+// }
 
 // TODO: build post template
-export default function Post() {}
+export default function Post() {
+  return <h1>post page template</h1>
+}
