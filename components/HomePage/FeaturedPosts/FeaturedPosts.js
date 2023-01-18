@@ -17,16 +17,18 @@ export default function FeaturedPosts() {
   return (
     <div className={styles.cards}>
       <PostPreviewCard
-        src={fabricFlowers}
-        tag="DIYs"
-        path="/diys"
+        imageSrc={fabricFlowers}
+        category="diys"
+        categoryPath="/diys"
         title="Fabric Flower Wedding Bouquet, Part 1: the Project Commences"
+        alt="placeholder alt text"
       />
       <PostPreviewCard
-        src={fabricBaby}
-        tag="DIYs"
-        path="/diys"
+        imageSrc={fabricBaby}
+        category="diys"
+        categoryPath="/diys"
         title="A Perfectly Tiny Puppy: Fabric Baby Toy"
+        alt="placeholder alt text"
       />
     </div>
   )

@@ -1,8 +1,14 @@
+.imageContainer {
+  position: relative;
+  height: 350px;
+}
+
 .card img {
+  object-fit: cover;
   border-radius: 4px;
 }
 
-.card a {
+.card .animatedLink {
   width: 100%;
   max-width: 100px;
   display: block;
@@ -13,10 +19,10 @@
   letter-spacing: 2px;
 }
 
-.card img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
+@media (min-width: 768px) {
+  .animatedLink:hover {
+    transform: translateY(-2px);
+  }
 }
 
 .card h3 {

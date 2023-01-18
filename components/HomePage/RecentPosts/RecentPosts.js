@@ -12,7 +12,7 @@ import deviledEggs from '../../../public/deviled-eggs.jpeg'
 /**
  * MostRecentPosts Component
  *
- * @returns Preview cards for most recent posts on home page hero 
+ * @returns Preview cards for most recent posts on home page hero
  */
 export default function MostRecentPosts() {
   return (
@@ -20,22 +20,25 @@ export default function MostRecentPosts() {
       <h2>Newest Projects</h2>
       <div className={styles.imagesContainer}>
         <PostPreviewCard
-          src={thankYou}
-          tag="DIYs"
-          path="/diys"
+          imageSrc={thankYou}
+          category="Diys"
+          categoryPath="/diys"
           title="Handcarved Thank You Cards"
+          alt="placeholder alt text"
         />
         <PostPreviewCard
-          src={deviledEggs}
-          tag="Recipes"
-          path="/recipes"
+          imageSrc={deviledEggs}
+          category="Recipes"
+          categoryPath="/recipes"
           title="Super Savory Deviled Eggs"
+          alt="placeholder alt text"
         />
         <PostPreviewCard
-          src={chocolateMiniRolls}
-          tag="Bake Off"
-          path="/bake-off"
+          imageSrc={chocolateMiniRolls}
+          category="Bake Off"
+          categoryPath="/bake-off"
           title="Prue's Chocolate Mini Rolls"
+          alt="placeholder alt text"
         />
       </div>
     </section>

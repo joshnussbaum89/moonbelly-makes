@@ -17,7 +17,9 @@ export default function DesktopNavigation() {
       {/* Left menu items */}
       <ul className={styles.mainNav}>
         <li className={styles.navItem}>
-          <Link href="/diys">DIYs</Link>
+          <Link href="/diys" className={styles.animatedLink}>
+            DIYs
+          </Link>
           {/* Sub navigation */}
           <ul className={styles.subNav}>
             <li>
@@ -29,7 +31,9 @@ export default function DesktopNavigation() {
           </ul>
         </li>
         <li className={styles.navItem}>
-          <Link href="/recipes">Recipes</Link>
+          <Link href="/recipes" className={styles.animatedLink}>
+            Recipes
+          </Link>
           {/* Sub navigation */}
           <ul className={styles.subNav}>
             <li>
@@ -54,7 +58,9 @@ export default function DesktopNavigation() {
       {/* Right menu items */}
       <ul className={styles.mainNav}>
         <li className={styles.navItem}>
-          <Link href="/bake-off">Bake Off</Link>
+          <Link href="/bake-off" className={styles.animatedLink}>
+            Bake Off
+          </Link>
           {/* Sub navigation */}
           <ul className={`${styles.subNav} ${styles.right}`}>
             <li>
@@ -74,7 +80,9 @@ export default function DesktopNavigation() {
           </ul>
         </li>
         <li>
-          <Link href="/about">About</Link>
+          <Link href="/about" className={styles.animatedLink}>
+            About
+          </Link>
         </li>
       </ul>
     </div>
