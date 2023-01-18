@@ -7,7 +7,7 @@ import client from '../lib/sanityClient'
 // Helpers
 import { getAllDiyPosts } from '../lib/getAllDiyPosts'
 
-// Fetch Sanity posts + authors
+// Fetch Sanity posts
 export async function getStaticProps() {
   const posts = await getAllDiyPosts()
 
