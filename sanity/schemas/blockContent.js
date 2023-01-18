@@ -54,11 +54,16 @@ export default defineType({
       validation: (Rule) => Rule.required().error('Please add an image'),
       fields: [
         {
-          type: 'text',
+          type: 'string',
           name: 'alt',
           title: 'Alternative text',
           description: `Some of your visitors cannot see images, be they blind, color-blind, low-sighted; alternative text is of great help for those people that can rely on it to have a good idea of what's on your page.`,
           validation: (Rule) => Rule.required().error('Please add alternative text'),
+        },
+        {
+          type: 'string',
+          name: 'caption',
+          title: 'Caption (optional)',
         },
         // Column layout properties
         {
