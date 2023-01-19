@@ -7,8 +7,22 @@ import client from '../lib/sanityClient'
 // Helpers
 import { getAllRecipePosts } from '../lib/getAllRecipePosts'
 
+// Fetch Sanity posts
+export async function getStaticProps() {
+  const posts = await getAllRecipePosts()
+
+  return {
+    props: {
+      posts,
+    },
+    revalidate: 60,
+  }
+}
+
 /**
  * Recipes Page
+ *
+ * @param {object} posts
  */
 export default function Recipes({ posts }) {
   // Build image from Sanity data
@@ -33,16 +47,4 @@ export default function Recipes({ posts }) {
       })}
     </>
   )
-}
-
-// Fetch Sanity posts
-export async function getStaticProps() {
-  const posts = await getAllRecipePosts()
-
-  return {
-    props: {
-      posts,
-    },
-    revalidate: 60,
-  }
 }

@@ -8,6 +8,8 @@ import styles from './Navigation.module.css'
 /**
  * Navigation Component
  *
+ * @param {function} handleShowMobileNav
+ * @param {function} handleShowMobileSearch
  * @returns Mobile + desktop navigation
  */
 export default function Navigation({

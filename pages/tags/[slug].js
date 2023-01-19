@@ -1,10 +1,5 @@
 // Styles
-import styles from './Posts.module.css'
-
-// TODO: build post template
-export default function Post() {
-  return <h1>post page template</h1>
-}
+import styles from './Tags.module.css'
 
 // // Create dynamic URLs from post slug
 // export async function getStaticPaths() {
@@ -15,3 +10,8 @@ export default function Post() {
 // export async function getStaticProps(context) {
 //   // TODO: fetch all posts and create props
 // }
+
+// TODO: build tag template
+export default function tag() {
+  return <h1>tag page template</h1>
+}

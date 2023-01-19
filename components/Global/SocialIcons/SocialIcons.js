@@ -9,6 +9,7 @@ import styles from './SocialIcons.module.css'
  *
  * TODO: replace link URLs
  *
+ * @param {boolean} darkMode
  * @returns Social icons displayed black or white depending on darkMode prop
  */
 export default function SocialIcons({ darkMode = false }) {

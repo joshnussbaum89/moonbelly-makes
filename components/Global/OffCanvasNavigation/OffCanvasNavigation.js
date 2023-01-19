@@ -11,6 +11,9 @@ import styles from './OffCanvasNavigation.module.css'
  * OffCanvasNavigation Component (hidden until active)
  *
  * TODO: break out into seperate components, needs to be dynamic => map through data and create NavItem
+ *
+ * @param {boolean} mobileNavIsActive
+ * @param {function} handleShowMobileNav
  */
 export default function OffCanvasNavigation({
   mobileNavIsActive,

@@ -8,6 +8,12 @@ import styles from './PostPreviewCard.module.css'
 /**
  * PostPreviewCard Component
  *
+ * @param {object} imageSrc
+ * @param {string} category
+ * @param {string} categoryPath
+ * @param {string} title
+ * @param {string} slug
+ * @param {string} alt
  * @returns Post preview card that links to corresponding post page
  */
 export default function PostPreviewCard({

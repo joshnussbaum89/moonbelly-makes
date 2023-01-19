@@ -7,6 +7,9 @@ import styles from './OffCanvasSearch.module.css'
 /**
  * OffCanvasSearch Component (hidden until active)
  *
+ * @param {boolean} mobileSearchIsActive
+ * @param {function} handleShowMobileSearch
+ * @param {object} searchRef
  * @returns Mobile search component
  */
 export default function OffCanvasSearch({
