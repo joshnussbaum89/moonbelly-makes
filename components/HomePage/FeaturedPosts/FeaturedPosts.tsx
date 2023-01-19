@@ -21,6 +21,7 @@ export default function FeaturedPosts() {
         category="diys"
         categoryPath="/diys"
         title="Fabric Flower Wedding Bouquet, Part 1: the Project Commences"
+        slug="slug-placeholder"
         alt="placeholder alt text"
       />
       <PostPreviewCard
@@ -28,6 +29,7 @@ export default function FeaturedPosts() {
         category="diys"
         categoryPath="/diys"
         title="A Perfectly Tiny Puppy: Fabric Baby Toy"
+        slug="slug-placeholder"
         alt="placeholder alt text"
       />
     </div>

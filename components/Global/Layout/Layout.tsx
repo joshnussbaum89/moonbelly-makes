@@ -11,7 +11,6 @@ import styles from './Layout.module.css'
 /**
  * Layout Component
  *
- * @param {object} children
  * @returns Site header, site footer, off canvas elements + children
  */
 export default function Layout({ children }) {

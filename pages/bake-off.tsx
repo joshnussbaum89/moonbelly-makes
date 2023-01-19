@@ -5,40 +5,26 @@ import imageUrlBuilder from '@sanity/image-url'
 import client from '../lib/sanityClient'
 
 // Helpers
-import { getAllDiyPosts } from '../lib/getAllDiyPosts'
-
-// Fetch Sanity posts
-export async function getStaticProps() {
-  const posts = await getAllDiyPosts()
-
-  return {
-    props: {
-      posts,
-    },
-    revalidate: 60,
-  }
-}
+import { getAllBakeOffPosts } from '../lib/getAllBakeOffPosts'
 
 /**
- * Diys Page
- *
- * @param {object} posts
+ * Bake Off Page
  */
-export default function Diys({ posts }) {
+export default function BakeOff({ posts }) {
   // Build image from Sanity data
   const builder = imageUrlBuilder(client)
   const urlFor = (source) => builder.image(source)
 
   return (
     <>
-      <PageTitle text="Diys" />
+      <PageTitle text="Bake Off" />
       {posts.map((post) => {
         return (
           <PostPreviewCard
             key={post._id}
             imageSrc={urlFor(post.mainImage).url()}
-            category="diys"
-            categoryPath="/diys"
+            category="bake off"
+            categoryPath="/bake-off"
             title={post.title}
             slug={post.slug.current}
             alt={post.mainImage.alt}
@@ -47,4 +33,16 @@ export default function Diys({ posts }) {
       })}
     </>
   )
+}
+
+// Fetch Sanity posts
+export async function getStaticProps() {
+  const posts = await getAllBakeOffPosts()
+
+  return {
+    props: {
+      posts,
+    },
+    revalidate: 60,
+  }
 }
