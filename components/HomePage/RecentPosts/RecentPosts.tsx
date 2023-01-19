@@ -24,6 +24,7 @@ export default function MostRecentPosts() {
           category="Diys"
           categoryPath="/diys"
           title="Handcarved Thank You Cards"
+          slug="slug-placeholder"
           alt="placeholder alt text"
         />
         <PostPreviewCard
@@ -31,6 +32,7 @@ export default function MostRecentPosts() {
           category="Recipes"
           categoryPath="/recipes"
           title="Super Savory Deviled Eggs"
+          slug="slug-placeholder"
           alt="placeholder alt text"
         />
         <PostPreviewCard
@@ -38,6 +40,7 @@ export default function MostRecentPosts() {
           category="Bake Off"
           categoryPath="/bake-off"
           title="Prue's Chocolate Mini Rolls"
+          slug="slug-placeholder"
           alt="placeholder alt text"
         />
       </div>

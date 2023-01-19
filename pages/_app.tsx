@@ -12,9 +12,6 @@ import '../styles/globals.css'
 
 /**
  * App Component
- *
- * @param {function} Component
- * @param {object} pageProps
  */
 export default function App({ Component, pageProps }) {
   return (
