@@ -73,7 +73,6 @@ export default defineType({
       type: 'date',
       options: {
         dateFormat: 'MM-DD-YYYY',
-        calendarTodayLabel: 'Today',
       },
       validation: (Rule) => Rule.required().error('Please add a date'),
     }),
