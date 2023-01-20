@@ -1,0 +1,36 @@
+.post {
+  width: 100%;
+  margin: 0 auto 4rem;
+  text-align: left;
+}
+
+.imageContainer {
+  position: relative;
+  display: inline-block;
+  height: 50vh;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.imageContainer[data-column-layout='two-column'] {
+  width: 50%;
+}
+
+.imageContainer[data-column-layout='three-column'] {
+  width: 33%;
+}
+
+.imageContainer img {
+  position: static;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.postHeader {
+  margin-bottom: 2rem;
+}

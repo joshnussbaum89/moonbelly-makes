@@ -7,18 +7,6 @@ import client from '../lib/sanityClient'
 // Helpers
 import { getAllBakeOffPosts } from '../lib/getAllBakeOffPosts'
 
-// Fetch Sanity posts
-export async function getStaticProps() {
-  const posts = await getAllBakeOffPosts()
-
-  return {
-    props: {
-      posts,
-    },
-    revalidate: 60,
-  }
-}
-
 /**
  * Bake Off Page
  *
@@ -47,4 +35,16 @@ export default function BakeOff({ posts }) {
       })}
     </>
   )
+}
+
+// Fetch Sanity posts
+export async function getStaticProps() {
+  const posts = await getAllBakeOffPosts()
+
+  return {
+    props: {
+      posts,
+    },
+    revalidate: 60,
+  }
 }

@@ -7,18 +7,6 @@ import client from '../lib/sanityClient'
 // Helpers
 import { getAllDiyPosts } from '../lib/getAllDiyPosts'
 
-// Fetch Sanity posts
-export async function getStaticProps() {
-  const posts = await getAllDiyPosts()
-
-  return {
-    props: {
-      posts,
-    },
-    revalidate: 60,
-  }
-}
-
 /**
  * Diys Page
  *
@@ -47,4 +35,16 @@ export default function Diys({ posts }) {
       })}
     </>
   )
+}
+
+// Fetch Sanity posts
+export async function getStaticProps() {
+  const posts = await getAllDiyPosts()
+
+  return {
+    props: {
+      posts,
+    },
+    revalidate: 60,
+  }
 }
