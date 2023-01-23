@@ -23,9 +23,7 @@ export default function Post({ post }) {
 
   return (
     <article className={styles.post}>
-      <div className={styles.postHeader}>
-        <PageTitle text={title} />
-      </div>
+      <PageTitle text={title} />
       <div className={styles.imageContainer}>
         <Image
           src={urlFor(mainImage).url()}

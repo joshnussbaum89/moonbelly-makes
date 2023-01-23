@@ -6,9 +6,9 @@
 
 .imageContainer {
   position: relative;
-  display: inline-block;
   height: 50vh;
   width: 100%;
+  display: inline-block;
   margin-bottom: 2rem;
 }
 
@@ -29,8 +29,4 @@
   height: auto;
   object-fit: cover;
   border-radius: 4px;
-}
-
-.postHeader {
-  margin-bottom: 2rem;
 }
