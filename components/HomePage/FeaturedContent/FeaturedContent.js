@@ -18,4 +18,3 @@ export default function FeaturedContent({ posts }) {
     </section>
   )
 }
-// 6082822035
