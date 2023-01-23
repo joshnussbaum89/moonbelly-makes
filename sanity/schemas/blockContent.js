@@ -46,8 +46,6 @@ export default defineType({
         ],
       },
     }),
-
-    // TODO: create a custom AlignImage component --> https://stackoverflow.com/questions/61280906/text-image-alignment-in-sanity-io-portable-text-rich-text-editor
     defineArrayMember({
       type: 'image',
       options: {hotspot: true},
