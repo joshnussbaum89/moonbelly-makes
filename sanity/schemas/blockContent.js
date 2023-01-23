@@ -12,6 +12,7 @@ export default defineType({
         {title: 'Normal', value: 'normal'},
         {title: 'H3', value: 'h3'},
         {title: 'H4', value: 'h4'},
+        {title: 'H5', value: 'h5'},
         {title: 'Quote', value: 'blockquote'},
       ],
       lists: [
