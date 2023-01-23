@@ -10,11 +10,12 @@ import styles from './FeaturedContent.module.css'
  *
  * @returns Featured posts and side panel info
  */
-export default function FeaturedContent() {
+export default function FeaturedContent({ posts }) {
   return (
     <section className={styles.content}>
-      <FeaturedPosts />
+      <FeaturedPosts posts={posts} />
       <AboutKatrina />
     </section>
   )
 }
+// 6082822035

@@ -31,9 +31,9 @@ export default defineType({
       options: {
         layout: 'radio',
         list: [
-          {title: 'Diy', value: 'diy'},
-          {title: 'Recipe', value: 'recipe'},
-          {title: 'Bake Off', value: 'bakeOff'},
+          {title: 'Diy', value: 'diys'},
+          {title: 'Recipe', value: 'recipes'},
+          {title: 'Bake Off', value: 'bake-off'},
         ],
       },
       validation: (Rule) =>
