@@ -27,7 +27,7 @@ export default function PostPreviewCard({
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
-        <Link href={`posts/${slug}`}>
+        <Link href={`/posts/${slug}`}>
           <Image
             src={imageSrc}
             sizes="(min-width: 768px) 50vw,
@@ -42,7 +42,7 @@ export default function PostPreviewCard({
         {category}
       </Link>
       <h3>
-        <Link href={`posts/${slug}`}>{title}</Link>
+        <Link href={`/posts/${slug}`}>{title}</Link>
       </h3>
     </div>
   )
