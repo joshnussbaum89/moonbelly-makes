@@ -9,22 +9,20 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required().error('Please add a title'),
-    }),
-    defineField({
-      title: 'Category',
-      name: 'category',
-      type: 'string',
-      options: {
-        layout: 'radio',
-        list: [
-          {title: 'Diy', value: 'diys'},
-          {title: 'Recipe', value: 'recipes'},
-          {title: 'Bake Off', value: 'bake-off'},
-        ],
-      },
       validation: (Rule) =>
-        Rule.required().error('Please create a new category or select one from the provided list'),
+        Rule.custom((tag) => {
+          // Regex to check for non-alphanumeric characters
+          const regex = /[^a-zA-Z0-9 ]/g
+
+          // Check if tag exists and only contains alphanumeric characters
+          if (tag === undefined) {
+            return 'Please add a title'
+          } else if (regex.test(tag)) {
+            return 'Please use only alphanumeric characters'
+          } else {
+            return true
+          }
+        }),
     }),
   ],
 })

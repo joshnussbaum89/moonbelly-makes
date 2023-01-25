@@ -68,23 +68,22 @@ export default function Post({ post }) {
 export async function getStaticPaths() {
   const posts = await getAllPosts()
 
+  // Create paths for each post
   const paths = posts.map((post) => ({
     params: {
       slug: post.slug.current,
     },
   }))
 
-  return { paths, fallback: 'blocking' }
+  return { paths, fallback: false }
 }
 
 // Get post props
-export async function getStaticProps(context) {
+export async function getStaticProps({ params }) {
   const allPosts = await getAllPosts()
 
-  // Get current post
-  const post = allPosts.filter(
-    (post) => post.slug.current === context.params.slug
-  )
+  // Filter post by slug
+  const post = allPosts.filter((post) => post.slug.current === params.slug)
 
   return {
     props: {

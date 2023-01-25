@@ -3,6 +3,7 @@ import PageTitle from '../../components/Global/PageTitle/PageTitle'
 import PostPreviewCard from '../../components/Global/PostPreviewCard/PostPreviewCard'
 
 // Helpers
+import { getAllTags } from '../../lib/getAllTags'
 import { getAllPostsByTag } from '../../lib/getAllPostsByTag'
 import { createTitleFromSlug } from '../../lib/createTitleFromSlug'
 import imageUrlBuilder from '@sanity/image-url'
@@ -33,28 +34,30 @@ export default function tags({ posts, title }) {
   )
 }
 
-// Create dynamic URLs from post slug
+// Create dynamic URLs from tags
 export async function getStaticPaths() {
-  const posts = await getAllPostsByTag()
+  const tags = await getAllTags()
 
-  const paths = posts.map((post) => ({
+  // Create path for each tag
+  const paths = tags.map((tag) => ({
     params: {
-      slug: post.slug.current,
+      slug: tag.title.toLowerCase().replace(/ /g, '-'),
     },
   }))
 
-  return { paths, fallback: 'blocking' }
+  return { paths, fallback: false }
 }
 
-// Get post props
-export async function getStaticProps(context) {
-  const title = createTitleFromSlug(context.params.slug)
-  const postsByTag = await getAllPostsByTag(title)
+// Fetch posts by tag
+export async function getStaticProps({ params }) {
+  const title = createTitleFromSlug(params.slug)
+  const posts = await getAllPostsByTag(params.slug)
 
   return {
     props: {
-      posts: postsByTag,
+      posts,
       title,
     },
+    revalidate: 60,
   }
 }
