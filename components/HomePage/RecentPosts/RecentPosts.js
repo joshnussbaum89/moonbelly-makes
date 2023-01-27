@@ -25,8 +25,7 @@ export default function MostRecentPosts({ posts }) {
             <PostPreviewCard
               key={post._id}
               imageSrc={urlFor(post.mainImage).url()}
-              category={post.category.replace(/-/g, ' ')}
-              categoryPath={post.category}
+              category={post.category}
               title={post.title}
               slug={post.slug.current}
               alt={post.mainImage.alt}

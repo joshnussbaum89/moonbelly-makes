@@ -10,7 +10,6 @@ import styles from './PostPreviewCard.module.css'
  *
  * @param {object} imageSrc
  * @param {string} category
- * @param {string} categoryPath
  * @param {string} title
  * @param {string} slug
  * @param {string} alt
@@ -19,11 +18,13 @@ import styles from './PostPreviewCard.module.css'
 export default function PostPreviewCard({
   imageSrc,
   category,
-  categoryPath,
   title,
   slug,
   alt,
 }) {
+  // Format category name
+  const formattedCategory = category.replace(/-/g, ' ')
+
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
@@ -38,8 +39,8 @@ export default function PostPreviewCard({
           />
         </Link>
       </div>
-      <Link href={`${categoryPath}`} className={styles.animatedLink}>
-        {category}
+      <Link href={`/${category}`} className={styles.animatedLink}>
+        {formattedCategory}
       </Link>
       <h3>
         <Link href={`/posts/${slug}`}>{title}</Link>

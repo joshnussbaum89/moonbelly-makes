@@ -1,24 +1,21 @@
 // Components
-import PostPreviewCard from '../../Global/PostPreviewCard/PostPreviewCard'
+import PostPreviewCard from '../PostPreviewCard/PostPreviewCard'
+
+// Helpers
 import imageUrlBuilder from '@sanity/image-url'
 import client from '../../../lib/sanityClient'
 
 // Styles
-import styles from './FeaturedPosts.module.css'
+import styles from './ContentContainer.module.css'
 
-/**
- * FeaturedPosts Component
- *
- * @returns Preview cards for featured posts
- */
-export default function FeaturedPosts({ posts }) {
-  // Build image URL from Sanity data
+export default function ContentContainer({ posts }) {
+  // Build image from Sanity data
   const builder = imageUrlBuilder(client)
   const urlFor = (source) => builder.image(source)
 
   return (
-    <div className={styles.cards}>
-      {posts.slice(3, 5).map((post) => {
+    <div className={styles.container}>
+      {posts.map((post) => {
         return (
           <PostPreviewCard
             key={post._id}
