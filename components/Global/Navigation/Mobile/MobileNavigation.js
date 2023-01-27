@@ -24,8 +24,8 @@ export default function MobileNavigation({
       <Link href="/">
         <Image
           src={logo}
-          width={770}
-          height={256}
+          width={385}
+          height={128}
           alt="Moonbelly Makes site logo"
           priority
         />
