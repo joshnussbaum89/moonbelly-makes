@@ -68,6 +68,8 @@ export default function Post({ post }) {
 export async function getStaticPaths() {
   const posts = await getAllPosts()
 
+  console.log('-- TESTING POST TEMPLATE --')
+  console.log('posts: ', posts)
   // Create paths for each post
   const paths = posts.map((post) => ({
     params: {
