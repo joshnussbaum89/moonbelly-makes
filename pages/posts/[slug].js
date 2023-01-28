@@ -68,8 +68,6 @@ export default function Post({ post }) {
 export async function getStaticPaths() {
   const posts = await getAllPosts()
 
-  console.log('-- TESTING POST TEMPLATE --')
-  console.log('posts: ', posts)
   // Create paths for each post
   const paths = posts.map((post) => ({
     params: {
@@ -77,7 +75,7 @@ export async function getStaticPaths() {
     },
   }))
 
-  return { paths, fallback: false }
+  return { paths, fallback: 'blocking' }
 }
 
 // Get post props
@@ -91,6 +89,6 @@ export async function getStaticProps({ params }) {
     props: {
       post,
     },
-    revalidate: 60,
+    revalidate: 10,
   }
 }

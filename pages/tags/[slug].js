@@ -27,7 +27,7 @@ export async function getStaticPaths() {
     },
   }))
 
-  return { paths, fallback: false }
+  return { paths, fallback: 'blocking' }
 }
 
 // Fetch posts by tag
@@ -40,6 +40,6 @@ export async function getStaticProps({ params }) {
       posts,
       title,
     },
-    revalidate: 60,
+    revalidate: 10,
   }
 }
