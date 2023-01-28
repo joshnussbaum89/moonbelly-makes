@@ -1,10 +1,9 @@
 // Components
 import Link from 'next/link'
-import Image from 'next/image'
 import { TbMenu2, TbSearch } from 'react-icons/tb'
+import Logo from '../../Logo/Logo'
 
 // Styles
-import logo from '../../../../public/logo.svg'
 import styles from './MobileNavigation.module.css'
 
 /**
@@ -22,13 +21,7 @@ export default function MobileNavigation({
     <div className={styles.wrapper}>
       <TbSearch onClick={handleShowMobileSearch} />
       <Link href="/">
-        <Image
-          src={logo}
-          width={385}
-          height={128}
-          alt="Moonbelly Makes site logo"
-          priority
-        />
+        <Logo />
       </Link>
       <TbMenu2 onClick={handleShowMobileNav} />
     </div>

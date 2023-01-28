@@ -1,5 +1,4 @@
 .wrapper {
-  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,9 +27,9 @@
   padding: 0.5rem;
 }
 
-.wrapper svg {
-  width: 1.8rem;
-  height: 1.8rem;
+.wrapper > svg {
+  width: 2rem;
+  height: 2rem;
   stroke: var(--color-purple);
   cursor: pointer;
 }

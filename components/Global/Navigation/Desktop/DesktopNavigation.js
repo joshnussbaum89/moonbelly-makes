@@ -1,9 +1,8 @@
 // Components
 import Link from 'next/link'
-import Image from 'next/image'
+import Logo from '../../Logo/Logo'
 
 // Styles
-import logo from '../../../../public/logo.svg'
 import styles from './DesktopNavigation.module.css'
 
 /**
@@ -47,13 +46,7 @@ export default function DesktopNavigation() {
       </ul>
       {/* Logo */}
       <Link href="/">
-        <Image
-          src={logo}
-          width={385}
-          height={128}
-          alt="Moonbelly Makes site logo"
-          priority
-        />
+        <Logo />
       </Link>
       {/* Right menu items */}
       <ul className={styles.mainNav}>
