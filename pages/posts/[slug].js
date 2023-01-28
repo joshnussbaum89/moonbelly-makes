@@ -3,6 +3,8 @@ import Image from 'next/image'
 import imageUrlBuilder from '@sanity/image-url'
 import { PortableText } from '@portabletext/react'
 import PageTitle from '../../components/Global/PageTitle/PageTitle'
+import SubscribeMain from '../../components/Global/SubscribeMain/SubscribeMain'
+import SubscribeAside from '../../components/Global/SubscribeAside/SubscribeAside'
 
 // Helpers
 import sanityClient from '../../lib/sanityClient'
@@ -22,45 +24,51 @@ export default function Post({ post }) {
   const altText = mainImage.alt ? mainImage.alt : 'Lab header image'
 
   return (
-    <article className={styles.post}>
+    <>
       <PageTitle text={title} />
-      <div className={styles.imageContainer}>
-        <Image
-          src={urlFor(mainImage).url()}
-          className={styles.image}
-          sizes="(min-width: 768px) 50vw, 100vw"
-          fill
-          alt={altText}
-          priority
-        />
+      <div className={styles.wrapper}>
+        <article className={styles.post}>
+          <div className={styles.imageContainer}>
+            <Image
+              src={urlFor(mainImage).url()}
+              className={styles.image}
+              sizes="(min-width: 768px) 50vw, 100vw"
+              fill
+              alt={altText}
+              priority
+            />
+          </div>
+          <div className={styles.postBody}>
+            <PortableText
+              value={body}
+              components={{
+                types: {
+                  image: ({ value }) => {
+                    return (
+                      <div
+                        className={styles.imageContainer}
+                        data-column-layout={value.columnLayout}
+                        data-alignment={value.alignment}
+                      >
+                        <Image
+                          src={urlFor(value.asset).url()}
+                          className={styles.image}
+                          fill
+                          sizes="(min-width: 768px) 50vw, 100vw"
+                          alt={value.alt ? value.alt : 'Post body image'}
+                        />
+                      </div>
+                    )
+                  },
+                },
+              }}
+            />
+          </div>
+        </article>
+        <SubscribeMain />
+        <SubscribeAside />
       </div>
-      <div className={styles.postBody}>
-        <PortableText
-          value={body}
-          components={{
-            types: {
-              image: ({ value }) => {
-                return (
-                  <div
-                    className={styles.imageContainer}
-                    data-column-layout={value.columnLayout}
-                    data-alignment={value.alignment}
-                  >
-                    <Image
-                      src={urlFor(value.asset).url()}
-                      className={styles.image}
-                      fill
-                      sizes="(min-width: 768px) 50vw, 100vw"
-                      alt={value.alt ? value.alt : 'Post body image'}
-                    />
-                  </div>
-                )
-              },
-            },
-          }}
-        />
-      </div>
-    </article>
+    </>
   )
 }
 

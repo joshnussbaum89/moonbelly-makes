@@ -1,9 +1,22 @@
+.card {
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .card {
+    margin: 0;
+  }
+}
+
 .imageContainer {
-  position: relative;
   height: 350px;
 }
 
 .imageContainer img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 4px;
 }
