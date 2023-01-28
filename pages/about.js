@@ -2,7 +2,7 @@
 import Head from 'next/head'
 import PageTitle from '../components/Global/PageTitle/PageTitle'
 import AboutKatrina from '../components/AboutPage/AboutKatrina/AboutKatrina'
-import Subscribe from '../components/Global/Subscribe/Subscribe'
+import SubscribeMain from '../components/Global/SubscribeMain/SubscribeMain'
 
 /**
  * About page
@@ -18,7 +18,7 @@ export default function About() {
       </Head>
       <PageTitle text="About" />
       <AboutKatrina />
-      <Subscribe />
+      <SubscribeMain />
     </>
   )
 }
