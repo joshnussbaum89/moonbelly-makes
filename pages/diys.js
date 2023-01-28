@@ -13,7 +13,7 @@ import { getAllDiyPosts } from '../lib/getAllDiyPosts'
 export default function Diys({ posts }) {
   return (
     <>
-      <PageTitle text="Diys" />
+      <PageTitle text="DIYs" />
       <ContentContainer posts={posts} />
     </>
   )
