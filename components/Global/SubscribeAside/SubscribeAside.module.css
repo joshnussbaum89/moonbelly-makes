@@ -1,0 +1,61 @@
+.subscribe {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .subscribe {
+    height: 100%;
+    display: block;
+  }
+}
+
+.subscribe {
+  margin-bottom: 4rem;
+  padding: 3rem;
+  background-color: var(--color-light-green);
+  border-radius: 0.25rem;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 325px;
+  margin: auto;
+  text-align: center;
+}
+
+.info h4 {
+  font-size: var(--size-large);
+}
+
+.form {
+  position: relative;
+}
+
+.form input,
+.form button {
+  display: block;
+  border-radius: 0.25rem;
+  width: 100%;
+  font-size: var(--size-extra-small);
+}
+
+.form input {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-green);
+  transition: var(--transition-normal);
+}
+
+.form button {
+  padding: 1rem;
+  background-color: var(--color-light-purple);
+  border: 1px solid transparent;
+  transition: var(--transition-normal);
+}
+
+.form button:hover {
+  color: var(--color-white);
+  background-color: var(--color-purple);
+  cursor: pointer;
+}

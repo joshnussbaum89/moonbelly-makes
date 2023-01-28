@@ -3,7 +3,7 @@
   height: 350px;
 }
 
-.card img {
+.imageContainer img {
   object-fit: cover;
   border-radius: 4px;
 }

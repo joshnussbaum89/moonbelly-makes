@@ -1,14 +1,14 @@
 // Styles
-import styles from './Subscribe.module.css'
+import styles from './SubscribeMain.module.css'
 
 /**
  * Subscribe Component
  *
  * @returns "Subscribe with Moonbelly" CTA widget
  */
-export default function Subscribe() {
+export default function SubscribeMain() {
   return (
-    <section className={styles.subscribe}>
+    <div className={styles.subscribe}>
       <div className={styles.wrapper}>
         <div className={styles.info}>
           <h4>Join the Community!</h4>
@@ -28,6 +28,6 @@ export default function Subscribe() {
           <button type="submit">Subscribe</button>
         </form>
       </div>
-    </section>
+    </div>
   )
 }

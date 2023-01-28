@@ -1,5 +1,7 @@
 // Components
 import PostPreviewCard from '../PostPreviewCard/PostPreviewCard'
+import SubscribeMain from '../SubscribeMain/SubscribeMain'
+import SubscribeAside from '../SubscribeAside/SubscribeAside'
 
 // Helpers
 import imageUrlBuilder from '@sanity/image-url'
@@ -14,19 +16,23 @@ export default function ContentContainer({ posts }) {
   const urlFor = (source) => builder.image(source)
 
   return (
-    <div className={styles.container}>
-      {posts.map((post) => {
-        return (
-          <PostPreviewCard
-            key={post._id}
-            imageSrc={urlFor(post.mainImage).url()}
-            category={post.category}
-            title={post.title}
-            slug={post.slug.current}
-            alt={post.mainImage.alt}
-          />
-        )
-      })}
-    </div>
+    <section className={styles.container}>
+      <div className={styles.content}>
+        {posts.map((post) => {
+          return (
+            <PostPreviewCard
+              key={post._id}
+              imageSrc={urlFor(post.mainImage).url()}
+              category={post.category}
+              title={post.title}
+              slug={post.slug.current}
+              alt={post.mainImage.alt}
+            />
+          )
+        })}
+      </div>
+      <SubscribeMain />
+      <SubscribeAside />
+    </section>
   )
 }
