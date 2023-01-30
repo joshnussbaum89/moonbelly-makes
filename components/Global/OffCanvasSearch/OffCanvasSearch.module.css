@@ -13,7 +13,7 @@
   padding: var(--padding-site-container-regular);
   background-color: var(--color-white);
   border-bottom: 2px solid var(--color-purple);
-  transition: var(--transition-normal);
+  transition: var(--transition-long);
 }
 
 .offCanvasContainer.active {
@@ -38,7 +38,7 @@
 }
 
 .offCanvasContainer:focus {
-  transition: var(--transition-normal);
+  transition: var(--transition-long);
 }
 
 .offCanvasContainer input::placeholder {

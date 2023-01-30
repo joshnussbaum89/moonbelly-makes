@@ -2,13 +2,13 @@
 import Image from 'next/image'
 import imageUrlBuilder from '@sanity/image-url'
 import { PortableText } from '@portabletext/react'
-import PageTitle from '../../components/Global/PageTitle/PageTitle'
 import SubscribeMain from '../../components/Global/SubscribeMain/SubscribeMain'
 import SubscribeAside from '../../components/Global/SubscribeAside/SubscribeAside'
 
 // Helpers
 import sanityClient from '../../lib/sanityClient'
 import { getAllPosts } from '../../lib/getAllPosts'
+import { formatDate } from '../../lib/formatDate'
 
 // Styles
 import styles from './Posts.module.css'
@@ -20,12 +20,18 @@ export default function Post({ post }) {
   const urlFor = (source) => builder.image(source)
 
   // Grab post details
-  const { title, mainImage, body } = post[0]
+  const { title, mainImage, body, publishedAt } = post[0]
   const altText = mainImage.alt ? mainImage.alt : 'Lab header image'
+
+  // Format date
+  const formattedDate = formatDate(publishedAt)
 
   return (
     <>
-      <PageTitle text={title} />
+      <div className={styles.postHeader}>
+        <h2>{title}</h2>
+        <p>{formattedDate}</p>
+      </div>
       <div className={styles.wrapper}>
         <article className={styles.post}>
           <div className={styles.imageContainer}>

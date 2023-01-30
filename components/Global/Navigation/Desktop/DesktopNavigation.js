@@ -1,6 +1,10 @@
 // Components
 import Link from 'next/link'
 import Logo from '../../Logo/Logo'
+import NavItem from '../NavItem/NavItem'
+
+// Data
+import { navigationData } from '../../../../lib/navigationData'
 
 // Styles
 import styles from './DesktopNavigation.module.css'
@@ -15,34 +19,9 @@ export default function DesktopNavigation() {
     <div className={styles.wrapper}>
       {/* Left menu items */}
       <ul className={styles.mainNav}>
-        <li className={styles.navItem}>
-          <Link href="/diys" className={styles.animatedLink}>
-            DIYs
-          </Link>
-          {/* Sub navigation */}
-          <ul className={styles.subNav}>
-            <li>
-              <Link href="/tags/fabric">Fabric</Link>
-            </li>
-            <li>
-              <Link href="/tags/ink">Ink</Link>
-            </li>
-          </ul>
-        </li>
-        <li className={styles.navItem}>
-          <Link href="/recipes" className={styles.animatedLink}>
-            Recipes
-          </Link>
-          {/* Sub navigation */}
-          <ul className={styles.subNav}>
-            <li>
-              <Link href="/tags/lunch">Lunch</Link>
-            </li>
-            <li>
-              <Link href="/tags/snacks">Snacks</Link>
-            </li>
-          </ul>
-        </li>
+        {[navigationData[0], navigationData[1]].map((item) => (
+          <NavItem item={item} side="left" />
+        ))}
       </ul>
       {/* Logo */}
       <Link href="/">
@@ -50,33 +29,9 @@ export default function DesktopNavigation() {
       </Link>
       {/* Right menu items */}
       <ul className={styles.mainNav}>
-        <li className={styles.navItem}>
-          <Link href="/bake-off" className={styles.animatedLink}>
-            Bake Off
-          </Link>
-          {/* Sub navigation */}
-          <ul className={`${styles.subNav} ${styles.right}`}>
-            <li>
-              <Link href="/tags/about-my-great-british-baking-project">
-                About My Great British Baking Project
-              </Link>
-            </li>
-            <li>
-              <Link href="/tags/signature-bakes">Signature Bakes</Link>
-            </li>
-            <li>
-              <Link href="/tags/technical-bakes">Technical Bakes</Link>
-            </li>
-            <li>
-              <Link href="/tags/showstopper-bakes">Showstopper Bakes</Link>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <Link href="/about" className={styles.animatedLink}>
-            About
-          </Link>
-        </li>
+        {[navigationData[2], navigationData[3]].map((item) => (
+          <NavItem item={item} side="right" />
+        ))}
       </ul>
     </div>
   )

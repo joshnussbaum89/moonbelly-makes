@@ -1,0 +1,40 @@
+@media (min-width: 768px) {
+  .subNav {
+    position: absolute;
+    top: 1.5rem;
+    z-index: 1;
+    min-width: 250px;
+    padding: 0.5rem;
+    border: 2px solid var(--color-purple);
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    background: var(--color-white);
+    transition: var(--transition-normal);
+  }
+
+  .subNav[data-side='right'] {
+    right: 50%;
+  }
+
+  .navItem:hover .subNav {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .subNav li {
+    transition: var(--transition-normal);
+  }
+  .subNav li:hover {
+    background: var(--color-light-purple);
+    border-radius: 4px;
+  }
+
+  .subNav li a {
+    padding: 1rem;
+  }
+
+  .animatedLink:hover {
+    transform: translateY(-2px);
+  }
+}

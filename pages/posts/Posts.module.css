@@ -1,3 +1,15 @@
+.postHeader {
+  width: 100%;
+  max-width: 813px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.postHeader p {
+  font-size: var(--size-extra-small);
+  color: var(--color-grey-text);
+}
+
 .wrapper {
   width: 100%;
   display: flex;
