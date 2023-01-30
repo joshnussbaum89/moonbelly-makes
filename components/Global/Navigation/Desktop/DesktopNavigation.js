@@ -20,7 +20,7 @@ export default function DesktopNavigation() {
       {/* Left menu items */}
       <ul className={styles.mainNav}>
         {[navigationData[0], navigationData[1]].map((item) => (
-          <NavItem item={item} side="left" />
+          <NavItem key={item.id} item={item} side="left" />
         ))}
       </ul>
       {/* Logo */}
@@ -30,7 +30,7 @@ export default function DesktopNavigation() {
       {/* Right menu items */}
       <ul className={styles.mainNav}>
         {[navigationData[2], navigationData[3]].map((item) => (
-          <NavItem item={item} side="right" />
+          <NavItem key={item.id} item={item} side="right" />
         ))}
       </ul>
     </div>

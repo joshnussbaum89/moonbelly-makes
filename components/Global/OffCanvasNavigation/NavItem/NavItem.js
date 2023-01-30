@@ -43,7 +43,7 @@ export default function NavItem({ item, handleShowMobileNav }) {
       {item.subNav && (
         <ul className={subNavStyles}>
           {item.subNav.map((subNavItem) => (
-            <li>
+            <li key={subNavItem.id}>
               <Link href={subNavItem.href} onClick={handleShowMobileNav}>
                 {subNavItem.title}
               </Link>

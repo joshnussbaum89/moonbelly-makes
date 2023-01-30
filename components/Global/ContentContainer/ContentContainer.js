@@ -21,7 +21,7 @@ export default function ContentContainer({ posts }) {
         {posts.map((post) => {
           return (
             <PostPreviewCard
-              key={post._id}
+              key={post._id ? post._id : post.slug.current}
               imageSrc={urlFor(post.mainImage).url()}
               category={post.category}
               title={post.title}

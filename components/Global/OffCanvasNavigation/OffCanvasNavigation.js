@@ -28,11 +28,13 @@ export default function OffCanvasNavigation({
     <div className={canvasContainerStyles}>
       <div className={styles.wrapper}>
         <ul>
-          {navigationData.map((item) => {
-            return (
-              <NavItem item={item} handleShowMobileNav={handleShowMobileNav} />
-            )
-          })}
+          {navigationData.map((item) => (
+            <NavItem
+              key={item.id}
+              item={item}
+              handleShowMobileNav={handleShowMobileNav}
+            />
+          ))}
         </ul>
         <TbX className={styles.close} onClick={handleShowMobileNav} />
       </div>

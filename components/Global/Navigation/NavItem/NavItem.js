@@ -13,7 +13,7 @@ export default function NavItem({ item, side }) {
       {item.subNav && (
         <ul className={styles.subNav} data-side={side}>
           {item.subNav.map((subNavItem) => (
-            <li>
+            <li key={subNavItem.id}>
               <Link href={subNavItem.href}>{subNavItem.title}</Link>
             </li>
           ))}
