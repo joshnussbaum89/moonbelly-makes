@@ -6,6 +6,7 @@
   .subscribe {
     height: 100%;
     display: block;
+    margin-top: 6.8rem;
   }
 }
 

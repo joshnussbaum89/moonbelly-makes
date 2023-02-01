@@ -27,54 +27,52 @@ export default function Post({ post }) {
   const formattedDate = formatDate(publishedAt)
 
   return (
-    <>
-      <div className={styles.postHeader}>
-        <h2>{title}</h2>
-        <p>{formattedDate}</p>
-      </div>
-      <div className={styles.wrapper}>
-        <article className={styles.post}>
-          <div className={styles.imageContainer}>
-            <Image
-              src={urlFor(mainImage).url()}
-              className={styles.image}
-              sizes="(min-width: 768px) 50vw, 100vw"
-              fill
-              alt={altText}
-              priority
-            />
-          </div>
-          <div className={styles.postBody}>
-            <PortableText
-              value={body}
-              components={{
-                types: {
-                  image: ({ value }) => {
-                    return (
-                      <div
-                        className={styles.imageContainer}
-                        data-column-layout={value.columnLayout}
-                        data-alignment={value.alignment}
-                      >
-                        <Image
-                          src={urlFor(value.asset).url()}
-                          className={styles.image}
-                          fill
-                          sizes="(min-width: 768px) 50vw, 100vw"
-                          alt={value.alt ? value.alt : 'Post body image'}
-                        />
-                      </div>
-                    )
-                  },
+    <div className={styles.wrapper}>
+      <article className={styles.post}>
+        <div className={styles.postHeader}>
+          <h2>{title}</h2>
+          <p>{formattedDate}</p>
+        </div>
+        <div className={styles.imageContainer}>
+          <Image
+            src={urlFor(mainImage).url()}
+            className={styles.image}
+            sizes="(min-width: 768px) 50vw, 100vw"
+            fill
+            alt={altText}
+            priority
+          />
+        </div>
+        <div className={styles.postBody}>
+          <PortableText
+            value={body}
+            components={{
+              types: {
+                image: ({ value }) => {
+                  return (
+                    <figure
+                      className={styles.imageContainer}
+                      data-column-layout={value.columnLayout}
+                      data-alignment={value.alignment}
+                    >
+                      <Image
+                        src={urlFor(value.asset).url()}
+                        className={styles.image}
+                        fill
+                        sizes="(min-width: 768px) 50vw, 100vw"
+                        alt={value.alt ? value.alt : 'Post body image'}
+                      />
+                    </figure>
+                  )
                 },
-              }}
-            />
-          </div>
-        </article>
-        <SubscribeMain />
-        <SubscribeAside />
-      </div>
-    </>
+              },
+            }}
+          />
+        </div>
+      </article>
+      <SubscribeMain />
+      <SubscribeAside />
+    </div>
   )
 }
 
