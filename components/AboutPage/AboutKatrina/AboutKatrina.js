@@ -20,6 +20,7 @@ export default function AboutKatrina() {
           width={500}
           height={500}
           sizes="(min-width: 768px) 50vw, 100vw"
+          quality={100}
           alt="Katrina Atkin headshot"
         />
         <h3>Katrina Quick Facts</h3>

@@ -21,6 +21,7 @@ export default function AboutKatrina() {
       <Image
         src={katrinaHeadshot}
         className={styles.headshot}
+        quality={100}
         alt="Katrina Atkin headshot"
       />
       <p>
@@ -31,6 +32,7 @@ export default function AboutKatrina() {
       <Image
         src={katrinaSignature}
         className={styles.signature}
+        quality={100}
         alt="Katrina Atkin signature"
       />
       <WidgetTitle titleCopy="About Moonbelly" />

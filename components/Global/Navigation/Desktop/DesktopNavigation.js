@@ -1,7 +1,7 @@
 // Components
 import Link from 'next/link'
 import Logo from '../../Logo/Logo'
-import NavItem from '../NavItem/NavItem'
+import NavItem from './NavItem/NavItem'
 
 // Data
 import { navigationData } from '../../../../lib/navigationData'
