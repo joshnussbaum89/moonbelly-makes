@@ -1,4 +1,8 @@
 @media (min-width: 768px) {
+  .navItem {
+    list-style-type: none;
+  }
+
   .subNav {
     position: absolute;
     top: 1.5rem;
@@ -23,6 +27,7 @@
   }
 
   .subNav li {
+    list-style-type: none;
     transition: var(--transition-normal);
   }
   .subNav li:hover {

@@ -47,7 +47,7 @@
 .imageContainer {
   position: relative;
   width: 100%;
-  margin: 0 auto 2rem;
+  margin: 0 auto 3rem;
 }
 
 .post > .imageContainer {
@@ -108,14 +108,6 @@
 
 .postBody li {
   margin-bottom: 0.75rem;
-}
-
-.postBody ul li {
-  list-style-type: disc;
-}
-
-.postBody ol li {
-  list-style-type: arabic;
 }
 
 .postBody a {

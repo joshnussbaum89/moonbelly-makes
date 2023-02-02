@@ -1,4 +1,5 @@
 .navItem {
+  list-style-type: none;
   font-size: var(--size-small);
 }
 
@@ -50,6 +51,10 @@
 
 .navItem:nth-of-type(3) .subNav.active {
   height: 200px;
+}
+
+.subNav li {
+  list-style-type: none;
 }
 
 .subNav li:not(:last-child) {
