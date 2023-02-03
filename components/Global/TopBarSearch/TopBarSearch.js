@@ -51,6 +51,7 @@ export default function TopBarSearch() {
 
   return (
     <div className={styles.searchContainer}>
+      {/* Used to hide auto-complete on Chrome */}
       <input
         type="search"
         name="fake_search"
@@ -63,7 +64,11 @@ export default function TopBarSearch() {
         name="search"
         value={searchQuery}
         onChange={handleSearch}
-        autocomplete="off"
+        onFocus={() => {
+          if (searchQuery !== '') setIsActive(true)
+        }}
+        onBlur={() => setIsActive(false)}
+        autoComplete="off"
         placeholder="search moonbelly"
       />
       <ul
@@ -72,20 +77,22 @@ export default function TopBarSearch() {
         }
       >
         {Object.keys(searchResults).length === 0 ? (
-          <li>Loading...</li>
-        ) : searchResults?.data?.length === 0 ? (
-          <li>No results...</li>
+          <li className={styles.userMessage}>Loading...</li>
+        ) : searchResults.data?.length === 0 ? (
+          <li className={styles.userMessage}>No results...</li>
         ) : (
-          searchResults?.data?.map((result) => (
-            <li className={styles.item}>
-              <Link
-                href={`/posts/${result.slug.current}`}
-                onClick={handleClick}
-              >
-                {result.title}
-              </Link>
-            </li>
-          ))
+          searchResults?.data?.map((result) => {
+            return (
+              <li className={styles.item} key={result._id}>
+                <Link
+                  href={`/posts/${result.slug.current}`}
+                  onClick={handleClick}
+                >
+                  {result.title}
+                </Link>
+              </li>
+            )
+          })
         )}
       </ul>
       <TbSearch />
