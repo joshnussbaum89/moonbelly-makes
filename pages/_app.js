@@ -1,3 +1,4 @@
+// Components
 import Layout from '../components/Global/Layout/Layout'
 
 // Fonts
