@@ -1,5 +1,6 @@
 // Components
-import { useState } from 'react'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { TbSearch } from 'react-icons/tb'
 
 // Styles
@@ -13,26 +14,39 @@ import styles from './TopBarSearch.module.css'
 export default function TopBarSearch() {
   const [searchQuery, setSearchQuery] = useState('')
   const [searchResults, setSearchResults] = useState({})
+  const [isActive, setIsActive] = useState(false)
+
+  // TODO: switch to axios or React.query or SWR?
+  useEffect(() => {
+    if (searchQuery === '') {
+      setSearchResults({})
+      setIsActive(false)
+    } else {
+      setIsActive(true)
+      fetch('/api/search', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          query: searchQuery,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          setSearchResults(data)
+        })
+    }
+  }, [searchQuery])
 
   // Handle search logic
-  const handleSearch = (e) => {
-    setSearchQuery(e.target.value)
+  const handleSearch = (e) => setSearchQuery(e.target.value)
 
-    // TODO: switch to axios or React.query?
-    fetch('/api/search', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: searchQuery,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setSearchResults(data)
-        console.log(`Search Results: `, searchResults.data)
-      })
+  // Reset state
+  const handleClick = () => {
+    setSearchQuery('')
+    setSearchResults({})
+    setIsActive(false)
   }
 
   return (
@@ -45,13 +59,28 @@ export default function TopBarSearch() {
         onChange={handleSearch}
         placeholder="search moonbelly"
       />
-
-      {/* TODO: Style this! 😁 */}
-      {/* <ul>
-        {searchResults.data?.map((result) => (
-          <li>{result.title}</li>
-        ))}
-      </ul> */}
+      <ul
+        className={
+          isActive ? `${styles.subNav} ${styles.active}` : styles.subNav
+        }
+      >
+        {Object.keys(searchResults).length === 0 ? (
+          <li>Loading...</li>
+        ) : searchResults?.data?.length === 0 ? (
+          <li>No results...</li>
+        ) : (
+          searchResults?.data?.map((result) => (
+            <li className={styles.item}>
+              <Link
+                href={`/posts/${result.slug.current}`}
+                onClick={handleClick}
+              >
+                {result.title}
+              </Link>
+            </li>
+          ))
+        )}
+      </ul>
       <TbSearch />
     </div>
   )
