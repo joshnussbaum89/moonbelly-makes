@@ -53,10 +53,17 @@ export default function TopBarSearch() {
     <div className={styles.searchContainer}>
       <input
         type="search"
+        name="fake_search"
+        style={{ display: 'none' }}
+        aria-hidden="true"
+      ></input>
+      <input
+        type="search"
         id="search"
         name="search"
         value={searchQuery}
         onChange={handleSearch}
+        autocomplete="off"
         placeholder="search moonbelly"
       />
       <ul
