@@ -7,35 +7,30 @@ import { TbSearch } from 'react-icons/tb'
 import styles from './TopBarSearch.module.css'
 
 /**
- * TopBarSearch Component
- *
- * @returns Search input field
+ * TopBarSearch Component -
  */
 export default function TopBarSearch() {
   const [searchQuery, setSearchQuery] = useState('')
   const [searchResults, setSearchResults] = useState({})
   const [isActive, setIsActive] = useState(false)
 
-  // TODO: switch to axios or React.query or SWR?
-  useEffect(() => {
-    if (searchQuery === '') {
-      setSearchResults({})
-      setIsActive(false)
-    } else {
-      setIsActive(true)
-      fetch('/api/search', {
+  // Handle search logic
+  const handleSearch = (e) => setSearchQuery(e.target.value)
+
+  // 'POST' request to get search results
+  const fetchResults = async () => {
+    try {
+      const response = await fetch('/api/search', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: searchQuery }),
       })
-        .then((response) => response.json())
-        .then((data) => setSearchResults(data))
-        .catch((error) => console.error(error))
+      const data = await response.json()
+      setSearchResults(data)
+    } catch (error) {
+      console.log(error)
     }
-  }, [searchQuery])
-
-  // Handle search logic
-  const handleSearch = (e) => setSearchQuery(e.target.value)
+  }
 
   // Reset state
   const handleClick = () => {
@@ -43,6 +38,16 @@ export default function TopBarSearch() {
     setSearchResults({})
     setIsActive(false)
   }
+
+  useEffect(() => {
+    if (searchQuery === '') {
+      setSearchResults({})
+      setIsActive(false)
+    } else {
+      setIsActive(true)
+      fetchResults()
+    }
+  }, [searchQuery])
 
   return (
     <div className={styles.searchContainer}>
@@ -53,6 +58,7 @@ export default function TopBarSearch() {
         style={{ display: 'none' }}
         aria-hidden="true"
       ></input>
+
       <input
         type="search"
         id="search"
