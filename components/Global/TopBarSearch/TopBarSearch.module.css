@@ -28,7 +28,7 @@
   color: var(--color-grey);
 }
 
-.searchContainer svg {
+.searchContainer svg:not(.loading svg) {
   position: absolute;
   right: 0.5rem;
   width: 1.5rem;
@@ -38,6 +38,14 @@
   background-color: var(--color-light-purple);
   border: 1px solid var(--color-purple);
   border-radius: 50%;
+}
+
+.loading {
+  justify-content: center;
+}
+
+.loading svg {
+  stroke: var(--color-light-purple);
 }
 
 /* Search results  */
@@ -56,7 +64,6 @@
   opacity: 0;
   visibility: hidden;
   background: var(--color-white);
-  transition: var(--transition-long);
 }
 
 .subNav.active {

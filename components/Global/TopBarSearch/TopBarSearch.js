@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { TbSearch } from 'react-icons/tb'
+import { Rings } from 'react-loader-spinner'
 
 // Styles
 import styles from './TopBarSearch.module.css'
@@ -20,6 +21,7 @@ export default function TopBarSearch() {
   // 'POST' request to get search results
   const fetchResults = async () => {
     try {
+      setIsActive(true)
       const response = await fetch('/api/search', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -36,15 +38,15 @@ export default function TopBarSearch() {
   const handleClick = () => {
     setSearchQuery('')
     setSearchResults({})
-    setIsActive(false)
   }
 
   useEffect(() => {
+    // IF input is empty, hide result container
+    // ELSE get results
     if (searchQuery === '') {
       setSearchResults({})
       setIsActive(false)
     } else {
-      setIsActive(true)
       fetchResults()
     }
   }, [searchQuery])
@@ -78,7 +80,13 @@ export default function TopBarSearch() {
         }
       >
         {Object.keys(searchResults).length === 0 ? (
-          <li className={styles.userMessage}>Loading...</li>
+          <Rings
+            height="50"
+            width="50"
+            wrapperClass={styles.loading}
+            visible={true}
+            ariaLabel="rings-loading"
+          />
         ) : searchResults.data?.length === 0 ? (
           <li className={styles.userMessage}>No results...</li>
         ) : (
