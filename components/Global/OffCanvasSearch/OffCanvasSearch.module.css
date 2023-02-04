@@ -4,7 +4,6 @@
   width: 100%;
   height: 0;
   z-index: 1;
-  overflow: auto;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -43,4 +42,58 @@
 
 .offCanvasContainer input::placeholder {
   color: var(--color-grey);
+}
+
+/* Search results  */
+
+.loading {
+  justify-content: center;
+}
+
+.loading svg {
+  stroke: var(--color-light-purple);
+}
+
+.subNav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  max-height: 500px;
+  width: 100%;
+  z-index: 1;
+  overflow: auto;
+  padding: 0.5rem;
+  border-top: 2px solid var(--color-purple);
+  border-bottom: 2px solid var(--color-purple);
+  opacity: 0;
+  visibility: hidden;
+  background: var(--color-white);
+}
+
+.subNav.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.subNav li {
+  list-style-type: none;
+  transition: var(--transition-normal);
+}
+
+.subNav .userMessage {
+  text-align: center;
+}
+
+.subNav .item {
+  text-align: left;
+}
+
+.subNav .item:hover {
+  background: var(--color-light-purple);
+  border-radius: 4px;
+}
+
+.subNav .item a {
+  display: block;
+  padding: 1rem;
 }

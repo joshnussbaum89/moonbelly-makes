@@ -27,7 +27,7 @@ export default function Layout({ children }) {
   // Hide/show off canvas mobile search field
   const handleShowMobileSearch = () => {
     setMobileSearchIsActive(!mobileSearchIsActive)
-    setTimeout(() => searchRef.current.focus(), 50)
+    if (!mobileSearchIsActive) setTimeout(() => searchRef.current.focus(), 50)
   }
 
   // Disable site scrolling when mobile search or navigation is open

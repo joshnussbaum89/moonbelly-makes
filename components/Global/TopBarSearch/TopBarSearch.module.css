@@ -40,6 +40,8 @@
   border-radius: 50%;
 }
 
+/* Search results  */
+
 .loading {
   justify-content: center;
 }
@@ -47,8 +49,6 @@
 .loading svg {
   stroke: var(--color-light-purple);
 }
-
-/* Search results  */
 
 .subNav {
   position: absolute;
