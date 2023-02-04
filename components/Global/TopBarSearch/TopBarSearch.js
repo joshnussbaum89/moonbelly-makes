@@ -25,17 +25,12 @@ export default function TopBarSearch() {
       setIsActive(true)
       fetch('/api/search', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          query: searchQuery,
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: searchQuery }),
       })
         .then((response) => response.json())
-        .then((data) => {
-          setSearchResults(data)
-        })
+        .then((data) => setSearchResults(data))
+        .catch((error) => console.error(error))
     }
   }, [searchQuery])
 
