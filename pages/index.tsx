@@ -7,12 +7,15 @@ import FeaturedContent from '../components/HomePage/FeaturedContent/FeaturedCont
 // Helpers
 import { getHomePagePosts } from '../lib/getHomePagePosts'
 
+// Types
+import { GetStaticProps } from 'next'
+
 /**
  * Home page
- *
- * @returns Recent posts, subscribe CTA, featured content
  */
-export default function Home({ posts }) {
+export default function Home(props: Props) {
+  const { posts } = props
+
   return (
     <>
       <Head>
@@ -27,7 +30,7 @@ export default function Home({ posts }) {
 }
 
 // Fetch Sanity posts
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const posts = await getHomePagePosts()
 
   return {
@@ -36,4 +39,28 @@ export async function getStaticProps() {
     },
     revalidate: 10,
   }
+}
+
+// Types
+interface Props {
+  posts: Post[]
+}
+
+interface Post {
+  _createdAt: string
+  _id: string
+  _rev: string
+  _type: string
+  _updatedAt: string
+  body: Object[]
+  category: string
+  mainImage: {
+    _type: string
+    alt: string
+    asset: Object[]
+  }
+  publishedAt: string
+  slug: { _type: string; current: string }
+  tag: []
+  title: string
 }
