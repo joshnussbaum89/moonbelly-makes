@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { TbSearch } from 'react-icons/tb'
-import { Rings } from 'react-loader-spinner'
+import { ThreeDots } from 'react-loader-spinner'
 
 // Styles
 import styles from './TopBarSearch.module.css'
@@ -97,12 +97,12 @@ export default function TopBarSearch() {
         }
       >
         {isLoading ? (
-          <Rings
-            height="50"
-            width="50"
+          <ThreeDots
+            height="40"
+            width="40"
             wrapperClass={styles.loading}
+            ariaLabel="three-dots-loading"
             visible={true}
-            ariaLabel="rings-loading"
           />
         ) : searchResults.data.length === 0 ? (
           <li className={styles.userMessage}>No results...</li>

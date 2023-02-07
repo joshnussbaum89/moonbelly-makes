@@ -64,3 +64,23 @@
   background-color: var(--color-purple);
   cursor: pointer;
 }
+
+.form button.loading {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form p {
+  font-size: 12px;
+  text-align: left;
+  line-height: normal;
+  margin-bottom: 0;
+}
+
+.form .error {
+  color: var(--color-red);
+}
+
+.form .success {
+  color: var(--color-green);
+}

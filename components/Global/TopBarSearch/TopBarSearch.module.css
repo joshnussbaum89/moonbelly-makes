@@ -47,7 +47,7 @@
 }
 
 .loading svg {
-  stroke: var(--color-light-purple);
+  fill: var(--color-light-purple);
 }
 
 .subNav {

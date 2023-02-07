@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { TbSearch, TbX } from 'react-icons/tb'
-import { Rings } from 'react-loader-spinner'
+import { ThreeDots } from 'react-loader-spinner'
 
 // Styles
 import styles from './OffCanvasSearch.module.css'
@@ -110,12 +110,12 @@ export default function OffCanvasSearch({
         }
       >
         {isLoading ? (
-          <Rings
-            height="50"
-            width="50"
+          <ThreeDots
+            height="40"
+            width="40"
             wrapperClass={styles.loading}
+            ariaLabel="three-dots-loading"
             visible={true}
-            ariaLabel="rings-loading"
           />
         ) : searchResults.data.length === 0 ? (
           <li className={styles.userMessage}>No results...</li>
