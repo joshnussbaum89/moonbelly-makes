@@ -1,5 +1,6 @@
 // Hooks
-import { useRef, useState, MutableRefObject } from 'react'
+import { useRef, useState, useEffect, MutableRefObject } from 'react'
+import { useRouter } from 'next/router'
 
 // Styles
 import styles from './SubscribeAside.module.css'
@@ -9,11 +10,26 @@ import styles from './SubscribeAside.module.css'
  */
 export default function SubscribeAside() {
   const inputEl = useRef() as MutableRefObject<HTMLInputElement>
+  const [isPost, setIsPost] = useState(false)
   const [message, setMessage] = useState('')
 
+  // Connect to router
+  const router = useRouter()
+
+  // Check if user is on a post page
+  useEffect(() => {
+    if (router.pathname.includes('posts')) {
+      setIsPost(true)
+    } else {
+      setIsPost(false)
+    }
+  })
+
+  // Subscribe user to newsletter
   const subscribeUser = async (e: React.FormEvent<EventTarget>) => {
     e.preventDefault()
 
+    // 1. Send a request to our API to subscribe the user
     setMessage('Loading...')
 
     const response = await fetch('/api/subscribe', {
@@ -22,6 +38,7 @@ export default function SubscribeAside() {
       method: 'POST',
     })
 
+    // 2. If there was an error, display updated error message to user
     const { error } = await response.json()
 
     if (error) {
@@ -29,12 +46,14 @@ export default function SubscribeAside() {
       return
     }
 
+    // 3. Clear the input value and show updated success message to user
     inputEl.current.value = ''
+
     setMessage('Success! 🎉 You are now subscribed to the newsletter.')
   }
 
   return (
-    <aside className={styles.subscribe}>
+    <aside className={styles.subscribe} data-is-post={`${isPost}`}>
       <div className={styles.wrapper}>
         <div className={styles.info}>
           <h4>Join the Community!</h4>

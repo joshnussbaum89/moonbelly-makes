@@ -14,6 +14,7 @@ export default function SubscribeMain() {
   const subscribeUser = async (e: React.FormEvent<EventTarget>) => {
     e.preventDefault()
 
+    // 1. Send a request to our API to subscribe the user
     setMessage('Loading...')
 
     const response = await fetch('/api/subscribe', {
@@ -22,6 +23,7 @@ export default function SubscribeMain() {
       method: 'POST',
     })
 
+    // 2. If there was an error, display updated error message to user
     const { error } = await response.json()
 
     if (error) {
@@ -29,7 +31,9 @@ export default function SubscribeMain() {
       return
     }
 
+    // 3. Clear the input value and show updated success message to user
     inputEl.current.value = ''
+    
     setMessage('Success! 🎉 You are now subscribed to the newsletter.')
   }
 

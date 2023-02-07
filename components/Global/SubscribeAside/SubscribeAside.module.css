@@ -6,7 +6,11 @@
   .subscribe {
     height: 100%;
     display: block;
-    margin-top: 6.8rem;
+    margin-top: 0;
+  }
+
+  .subscribe[data-is-post='true'] {
+    margin-top: 7.25rem;
   }
 }
 
