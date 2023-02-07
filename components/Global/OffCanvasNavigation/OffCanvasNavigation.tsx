@@ -11,14 +11,11 @@ import styles from './OffCanvasNavigation.module.css'
 
 /**
  * OffCanvasNavigation Component (hidden until active)
- *
- * @param {boolean} mobileNavIsActive
- * @param {function} handleShowMobileNav
  */
 export default function OffCanvasNavigation({
   mobileNavIsActive,
   handleShowMobileNav,
-}) {
+}: OffCanvasNavigationProps) {
   // Canvas container styles
   const canvasContainerStyles = mobileNavIsActive
     ? `${styles.offCanvasContainer} ${styles.active}`
@@ -43,4 +40,10 @@ export default function OffCanvasNavigation({
       </div>
     </div>
   )
+}
+
+// Types
+interface OffCanvasNavigationProps {
+  mobileNavIsActive: boolean
+  handleShowMobileNav: () => void
 }

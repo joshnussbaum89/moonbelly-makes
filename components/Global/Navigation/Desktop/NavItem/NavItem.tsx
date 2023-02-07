@@ -4,7 +4,7 @@ import Link from 'next/link'
 // Styles
 import styles from './NavItem.module.css'
 
-export default function NavItem({ item, side }) {
+export default function NavItem({ item, side }: NavItemProps) {
   return (
     <li className={styles.navItem}>
       <Link href={item.href} className={styles.animatedLink}>
@@ -22,3 +22,27 @@ export default function NavItem({ item, side }) {
     </li>
   )
 }
+
+// Types
+interface NavItemProps {
+  item: Item
+  side: string
+}
+
+type Item =
+  | {
+      id: number
+      title: string
+      href: string
+      subNav: {
+        id: number
+        title: string
+        href: string
+      }[]
+    }
+  | {
+      id: number
+      title: string
+      href: string
+      subNav: null
+    }

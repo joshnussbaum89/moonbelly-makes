@@ -6,16 +6,12 @@ import DesktopNavigation from './Desktop/DesktopNavigation'
 import styles from './Navigation.module.css'
 
 /**
- * Navigation Component
- *
- * @param {function} handleShowMobileNav
- * @param {function} handleShowMobileSearch
- * @returns Mobile + desktop navigation
+ * Navigation Component (Mobile + desktop navigation)
  */
 export default function Navigation({
   handleShowMobileNav,
   handleShowMobileSearch,
-}) {
+}: NavigationProps) {
   return (
     <nav className={styles.navigation}>
       <MobileNavigation
@@ -25,4 +21,10 @@ export default function Navigation({
       <DesktopNavigation />
     </nav>
   )
+}
+
+// Types
+interface NavigationProps {
+  handleShowMobileNav: () => void
+  handleShowMobileSearch: () => void
 }

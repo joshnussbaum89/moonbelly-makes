@@ -1,4 +1,4 @@
-// Mobile + desktop navigation data
+// Site navigation data
 export const navigationData = [
   {
     id: 1,
@@ -24,11 +24,21 @@ export const navigationData = [
     subNav: [
       {
         id: 1,
+        title: 'Breakfast',
+        href: '/tags/breakfast',
+      },
+      {
+        id: 2,
         title: 'Lunch',
         href: '/tags/lunch',
       },
       {
-        id: 2,
+        id: 3,
+        title: 'Dinner',
+        href: '/tags/dinner',
+      },
+      {
+        id: 4,
         title: 'Snacks',
         href: '/tags/snacks',
       },

@@ -13,9 +13,7 @@ import { GetStaticProps } from 'next'
 /**
  * Home page
  */
-export default function Home(props: Props) {
-  const { posts } = props
-
+export default function Home({ posts }: PostProps) {
   return (
     <>
       <Head>
@@ -42,9 +40,7 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 // Types
-interface Props {
-  posts: Post[]
-}
+type PostProps = { posts: Post[] }
 
 interface Post {
   _createdAt: string

@@ -10,9 +10,7 @@ import { navigationData } from '../../../../lib/navigationData'
 import styles from './DesktopNavigation.module.css'
 
 /**
- * DesktopNavigation Component
- *
- * @returns Desktop navigation (menu items, sub navigation modals, site logo)
+ * Desktop Navigation
  */
 export default function DesktopNavigation() {
   return (
@@ -36,3 +34,4 @@ export default function DesktopNavigation() {
     </div>
   )
 }
+

@@ -7,16 +7,12 @@ import Logo from '../../Logo/Logo'
 import styles from './MobileNavigation.module.css'
 
 /**
- * MobileNavigation Component
- *
- * @param {function} handleShowMobileNav
- * @param {function} handleShowMobileSearch
- * @returns Mobile navigation (search icon, site logo, hamburger icon)
+ * Mobile navigation (search icon, site logo, hamburger icon)
  */
 export default function MobileNavigation({
   handleShowMobileNav,
   handleShowMobileSearch,
-}) {
+}: MobileNavigationProps) {
   return (
     <div className={styles.wrapper}>
       <TbSearch onClick={handleShowMobileSearch} />
@@ -26,4 +22,10 @@ export default function MobileNavigation({
       <TbMenu2 onClick={handleShowMobileNav} />
     </div>
   )
+}
+
+// Types
+interface MobileNavigationProps {
+  handleShowMobileNav: () => void
+  handleShowMobileSearch: () => void
 }
