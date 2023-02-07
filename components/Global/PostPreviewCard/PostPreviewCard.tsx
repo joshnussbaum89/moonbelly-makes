@@ -6,14 +6,7 @@ import Link from 'next/link'
 import styles from './PostPreviewCard.module.css'
 
 /**
- * PostPreviewCard Component
- *
- * @param {object} imageSrc
- * @param {string} category
- * @param {string} title
- * @param {string} slug
- * @param {string} alt
- * @returns Post preview card that links to corresponding post page
+ * Post preview card that links to corresponding post page
  */
 export default function PostPreviewCard({
   imageSrc,
@@ -21,20 +14,20 @@ export default function PostPreviewCard({
   title,
   slug,
   alt,
-}) {
+}: PostPreviewCardProps) {
   // Format category name
-  const formattedCategory = category.replace(/-/g, ' ')
+  const formattedCategory = category?.replace(/-/g, ' ')
 
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
         <Link href={`/posts/${slug}`}>
           <Image
-            src={imageSrc}
+            src={`${imageSrc}`}
             sizes="(min-width: 768px) 50vw,
             (min-width: 1024px) 33vw,
             100vw"
-            alt={alt}
+            alt={`${alt}`}
             width={390}
             height={350}
           />
@@ -48,4 +41,13 @@ export default function PostPreviewCard({
       </h3>
     </div>
   )
+}
+
+// Types
+interface PostPreviewCardProps {
+  imageSrc: string | undefined
+  category: string | undefined
+  title: string | undefined
+  slug: string | undefined
+  alt: string | undefined
 }
