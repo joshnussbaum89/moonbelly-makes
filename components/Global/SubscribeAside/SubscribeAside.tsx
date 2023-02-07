@@ -1,5 +1,5 @@
 // Hooks
-import { useRef, useState, useEffect, MutableRefObject } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 // Styles
@@ -9,7 +9,7 @@ import styles from './SubscribeAside.module.css'
  * Secondary Subscribe Component for sidebar
  */
 export default function SubscribeAside() {
-  const inputEl = useRef() as MutableRefObject<HTMLInputElement>
+  const [emailValue, setEmailValue] = useState('')
   const [isPost, setIsPost] = useState(false)
   const [message, setMessage] = useState('')
 
@@ -25,30 +25,32 @@ export default function SubscribeAside() {
     }
   })
 
+  // Handle subscribe logic
+  const handleSubcribe = (event: React.FormEvent<EventTarget>) => {
+    setEmailValue((event.target as HTMLInputElement).value)
+  }
+
   // Subscribe user to newsletter
-  const subscribeUser = async (e: React.FormEvent<EventTarget>) => {
-    e.preventDefault()
+  const subscribeUser = async (event: React.FormEvent<EventTarget>) => {
+    event.preventDefault()
 
     // 1. Send a request to our API to subscribe the user
     setMessage('Loading...')
-
     const response = await fetch('/api/subscribe', {
-      body: JSON.stringify({ email: inputEl.current.value }),
+      body: JSON.stringify({ email: emailValue }),
       headers: { 'Content-Type': 'application/json' },
       method: 'POST',
     })
 
     // 2. If there was an error, display updated error message to user
     const { error } = await response.json()
-
     if (error) {
       setMessage(error)
       return
     }
 
     // 3. Clear the input value and show updated success message to user
-    inputEl.current.value = ''
-
+    setEmailValue('')
     setMessage('Success! 🎉 You are now subscribed to the newsletter.')
   }
 
@@ -68,7 +70,8 @@ export default function SubscribeAside() {
             type="email"
             name="email"
             id="email"
-            ref={inputEl}
+            value={emailValue}
+            onChange={handleSubcribe}
             placeholder="email address..."
             required
           />
