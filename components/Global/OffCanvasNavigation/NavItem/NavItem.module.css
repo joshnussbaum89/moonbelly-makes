@@ -49,6 +49,10 @@
   border-top: 2px solid var(--color-purple);
 }
 
+.navItem:nth-of-type(2) .subNav.active {
+  height: 175px;
+}
+
 .navItem:nth-of-type(3) .subNav.active {
   height: 200px;
 }
