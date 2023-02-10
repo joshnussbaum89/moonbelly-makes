@@ -1,5 +1,6 @@
 // Components
 import Image from 'next/image'
+import Link from 'next/link'
 
 // Styles
 import styles from './AboutKatrina.module.css'
@@ -8,14 +9,6 @@ import styles from './AboutKatrina.module.css'
 import katrinaHeadshot from '../../../public/katrina-headshot.png'
 import katrinaDancing from '../../../public/katrina-dancing.webp'
 import spiralIcon from '../../../public/spiral-icon.webp'
-
-// Fonts
-import { Nothing_You_Could_Do } from '@next/font/google'
-import Link from 'next/link'
-const nothingYouCouldDo = Nothing_You_Could_Do({
-  weight: '400',
-  subsets: ['latin'],
-})
 
 /**
  * About page content
@@ -121,7 +114,7 @@ export default function AboutKatrina() {
           </p>
           <p className={styles.heavyText}>to live a decorated life. 🌷</p>
         </div>
-        <div className={`${styles.spiralText} ${nothingYouCouldDo.className}`}>
+        <div className={`${styles.spiralText}`}>
           <p>
             Looking up to the <span className={styles.heavyText}>moon</span>, I
             am reminded of the cosmic vastness we are inherently a part of and

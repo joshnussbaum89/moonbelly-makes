@@ -154,6 +154,7 @@
   width: 100%;
   max-width: 950px;
   margin: 0 auto 6rem;
+  font-family: var(--font-nothing-you-could-do);
 }
 
 .spiralText span {

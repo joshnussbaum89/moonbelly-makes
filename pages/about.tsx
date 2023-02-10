@@ -5,9 +5,7 @@ import AboutKatrina from '../components/AboutPage/AboutKatrina/AboutKatrina'
 import SubscribeMain from '../components/Global/SubscribeMain/SubscribeMain'
 
 /**
- * About page
- *
- * @returns Information about Katrina and Moonbelly Makes
+ * About page - Information about Katrina and Moonbelly Makes
  */
 export default function About() {
   return (
