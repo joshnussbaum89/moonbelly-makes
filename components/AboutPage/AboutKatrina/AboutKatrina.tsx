@@ -23,7 +23,7 @@ const nothingYouCouldDo = Nothing_You_Could_Do({
 export default function AboutKatrina() {
   return (
     <section className={styles.wrapper}>
-      <p className={styles.greeting}>
+      <p className={`${styles.greeting} ${styles.heavyText}`}>
         <span className={styles.italicText}>Hello you!</span> Welcome to
         Moonbelly Makes, the virtual vessel for sharing my homemade projects!
       </p>
@@ -145,7 +145,7 @@ export default function AboutKatrina() {
           />
         </div>
         <div className={styles.signatureContainer}>
-          <div className={styles.signature}>
+          <div className={`${styles.signature} ${styles.heavyText}`}>
             <p>
               Making for me is an act of healing, connection, expression, and
               energetic exchange.

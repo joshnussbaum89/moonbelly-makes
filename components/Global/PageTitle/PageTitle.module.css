@@ -1,5 +1,6 @@
 .title {
   margin-bottom: 3rem;
+  font-size: clamp(var(--size-large), 10vw, var(--size-extra-large));
   text-align: center;
 }
 

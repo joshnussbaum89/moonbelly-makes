@@ -8,6 +8,14 @@
   text-align: center;
 }
 
+.wrapper p:first-child {
+  margin-top: 0;
+}
+
+.wrapper p:last-child {
+  margin-bottom: 0;
+}
+
 .wrapper a {
   text-decoration: underline;
 }
@@ -27,7 +35,29 @@
 .greeting {
   display: block;
   margin: 0 auto 4rem;
-  max-width: 440px;
+  max-width: 750px;
+  font-size: clamp(var(--size-small), 3vw, var(--size-medium));
+  line-height: normal;
+  letter-spacing: 3px;
+}
+
+.greeting::after,
+.greeting::before {
+  content: '';
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-green);
+  border-radius: 10px;
+}
+
+.greeting::after {
+  margin-top: 2rem;
+}
+
+.greeting::before {
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -113,6 +143,12 @@
   border-radius: 10px;
 }
 
+@media (min-width: 768px) {
+  .intention {
+    padding: 2rem;
+  }
+}
+
 .spiralText {
   position: relative;
   width: 100%;
@@ -151,10 +187,12 @@
 @media (min-width: 768px) {
   .signatureContainer .signature {
     position: absolute;
-    width: 50%;
+    width: 40%;
     top: 0;
     right: 0;
     margin: 1rem;
+    padding: 1rem;
+    font-size: var(--size-extra-small);
     background: var(--color-white-transparent);
     border-radius: 10px;
   }
