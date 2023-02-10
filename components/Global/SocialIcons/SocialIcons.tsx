@@ -2,6 +2,7 @@
 import {
   TbBrandYoutube,
   TbBrandInstagram,
+  TbMail,
   TbBrandPinterest,
 } from 'react-icons/tb'
 
@@ -33,6 +34,9 @@ export default function SocialIcons({ darkMode = false }) {
         rel="noreferrer"
       >
         <TbBrandInstagram />
+      </a>
+      <a href="mailto:moonbellymakes@gmail.com?subject=Contact from moonbellymakes.com">
+        <TbMail />
       </a>
       <a
         href="https://www.pinterest.com/moonbellymakes/"
