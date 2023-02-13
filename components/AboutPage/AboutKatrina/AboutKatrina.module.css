@@ -33,23 +33,17 @@
   letter-spacing: 3px;
 }
 
-.greeting::after,
-.greeting::before {
+.greeting::after {
   content: '';
   display: block;
   margin: auto;
-  width: 100%;
-  height: 2px;
-  background-color: var(--color-green);
-  border-radius: 10px;
+  width: 50%;
+  height: 1px;
+  background-color: var(--color-purple);
 }
 
 .greeting::after {
   margin-top: 2rem;
-}
-
-.greeting::before {
-  margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
