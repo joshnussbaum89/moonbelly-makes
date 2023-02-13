@@ -8,6 +8,7 @@
 @media (min-width: 1024px) {
   .wrapper {
     flex-direction: row;
+    margin-top: 8rem;
   }
 }
 
