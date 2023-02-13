@@ -24,14 +24,6 @@
   color: var(--color-light-purple);
 }
 
-.heavyText {
-  font-weight: bold;
-}
-
-.italicText {
-  font-style: italic;
-}
-
 .greeting {
   display: block;
   margin: 0 auto 4rem;

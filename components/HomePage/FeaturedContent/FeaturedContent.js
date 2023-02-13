@@ -1,6 +1,6 @@
 // Components
 import FeaturedPosts from '../FeaturedPosts/FeaturedPosts'
-import AboutKatrina from '../AboutKatrina/AboutKatrina'
+import AboutKatrina from '../../Global/AboutKatrina/AboutKatrina'
 
 // Styles
 import styles from './FeaturedContent.module.css'
