@@ -13,11 +13,16 @@ import { formatDate } from '../../lib/formatDate'
 // Styles
 import styles from './Posts.module.css'
 
+// Types
+import { GetStaticProps, GetStaticPaths } from 'next'
+import { TypedObject } from '@portabletext/types'
+import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+
 // Post template
-export default function Post({ post }) {
+export default function Post({ post }: { post: Post[] }) {
   // Build image from Sanity data
   const builder = imageUrlBuilder(sanityClient)
-  const urlFor = (source) => builder.image(source)
+  const urlFor = (source: SanityImageSource) => builder.image(source)
 
   // Grab post details
   const { title, mainImage, body, publishedAt } = post[0]
@@ -51,7 +56,11 @@ export default function Post({ post }) {
                 image: ({ value }) => {
                   return (
                     <figure
-                      className={styles.imageContainer}
+                      className={
+                        value.caption
+                          ? `${styles.imageContainer} ${styles.hasCaption}`
+                          : styles.imageContainer
+                      }
                       data-column-layout={value.columnLayout}
                       data-alignment={value.alignment}
                     >
@@ -62,6 +71,9 @@ export default function Post({ post }) {
                         sizes="(min-width: 768px) 50vw, 100vw"
                         alt={value.alt ? value.alt : 'Post body image'}
                       />
+                      {value.caption && (
+                        <figcaption>{value.caption}</figcaption>
+                      )}
                     </figure>
                   )
                 },
@@ -77,8 +89,8 @@ export default function Post({ post }) {
 }
 
 // Create dynamic URLs from post slug
-export async function getStaticPaths() {
-  const posts = await getAllPosts()
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts: Post[] = await getAllPosts()
 
   // Create paths for each post
   const paths = posts.map((post) => ({
@@ -91,11 +103,11 @@ export async function getStaticPaths() {
 }
 
 // Get post props
-export async function getStaticProps({ params }) {
-  const allPosts = await getAllPosts()
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const allPosts: Post[] = await getAllPosts()
 
   // Filter post by slug
-  const post = allPosts.filter((post) => post.slug.current === params.slug)
+  const post = allPosts.filter((post) => post.slug.current === params?.slug)
 
   return {
     props: {
@@ -103,4 +115,25 @@ export async function getStaticProps({ params }) {
     },
     revalidate: 10,
   }
+}
+
+// Types
+interface Post {
+  _createdAt: string
+  _id: string
+  _rev: string
+  _type: string
+  _updatedAt: string
+  _key: string
+  body: TypedObject[]
+  category: string
+  mainImage: {
+    _type: string
+    alt: string
+    asset: Object[]
+  }
+  publishedAt: string
+  slug: { _type: string; current: string }
+  tag: []
+  title: string
 }

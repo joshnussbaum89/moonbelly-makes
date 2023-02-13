@@ -50,6 +50,18 @@
   margin: 0 auto 3rem;
 }
 
+.imageContainer.hasCaption {
+  margin-bottom: 3.5rem;
+}
+
+.imageContainer figcaption {
+  position: absolute;
+  top: 100%;
+  margin: 0.2rem 0;
+  font-size: clamp(0.75rem, 1.2vw, var(--size-extra-small));
+  color: var(--color-grey-text);
+}
+
 .post > .imageContainer {
   height: clamp(300px, 40vw, 500px);
 }
@@ -62,15 +74,23 @@
 .postBody .imageContainer[data-column-layout='two-column'] {
   width: 48%;
   height: clamp(200px, 40vw, 400px);
-  margin-left: 1%;
-  margin-right: 1%;
+}
+
+.postBody
+  .imageContainer[data-column-layout='two-column'][data-alignment='left'] {
+  margin-right: 2%;
 }
 
 .postBody .imageContainer[data-column-layout='three-column'] {
   width: 31%;
   height: clamp(150px, 25vw, 300px);
-  margin-left: 1%;
-  margin-right: 1%;
+}
+
+.postBody
+  .imageContainer[data-column-layout='three-column'][data-alignment='left'],
+.postBody
+  .imageContainer[data-column-layout='three-column'][data-alignment='center'] {
+  margin-right: 2%;
 }
 
 .image {
