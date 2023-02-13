@@ -1,7 +1,6 @@
 // Components
 import PostPreviewCard from '../PostPreviewCard/PostPreviewCard'
-import SubscribeMain from '../SubscribeMain/SubscribeMain'
-import SubscribeAside from '../SubscribeAside/SubscribeAside'
+import SideBar from '../SideBar/SideBar'
 
 // Helpers
 import imageUrlBuilder from '@sanity/image-url'
@@ -10,10 +9,14 @@ import client from '../../../lib/sanityClient'
 // Styles
 import styles from './ContentContainer.module.css'
 
-export default function ContentContainer({ posts }) {
+// Types
+import { TypedObject } from '@portabletext/types'
+import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+
+export default function ContentContainer({ posts }: { posts: Post[] }) {
   // Build image from Sanity data
   const builder = imageUrlBuilder(client)
-  const urlFor = (source) => builder.image(source)
+  const urlFor = (source: SanityImageSource) => builder.image(source)
 
   return (
     <section className={styles.container}>
@@ -31,8 +34,28 @@ export default function ContentContainer({ posts }) {
           )
         })}
       </div>
-      <SubscribeMain />
-      <SubscribeAside />
+      <SideBar />
     </section>
   )
+}
+
+// Types
+interface Post {
+  _createdAt: string
+  _id: string
+  _rev: string
+  _type: string
+  _updatedAt: string
+  _key: string
+  body: TypedObject[]
+  category: string
+  mainImage: {
+    _type: string
+    alt: string
+    asset: Object[]
+  }
+  publishedAt: string
+  slug: { _type: string; current: string }
+  tag: []
+  title: string
 }

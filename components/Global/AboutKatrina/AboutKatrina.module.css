@@ -1,10 +1,10 @@
-.aside {
+.container {
   margin: auto;
   max-width: 650px;
   text-align: center;
 }
 
-.aside p {
+.container p {
   font-size: var(--size-extra-small);
 }
 
@@ -14,9 +14,6 @@
   height: auto;
 }
 
-.signature {
-  width: 50%;
-  max-width: 200px;
-  height: auto;
+.aboutKatrina {
   margin-bottom: 4rem;
 }

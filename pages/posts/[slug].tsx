@@ -2,8 +2,7 @@
 import Image from 'next/image'
 import imageUrlBuilder from '@sanity/image-url'
 import { PortableText } from '@portabletext/react'
-import SubscribeMain from '../../components/Global/SubscribeMain/SubscribeMain'
-import SubscribeAside from '../../components/Global/SubscribeAside/SubscribeAside'
+import SideBar from '../../components/Global/SideBar/SideBar'
 
 // Helpers
 import sanityClient from '../../lib/sanityClient'
@@ -82,8 +81,7 @@ export default function Post({ post }: { post: Post[] }) {
           />
         </div>
       </article>
-      <SubscribeMain />
-      <SubscribeAside />
+      <SideBar />
     </div>
   )
 }

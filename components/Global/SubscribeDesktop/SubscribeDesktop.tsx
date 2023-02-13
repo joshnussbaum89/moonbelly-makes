@@ -4,12 +4,12 @@ import { useRouter } from 'next/router'
 import { ThreeDots } from 'react-loader-spinner'
 
 // Styles
-import styles from './SubscribeAside.module.css'
+import styles from './SubscribeDesktop.module.css'
 
 /**
  * Secondary Subscribe Component for sidebar
  */
-export default function SubscribeAside() {
+export default function SubscribeDesktop() {
   const [isPost, setIsPost] = useState(false)
   const [emailValue, setEmailValue] = useState('')
   const [loading, setLoading] = useState(false)
@@ -64,7 +64,7 @@ export default function SubscribeAside() {
   }
 
   return (
-    <aside className={styles.subscribe} data-is-post={`${isPost}`}>
+    <div className={styles.subscribe} data-is-post={`${isPost}`}>
       <div className={styles.wrapper}>
         <div className={styles.info}>
           <h4>Join the Community!</h4>
@@ -107,6 +107,6 @@ export default function SubscribeAside() {
           {success && <p className={styles.success}>{success}</p>}
         </form>
       </div>
-    </aside>
+    </div>
   )
 }

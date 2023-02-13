@@ -2,13 +2,12 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 @media (min-width: 1024px) {
   .container {
     flex-direction: row;
-    margin-bottom: 4rem;
   }
 }
 
@@ -16,6 +15,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-rows: max-content;
   gap: 3rem 2rem;
   margin-bottom: 2rem;
 }
@@ -23,11 +23,5 @@
 @media (min-width: 1024px) {
   .content {
     margin-bottom: 0;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container > div:nth-child(2) {
-    display: none;
   }
 }

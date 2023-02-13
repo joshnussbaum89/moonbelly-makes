@@ -1,7 +1,7 @@
 // Components
 import Head from 'next/head'
 import RecentPosts from '../components/HomePage/RecentPosts/RecentPosts'
-import SubscribeMain from '../components/Global/SubscribeMain/SubscribeMain'
+import SubscribeMobile from '../components/Global/SubscribeMobile/SubscribeMobile'
 import FeaturedContent from '../components/HomePage/FeaturedContent/FeaturedContent'
 
 // Helpers
@@ -21,7 +21,7 @@ export default function Home({ posts }: PostProps) {
         <meta name="description" content="decorate your life" />
       </Head>
       <RecentPosts posts={posts} />
-      <SubscribeMain />
+      <SubscribeMobile />
       <FeaturedContent posts={posts} />
     </>
   )

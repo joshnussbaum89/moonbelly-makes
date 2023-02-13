@@ -4,4 +4,5 @@
   margin: auto;
   padding-left: var(--padding-site-container-regular);
   padding-right: var(--padding-site-container-regular);
+  padding-bottom: 4rem;
 }

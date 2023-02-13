@@ -1,0 +1,14 @@
+.aside .desktop {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .aside .mobile {
+    display: none;
+  }
+
+  .aside .desktop {
+    display: block;
+    max-width: 322px;
+  }
+}

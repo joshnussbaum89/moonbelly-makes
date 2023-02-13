@@ -2,7 +2,7 @@
 import Head from 'next/head'
 import PageTitle from '../components/Global/PageTitle/PageTitle'
 import AboutKatrina from '../components/AboutPage/AboutKatrina/AboutKatrina'
-import SubscribeMain from '../components/Global/SubscribeMain/SubscribeMain'
+import SubscribeMobile from '../components/Global/SubscribeMobile/SubscribeMobile'
 
 /**
  * About page - Information about Katrina and Moonbelly Makes
@@ -16,7 +16,7 @@ export default function About() {
       </Head>
       <PageTitle text="About" />
       <AboutKatrina />
-      <SubscribeMain />
+      <SubscribeMobile />
     </>
   )
 }
