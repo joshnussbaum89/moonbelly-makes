@@ -39,7 +39,7 @@ export default function Post({ post }: { post: Post[] }) {
         </div>
         <div className={styles.imageContainer}>
           <Image
-            src={urlFor(mainImage).quality(100).url()}
+            src={urlFor(mainImage).auto('format').quality(100).url()}
             className={styles.image}
             sizes="(min-width: 768px) 50vw, 100vw"
             fill
@@ -64,7 +64,10 @@ export default function Post({ post }: { post: Post[] }) {
                       data-alignment={value.alignment}
                     >
                       <Image
-                        src={urlFor(value.asset).quality(100).url()}
+                        src={urlFor(value.asset)
+                          .auto('format')
+                          .quality(100)
+                          .url()}
                         className={styles.image}
                         fill
                         sizes="(min-width: 768px) 50vw, 100vw"

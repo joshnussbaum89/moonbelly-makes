@@ -29,7 +29,10 @@ export default function MostRecentPosts({ posts }: PostProps) {
       <div className={styles.imagesContainer}>
         <PostPreviewCard
           key={newestDiyPost?._id}
-          imageSrc={urlFor(newestDiyPost?.mainImage).quality(100).url()}
+          imageSrc={urlFor(newestDiyPost?.mainImage)
+            .auto('format')
+            .quality(100)
+            .url()}
           category={newestDiyPost?.category}
           title={newestDiyPost?.title}
           slug={newestDiyPost?.slug.current}
@@ -37,7 +40,10 @@ export default function MostRecentPosts({ posts }: PostProps) {
         />
         <PostPreviewCard
           key={newestRecipePost?._id}
-          imageSrc={urlFor(newestRecipePost?.mainImage).quality(100).url()}
+          imageSrc={urlFor(newestRecipePost?.mainImage)
+            .auto('format')
+            .quality(100)
+            .url()}
           category={newestRecipePost?.category}
           title={newestRecipePost?.title}
           slug={newestRecipePost?.slug.current}
@@ -45,7 +51,10 @@ export default function MostRecentPosts({ posts }: PostProps) {
         />
         <PostPreviewCard
           key={newestBakeOffPost?._id}
-          imageSrc={urlFor(newestBakeOffPost?.mainImage).quality(100).url()}
+          imageSrc={urlFor(newestBakeOffPost?.mainImage)
+            .auto('format')
+            .quality(100)
+            .url()}
           category={newestBakeOffPost?.category}
           title={newestBakeOffPost?.title}
           slug={newestBakeOffPost?.slug.current}
@@ -59,7 +68,7 @@ export default function MostRecentPosts({ posts }: PostProps) {
 // Types
 type PostProps = { posts: Post[] }
 
-interface Post {
+type Post = {
   _createdAt: string
   _id: string
   _rev: string
