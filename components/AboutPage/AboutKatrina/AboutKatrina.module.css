@@ -1,6 +1,9 @@
 .wrapper {
   margin-bottom: 4rem;
   text-align: center;
+
+  --section-margin-bottom: clamp(6rem, 8vw, 8rem);
+  --sub-section-margin-bottom: clamp(4rem, 8vw, 8rem);
 }
 
 .wrapper h3 {
@@ -26,7 +29,7 @@
 
 .greeting {
   display: block;
-  margin: 0 auto 4rem;
+  margin: 0 auto var(--sub-section-margin-bottom);
   max-width: 750px;
   font-size: clamp(var(--size-small), 3vw, var(--size-medium));
   line-height: normal;
@@ -36,20 +39,12 @@
 .greeting::after {
   content: '';
   display: block;
-  margin: auto;
-  width: 50%;
+  margin-top: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
   height: 1px;
   background-color: var(--color-purple);
-}
-
-.greeting::after {
-  margin-top: 2rem;
-}
-
-@media (min-width: 768px) {
-  .greeting {
-    margin-bottom: 6rem;
-  }
 }
 
 .mainContentContainer {
@@ -59,8 +54,8 @@
     'description'
     'quickFacts'
     'philosophy';
-  gap: 4rem 2rem;
-  margin-bottom: 4rem;
+  gap: var(--sub-section-margin-bottom);
+  margin-bottom: var(--section-margin-bottom);
 }
 
 @media (min-width: 768px) {
@@ -68,15 +63,6 @@
     grid-template-areas:
       'description headshot'
       'quickFacts philosophy';
-  }
-}
-
-@media (min-width: 768px) {
-  .description,
-  .headshot,
-  .quickFacts,
-  .philosophy {
-    padding: 0 2rem;
   }
 }
 
@@ -99,7 +85,6 @@
 .headshot img {
   max-width: 90%;
   height: auto;
-  margin-bottom: 2rem;
 }
 
 .quickFacts ul {
@@ -122,7 +107,7 @@
 .intention {
   width: 100%;
   max-width: 475px;
-  margin: 0 auto 6rem;
+  margin: 0 auto var(--section-margin-bottom);
   padding: 1rem;
   background-color: var(--color-light-purple);
   border: 1px solid var(--color-purple);
@@ -139,7 +124,7 @@
   position: relative;
   width: 100%;
   max-width: 950px;
-  margin: 0 auto 6rem;
+  margin: 0 auto var(--section-margin-bottom);
   font-family: var(--font-nothing-you-could-do);
 }
 
@@ -149,22 +134,17 @@
 
 .spiralText img {
   max-width: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   height: auto;
-}
-
-@media (min-width: 768px) {
-  .spiralText img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
 }
 
 .signatureContainer {
   position: relative;
   width: fit-content;
-  margin: 0 auto 6rem;
+  margin: 0 auto var(--section-margin-bottom);
 }
 
 .signatureContainer .signature {
@@ -196,7 +176,7 @@
   overflow: hidden;
   width: 100%;
   max-width: 650px;
-  margin: 0 auto 6rem;
+  margin: 0 auto var(--section-margin-bottom);
   border-radius: 10px;
 }
 
