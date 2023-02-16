@@ -51,6 +51,7 @@ export default function AboutKatrina() {
             height={500}
             sizes="(min-width: 768px) 50vw, 100vw"
             quality={100}
+            placeholder="blur"
             priority
             alt="Katrina Atkin headshot"
           />
@@ -143,6 +144,7 @@ export default function AboutKatrina() {
             width={293}
             height={294}
             sizes="50vw"
+            placeholder="blur"
             alt="Swirling spiral icon"
           />
         </div>
@@ -168,6 +170,7 @@ export default function AboutKatrina() {
             width={900}
             height={515}
             sizes="(min-width: 768px) 50vw, 100vw"
+            placeholder="blur"
             alt="Katrina Atkin dancing in the park"
           />
         </div>
