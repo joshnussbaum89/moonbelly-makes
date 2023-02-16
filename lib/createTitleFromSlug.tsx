@@ -1,5 +1,7 @@
-// Creates a title from a slug
-export function createTitleFromSlug(slug) {
+/**
+ * Creates a title from a slug
+ */
+export function createTitleFromSlug(slug: string) {
   const words = slug.split('-')
 
   for (let i = 0; i < words.length; i++) {

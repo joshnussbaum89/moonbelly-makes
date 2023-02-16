@@ -12,7 +12,12 @@ export default function About() {
     <>
       <Head>
         <title>Moonbelly Makes | About</title>
-        <meta name="description" content="decorate your life" />
+        <meta name="description" content="About Moonbelly Makes" />
+        <meta property="og:title" content="Moonbelly Makes | About" />
+        <meta property="og:image" content="/fabric-flowers.jpeg" />
+        <meta property="og:description" content="About Moonbelly Makes" />
+        <meta property="og:url" content="https://moonbellymakes.com/about" />
+        <meta property="og:type" content="website" />
       </Head>
       <PageTitle text="About" />
       <AboutKatrina />

@@ -1,4 +1,5 @@
 // Components
+import Head from 'next/head'
 import Image from 'next/image'
 import imageUrlBuilder from '@sanity/image-url'
 import { PortableText } from '@portabletext/react'
@@ -24,68 +25,88 @@ export default function Post({ post }: { post: Post[] }) {
   const urlFor = (source: SanityImageSource) => builder.image(source)
 
   // Grab post details
-  const { title, mainImage, body, publishedAt } = post[0]
+  const { title, mainImage, body, publishedAt, slug } = post[0]
   const altText = mainImage.alt ? mainImage.alt : 'Lab header image'
 
   // Format date
   const formattedDate = formatDate(publishedAt)
 
   return (
-    <div className={styles.wrapper}>
-      <article className={styles.post}>
-        <div className={styles.postHeader}>
-          <h2>{title}</h2>
-          <p>{formattedDate}</p>
-        </div>
-        <div className={styles.imageContainer}>
-          <Image
-            src={urlFor(mainImage).auto('format').quality(100).url()}
-            className={styles.image}
-            sizes="(min-width: 768px) 50vw, 100vw"
-            fill
-            alt={altText}
-            priority
-          />
-        </div>
-        <div className={styles.postBody}>
-          <PortableText
-            value={body}
-            components={{
-              types: {
-                image: ({ value }) => {
-                  return (
-                    <figure
-                      className={
-                        value.caption
-                          ? `${styles.imageContainer} ${styles.hasCaption}`
-                          : styles.imageContainer
-                      }
-                      data-column-layout={value.columnLayout}
-                      data-alignment={value.alignment}
-                    >
-                      <Image
-                        src={urlFor(value.asset)
-                          .auto('format')
-                          .quality(100)
-                          .url()}
-                        className={styles.image}
-                        fill
-                        sizes="(min-width: 768px) 50vw, 100vw"
-                        alt={value.alt ? value.alt : 'Post body image'}
-                      />
-                      {value.caption && (
-                        <figcaption>{value.caption}</figcaption>
-                      )}
-                    </figure>
-                  )
+    <>
+      <Head>
+        <title>{`Moonbelly Makes | ${title}`}</title>
+        <meta
+          name="description"
+          content={`Moonbelly Makes blog post: ${title}`}
+        />
+        <meta property="og:title" content={`Moonbelly Makes | ${title}`} />
+        <meta property="og:image" content="/fabric-flowers.jpeg" />
+        <meta
+          property="og:description"
+          content={`Moonbelly Makes blog post: ${title}`}
+        />
+        <meta
+          property="og:url"
+          content={`https://moonbellymakes.com/posts/${slug.current}`}
+        />
+        <meta property="og:type" content="website" />
+      </Head>
+      <div className={styles.wrapper}>
+        <article className={styles.post}>
+          <div className={styles.postHeader}>
+            <h2>{title}</h2>
+            <p>{formattedDate}</p>
+          </div>
+          <div className={styles.imageContainer}>
+            <Image
+              src={urlFor(mainImage).auto('format').quality(100).url()}
+              className={styles.image}
+              sizes="(min-width: 768px) 50vw, 100vw"
+              fill
+              alt={altText}
+              priority
+            />
+          </div>
+          <div className={styles.postBody}>
+            <PortableText
+              value={body}
+              components={{
+                types: {
+                  image: ({ value }) => {
+                    return (
+                      <figure
+                        className={
+                          value.caption
+                            ? `${styles.imageContainer} ${styles.hasCaption}`
+                            : styles.imageContainer
+                        }
+                        data-column-layout={value.columnLayout}
+                        data-alignment={value.alignment}
+                      >
+                        <Image
+                          src={urlFor(value.asset)
+                            .auto('format')
+                            .quality(100)
+                            .url()}
+                          className={styles.image}
+                          fill
+                          sizes="(min-width: 768px) 50vw, 100vw"
+                          alt={value.alt ? value.alt : 'Post body image'}
+                        />
+                        {value.caption && (
+                          <figcaption>{value.caption}</figcaption>
+                        )}
+                      </figure>
+                    )
+                  },
                 },
-              },
-            }}
-          />
-        </div>
-      </article>
-      <SideBar />
-    </div>
+              }}
+            />
+          </div>
+        </article>
+        <SideBar />
+      </div>
+    </>
   )
 }
 
