@@ -41,6 +41,17 @@
   position: relative;
   width: 100%;
   margin: 0 auto 3rem;
+
+  /* Loading animation */
+  background: linear-gradient(
+    110deg,
+    var(--color-light-purple) 0%,
+    var(--color-light-green) 50%,
+    var(--color-light-purple) 100%
+  );
+  background-size: 400%;
+  animation: loading 4s ease infinite;
+  box-shadow: inset 0 0 10rem var(--color-light-green);
 }
 
 .imageContainer.hasCaption {
@@ -129,4 +140,16 @@
 
 .postBody a:hover {
   color: var(--color-light-purple);
+}
+
+@keyframes loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 0 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
