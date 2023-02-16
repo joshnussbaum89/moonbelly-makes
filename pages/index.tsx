@@ -20,9 +20,9 @@ export default function Home({ posts }: PostProps) {
         <title>Moonbelly Makes | Decorate Your Life</title>
         <meta name="description" content="decorate your life" />
       </Head>
-      <RecentPosts posts={posts} />
+      <RecentPosts posts={posts.recentPosts} />
       <SubscribeMobile />
-      <FeaturedContent posts={posts} />
+      <FeaturedContent posts={posts.featuredPosts} />
     </>
   )
 }
@@ -31,16 +31,39 @@ export default function Home({ posts }: PostProps) {
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getHomePagePosts()
 
+  // Get most recent posts
+  const newestDiyPost = posts
+    .filter((post: Post) => post.category === 'diys')
+    .at(0)
+  const newestRecipePost = posts
+    .filter((post: Post) => post.category === 'recipes')
+    .at(0)
+  const newestBakeOffPost = posts
+    .filter((post: Post) => post.category === 'bake-off')
+    .at(0)
+
+  // Get posts without newest posts
+  const postsWithoutNewest = posts.filter((post: Post) => {
+    return (
+      post._id !== newestDiyPost._id &&
+      post._id !== newestRecipePost._id &&
+      post._id !== newestBakeOffPost._id
+    )
+  })
+
   return {
     props: {
-      posts,
+      posts: {
+        recentPosts: [newestDiyPost, newestRecipePost, newestBakeOffPost],
+        featuredPosts: postsWithoutNewest,
+      },
     },
     revalidate: 10,
   }
 }
 
 // Types
-type PostProps = { posts: Post[] }
+type PostProps = { posts: { recentPosts: Post[]; featuredPosts: Post[] } }
 
 interface Post {
   _createdAt: string

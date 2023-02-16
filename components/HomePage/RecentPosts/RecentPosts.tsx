@@ -15,13 +15,9 @@ export default function MostRecentPosts({ posts }: PostProps) {
   const urlFor = (source: any) => builder.image(source)
 
   // Get most recent posts
-  const newestDiyPost = posts.filter((post) => post.category === 'diys').at(0)
-  const newestRecipePost = posts
-    .filter((post) => post.category === 'recipes')
-    .at(0)
-  const newestBakeOffPost = posts
-    .filter((post) => post.category === 'bake-off')
-    .at(0)
+  const newestDiyPost = posts.at(0)
+  const newestRecipePost = posts.at(1)
+  const newestBakeOffPost = posts.at(2)
 
   return (
     <section className={styles.recentPostscontainer}>

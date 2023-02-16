@@ -1,6 +1,7 @@
 // Components
 import Image from 'next/image'
 import WidgetTitle from '../WidgetTitle/WidgetTitle'
+import { useRouter } from 'next/router'
 
 // Styles
 import styles from './AboutKatrina.module.css'
@@ -12,8 +13,14 @@ import katrinaHeadshot from '../../../public/katrina-headshot.png'
  * About Katrina section for the side panel
  */
 export default function AboutKatrina() {
+  // Connect to next router
+  const router = useRouter()
+
+  // Get current path
+  const currentPath = router.pathname
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-path={currentPath}>
       <div className={styles.aboutKatrina}>
         <WidgetTitle titleCopy="About Katrina" />
         <Image

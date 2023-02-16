@@ -10,3 +10,13 @@
     grid-template-columns: 1fr 350px;
   }
 }
+
+.content > div:nth-child(1) {
+  order: 1;
+}
+
+@media (min-width: 951px) {
+  .content > div:nth-child(1) {
+    order: 0;
+  }
+}

@@ -19,7 +19,7 @@ export default function FeaturedPosts({ posts }: PostProps) {
 
   return (
     <div className={styles.cards}>
-      {posts.slice(3, 5).map((post) => {
+      {posts.map((post) => {
         return (
           <PostPreviewCard
             key={post._id}
