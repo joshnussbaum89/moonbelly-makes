@@ -8,7 +8,7 @@ import NProgress from 'nprogress'
 
 // Styles
 import 'nprogress/nprogress.css'
-import '../styles/NProgress.css'
+import '../styles/Nprogress.css'
 import '../styles/globals.css'
 
 // Types
