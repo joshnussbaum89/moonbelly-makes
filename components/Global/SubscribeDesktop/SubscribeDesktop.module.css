@@ -17,6 +17,12 @@
   border-radius: 0.25rem;
 }
 
+@media (min-width: 951px) {
+  .subscribe {
+    margin-bottom: 2rem;
+  }
+}
+
 .wrapper {
   width: 100%;
   max-width: 325px;

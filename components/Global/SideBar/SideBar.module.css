@@ -10,5 +10,18 @@
   .aside .desktop {
     display: block;
     max-width: 322px;
+    scrollbar-width: none;
+  }
+
+  .aside.isSticky .desktop {
+    position: sticky;
+    top: 2rem;
+    height: 92vh;
+    overflow: scroll;
+  }
+
+  /* Safari and Chrome */
+  .aside.isSticky .desktop::-webkit-scrollbar {
+    display: none;
   }
 }

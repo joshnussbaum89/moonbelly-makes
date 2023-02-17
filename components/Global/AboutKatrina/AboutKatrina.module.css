@@ -23,3 +23,9 @@
 .aboutKatrina {
   margin-bottom: 4rem;
 }
+
+@media (min-width: 951px) {
+  .aboutKatrina {
+    margin-bottom: 2rem;
+  }
+}
