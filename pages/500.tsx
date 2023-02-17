@@ -1,6 +1,14 @@
-import PageTitle from '../components/Global/PageTitle/PageTitle'
+// Components
+import Error from '../components/Global/Error/Error'
 
-// Server error - copy handled by Header component
+/**
+ * 500: Server error
+ */
 export default function Custom500() {
-  return <PageTitle text="500: Server-side error occurred" />
+  const errorProps = {
+    title: '500: Server-side error occurred',
+    body: 'Oopsie, woopsies! Something went wrong on our end.',
+  }
+
+  return <Error title={errorProps.title} body={errorProps.body} />
 }
