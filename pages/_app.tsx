@@ -1,10 +1,20 @@
-// Components
-import Layout from '../components/Global/Layout/Layout'
-
-// Fonts
+// Components + packages
+import Router from 'next/router'
 import localFont from '@next/font/local'
 import { Be_Vietnam_Pro } from '@next/font/google'
 import { Nothing_You_Could_Do } from '@next/font/google'
+import Layout from '../components/Global/Layout/Layout'
+import NProgress from 'nprogress'
+
+// Styles
+import 'nprogress/nprogress.css'
+import '../styles/NProgress.css'
+import '../styles/globals.css'
+
+// Types
+import type { AppProps } from 'next/app'
+
+// Fonts
 const laguna = localFont({ src: '../public/fonts/laguna-bold-regular.otf' })
 const vietnam = Be_Vietnam_Pro({ weight: '300', subsets: ['latin'] })
 const nothingYouCouldDo = Nothing_You_Could_Do({
@@ -12,11 +22,11 @@ const nothingYouCouldDo = Nothing_You_Could_Do({
   subsets: ['latin'],
 })
 
-// Types
-import type { AppProps } from 'next/app'
-
-// Styles
-import '../styles/globals.css'
+// NProgress
+NProgress.configure({ showSpinner: false })
+Router.events.on('routeChangeStart', () => NProgress.start())
+Router.events.on('routeChangeComplete', () => NProgress.done())
+Router.events.on('routeChangeError', () => NProgress.done())
 
 /**
  * App Component
