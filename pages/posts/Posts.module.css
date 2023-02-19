@@ -142,6 +142,29 @@
   color: var(--color-light-purple);
 }
 
+.postBody blockquote {
+  margin: 2rem 1rem;
+  padding: 1rem;
+  font-size: var(--size-small);
+  border-left: 6px solid var(--color-purple);
+}
+
+.postBody blockquote:before {
+  content: open-quote;
+  font-size: var(--size-extra-large);
+  line-height: 0.1em;
+  vertical-align: -0.4em;
+  color: var(--color-purple);
+}
+
+.postBody blockquote:after {
+  content: close-quote;
+  font-size: var(--size-extra-large);
+  line-height: 0.1em;
+  vertical-align: -0.4em;
+  color: var(--color-purple);
+}
+
 @keyframes loading {
   0% {
     background-position: 100% 50%;
