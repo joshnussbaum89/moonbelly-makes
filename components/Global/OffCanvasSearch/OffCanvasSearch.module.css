@@ -1,6 +1,6 @@
 .offCanvasContainer {
   position: fixed;
-  top: 0;
+  top: -10%;
   width: 100%;
   height: 0;
   z-index: 1;
@@ -16,9 +16,10 @@
 }
 
 .offCanvasContainer.active {
+  top: 0;
+  height: 150px;
   visibility: visible;
   opacity: 1;
-  height: 150px;
 }
 
 .offCanvasContainer svg {
