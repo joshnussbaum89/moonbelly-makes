@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import imageUrlBuilder from '@sanity/image-url'
 import { PortableText } from '@portabletext/react'
+import getYouTubeId from 'get-youtube-id'
 import SideBar from '../../components/Global/SideBar/SideBar'
 
 // Helpers
@@ -30,6 +31,51 @@ export default function Post({ post }: { post: Post[] }) {
 
   // Format date
   const formattedDate = formatDate(publishedAt)
+
+  // Portable Text serializers
+  const serializers = {
+    types: {
+      image: ({ value }: { value: Image }) => {
+        return (
+          <figure
+            className={
+              value.caption
+                ? `${styles.imageContainer} ${styles.hasCaption}`
+                : styles.imageContainer
+            }
+            data-column-layout={value.columnLayout}
+            data-alignment={value.alignment}
+          >
+            <Image
+              src={urlFor(value.asset).auto('format').quality(100).url()}
+              className={styles.image}
+              sizes="(min-width: 768px) 50vw, 100vw"
+              alt={value.alt ? value.alt : 'Post body image'}
+              fill
+            />
+            {value.caption && <figcaption>{value.caption}</figcaption>}
+          </figure>
+        )
+      },
+      youtube: ({ value }: { value: YouTube }) => {
+        const { url } = value
+        const id = getYouTubeId(url)
+        return (
+          <div className={styles.youtubeContainer}>
+            <iframe
+              width="737"
+              height="500"
+              src={`https://www.youtube.com/embed/${id}`}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+        )
+      },
+    },
+  }
 
   return (
     <>
@@ -68,40 +114,7 @@ export default function Post({ post }: { post: Post[] }) {
             />
           </div>
           <div className={styles.postBody}>
-            <PortableText
-              value={body}
-              components={{
-                types: {
-                  image: ({ value }) => {
-                    return (
-                      <figure
-                        className={
-                          value.caption
-                            ? `${styles.imageContainer} ${styles.hasCaption}`
-                            : styles.imageContainer
-                        }
-                        data-column-layout={value.columnLayout}
-                        data-alignment={value.alignment}
-                      >
-                        <Image
-                          src={urlFor(value.asset)
-                            .auto('format')
-                            .quality(100)
-                            .url()}
-                          className={styles.image}
-                          fill
-                          sizes="(min-width: 768px) 50vw, 100vw"
-                          alt={value.alt ? value.alt : 'Post body image'}
-                        />
-                        {value.caption && (
-                          <figcaption>{value.caption}</figcaption>
-                        )}
-                      </figure>
-                    )
-                  },
-                },
-              }}
-            />
+            <PortableText value={body} components={serializers} />
           </div>
         </article>
         <SideBar />
@@ -158,4 +171,37 @@ interface Post {
   slug: { _type: string; current: string }
   tag: []
   title: string
+}
+
+interface Image {
+  _key: string
+  _type: string
+  alignment: string
+  alt: string
+  asset: {
+    _ref: string
+    _type: string
+  }
+  caption: string
+  columnLayout: string
+  crop: {
+    _type: string
+    bottom: number
+    left: number
+    right: number
+    top: number
+  }
+  hotspot: {
+    _type: string
+    height: number
+    width: number
+    x: number
+    y: number
+  }
+}
+
+interface YouTube {
+  _key: string
+  _type: string
+  url: string
 }

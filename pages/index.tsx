@@ -19,7 +19,10 @@ export default function Home({ posts }: PostProps) {
       <Head>
         <title>Moonbelly Makes | Decorate Your Life</title>
         <meta name="description" content="Decorate Your Life" />
-        <meta property="og:title" content="Moonbelly Makes | Decorate Your Life" />
+        <meta
+          property="og:title"
+          content="Moonbelly Makes | Decorate Your Life"
+        />
         <meta property="og:image" content="/fabric-flowers.jpeg" />
         <meta property="og:description" content="Decorate Your Life" />
         <meta property="og:url" content="https://moonbellymakes.com" />

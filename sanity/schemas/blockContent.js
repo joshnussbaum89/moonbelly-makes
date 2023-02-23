@@ -49,6 +49,7 @@ export default defineType({
     }),
     defineArrayMember({
       type: 'image',
+      title: 'Image',
       options: {hotspot: true},
       validation: (Rule) => Rule.required().error('Please add an image'),
       fields: [
@@ -95,6 +96,10 @@ export default defineType({
         columnLayout: 'one-column',
         alignment: 'full-width',
       }),
+    }),
+    defineArrayMember({
+      type: 'youtube',
+      title: 'YouTube',
     }),
   ],
 })
