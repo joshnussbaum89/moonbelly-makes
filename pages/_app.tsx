@@ -76,7 +76,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <link rel="manifest" href="favicon/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#407d62" />
-        <meta name="theme-color" content="#cfbcff" />
+        <meta name="theme-color" content="#407d62" />
       </Head>
       <Layout>
         <Component {...pageProps} />
