@@ -15,6 +15,12 @@ export default function NavItem({ item, handleShowMobileNav }: NavItemProps) {
   // Handle hide/show sub navigation
   const handleShowSubNav = () => setSubNavIsShown(!subNavIsShown)
 
+  // When a menu item is selected, hide navigation
+  const handleSelectMenuItem = () => {
+    handleShowMobileNav()
+    setSubNavIsShown(false)
+  }
+
   // Chevron styles
   const subNavArrowStyles = subNavIsShown
     ? `${styles.arrow} ${styles.active}`
@@ -28,7 +34,7 @@ export default function NavItem({ item, handleShowMobileNav }: NavItemProps) {
   return (
     <li className={styles.navItem}>
       <div>
-        <Link href={item.href} onClick={handleShowMobileNav}>
+        <Link href={item.href} onClick={handleSelectMenuItem}>
           {item.title}
         </Link>
         {item.subNav && (
@@ -41,7 +47,7 @@ export default function NavItem({ item, handleShowMobileNav }: NavItemProps) {
         <ul className={subNavStyles}>
           {item.subNav.map((subNavItem) => (
             <li key={subNavItem.id}>
-              <Link href={subNavItem.href} onClick={handleShowMobileNav}>
+              <Link href={subNavItem.href} onClick={handleSelectMenuItem}>
                 {subNavItem.title}
               </Link>
             </li>

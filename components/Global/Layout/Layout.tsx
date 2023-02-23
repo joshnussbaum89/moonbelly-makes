@@ -24,7 +24,7 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
   // Hide/show off canvas mobile search field
   const handleShowMobileSearch = () => {
     setMobileSearchIsActive(!mobileSearchIsActive)
-    if (!mobileSearchIsActive) setTimeout(() => searchRef.current.focus(), 50)
+    if (!mobileSearchIsActive) setTimeout(() => searchRef.current.focus(), 100)
   }
 
   // Disable site scrolling when mobile search or navigation is open

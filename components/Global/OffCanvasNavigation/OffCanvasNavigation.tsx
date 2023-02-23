@@ -1,4 +1,5 @@
 // Components
+import { useEffect } from 'react'
 import { TbX } from 'react-icons/tb'
 import SocialIcons from '../SocialIcons/SocialIcons'
 import NavItem from './NavItem/NavItem'
@@ -16,7 +17,21 @@ export default function OffCanvasNavigation({
   mobileNavIsActive,
   handleShowMobileNav,
 }: OffCanvasNavigationProps) {
-  // Canvas container styles
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      const eventTarget = event.target as HTMLElement
+      const eventTargetIsCanvas = eventTarget !== document.querySelector('body')
+      if (mobileNavIsActive && !eventTargetIsCanvas) {
+        handleShowMobileNav()
+      }
+    }
+
+    document.addEventListener('click', handleOutsideClick)
+    return () => {
+      document.removeEventListener('click', handleOutsideClick)
+    }
+  }, [mobileNavIsActive])
+
   const canvasContainerStyles = mobileNavIsActive
     ? `${styles.offCanvasContainer} ${styles.active}`
     : styles.offCanvasContainer

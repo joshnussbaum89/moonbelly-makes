@@ -21,7 +21,6 @@ export default function OffCanvasSearch({
   const [searchResults, setSearchResults] = useState<{ data: Post[] }>({
     data: [],
   })
-
   // Handle search logic
   const handleSearch = (event: React.FormEvent<EventTarget>) => {
     setSearchQuery((event.target as HTMLInputElement).value)
@@ -63,15 +62,32 @@ export default function OffCanvasSearch({
   }
 
   useEffect(() => {
-    // IF input is empty, hide result container
-    // ELSE get results
-    if (searchQuery === '') {
+    const hideResultContainer = () => {
       setSearchResults({ data: [] })
       setIsActive(false)
+    }
+
+    if (searchQuery === '') {
+      hideResultContainer()
     } else {
       fetchResults()
     }
   }, [searchQuery])
+
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      const eventTarget = event.target as HTMLElement
+      const eventTargetIsCanvas = eventTarget !== document.querySelector('body')
+      if (mobileSearchIsActive && !eventTargetIsCanvas) {
+        handleShowMobileSearch()
+      }
+    }
+
+    document.addEventListener('click', handleOutsideClick)
+    return () => {
+      document.removeEventListener('click', handleOutsideClick)
+    }
+  }, [mobileSearchIsActive])
 
   return (
     <div
