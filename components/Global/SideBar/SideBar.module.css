@@ -15,8 +15,8 @@
 
   .aside.isSticky .desktop {
     position: sticky;
-    top: 2rem;
-    height: 92vh;
+    top: 0;
+    height: 100vh;
     overflow: scroll;
   }
 
