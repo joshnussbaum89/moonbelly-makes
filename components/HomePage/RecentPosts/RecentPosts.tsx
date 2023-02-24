@@ -22,6 +22,7 @@ export default function MostRecentPosts({ posts }: PostProps) {
   return (
     <section className={styles.recentPostscontainer}>
       <h2>Newest Projects</h2>
+      {/* TODO: Build mobile carousel */}
       <div className={styles.imagesContainer}>
         <PostPreviewCard
           key={newestDiyPost?._id}

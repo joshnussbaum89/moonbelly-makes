@@ -71,6 +71,7 @@
 }
 
 .post > .imageContainer {
+  position: relative;
   height: clamp(300px, 40vw, 500px);
 }
 
@@ -101,9 +102,7 @@
   margin-right: 2%;
 }
 
-.image {
-  max-width: 100%;
-  height: auto;
+.imageContainer img {
   object-fit: cover;
   border-radius: 4px;
 }

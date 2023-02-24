@@ -48,7 +48,6 @@ export default function Post({ post }: { post: Post[] }) {
           >
             <Image
               src={urlFor(value.asset).auto('format').quality(100).url()}
-              className={styles.image}
               sizes="(min-width: 768px) 50vw, 100vw"
               alt={value.alt ? value.alt : 'Post body image'}
               fill
