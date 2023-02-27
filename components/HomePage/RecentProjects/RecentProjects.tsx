@@ -11,7 +11,7 @@ import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 import { PostProps } from '../../../types'
 
 /**
- * Preview cards for featured posts
+ * Preview cards for recent posts
  */
 export default function RecentProjects({ posts }: PostProps) {
   // Build image URL from Sanity data

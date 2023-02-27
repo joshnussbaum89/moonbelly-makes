@@ -9,7 +9,7 @@ import styles from './FeaturedContent.module.css'
 import { PostProps } from '../../../types'
 
 /**
- * Featured posts and side panel info
+ * Recent projects and side panel info
  */
 export default function FeaturedContent({ posts }: PostProps) {
   return (

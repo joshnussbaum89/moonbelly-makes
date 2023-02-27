@@ -13,7 +13,7 @@ import styles from './NewestProjects.module.css'
 import { Post, PostProps } from '../../../types'
 
 /**
- * Preview cards for most recent posts on home page hero
+ * Preview cards for newest posts on home page hero
  */
 export default function NewestProjects({ posts }: PostProps) {
   // Get most recent posts

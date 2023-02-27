@@ -44,7 +44,7 @@ export default function Home({ posts }: PostProps) {
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getHomePagePosts()
 
-  // Get most recent posts
+  // Get newest posts
   const newestDiyPost = posts
     .filter((post: Post) => post.category === 'diys')
     .at(0)
