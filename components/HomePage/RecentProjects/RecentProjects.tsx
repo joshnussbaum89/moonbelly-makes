@@ -4,7 +4,7 @@ import imageUrlBuilder from '@sanity/image-url'
 import client from '../../../lib/sanityClient'
 
 // Styles
-import styles from './FeaturedPosts.module.css'
+import styles from './RecentProjects.module.css'
 
 // Types
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
@@ -13,7 +13,7 @@ import { PostProps } from '../../../types'
 /**
  * Preview cards for featured posts
  */
-export default function FeaturedPosts({ posts }: PostProps) {
+export default function RecentProjects({ posts }: PostProps) {
   // Build image URL from Sanity data
   const builder = imageUrlBuilder(client)
   const urlFor = (source: SanityImageSource) => builder.image(source)

@@ -1,6 +1,6 @@
 // Components
 import Head from 'next/head'
-import RecentPosts from '../components/HomePage/RecentPosts/RecentPosts'
+import NewestProjects from '../components/HomePage/NewestProjects/NewestProjects'
 import SubscribeMobile from '../components/Global/SubscribeMobile/SubscribeMobile'
 import FeaturedContent from '../components/HomePage/FeaturedContent/FeaturedContent'
 
@@ -12,7 +12,7 @@ import { GetStaticProps } from 'next'
 import { Post } from '../types'
 
 interface PostProps {
-  posts: { recentPosts: Post[]; featuredPosts: Post[] }
+  posts: { newestProjects: Post[]; recentProjects: Post[] }
 }
 
 /**
@@ -33,9 +33,9 @@ export default function Home({ posts }: PostProps) {
         <meta property="og:url" content="https://moonbellymakes.com" />
         <meta property="og:type" content="website" />
       </Head>
-      <RecentPosts posts={posts.recentPosts} />
+      <NewestProjects posts={posts.newestProjects} />
       <SubscribeMobile />
-      <FeaturedContent posts={posts.featuredPosts} />
+      <FeaturedContent posts={posts.recentProjects} />
     </>
   )
 }
@@ -67,8 +67,8 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       posts: {
-        recentPosts: [newestDiyPost, newestRecipePost, newestBakeOffPost],
-        featuredPosts: postsWithoutNewest,
+        newestProjects: [newestDiyPost, newestRecipePost, newestBakeOffPost],
+        recentProjects: postsWithoutNewest,
       },
     },
     revalidate: 10,

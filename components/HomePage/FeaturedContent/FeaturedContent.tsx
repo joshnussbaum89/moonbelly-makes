@@ -1,5 +1,5 @@
 // Components
-import FeaturedPosts from '../FeaturedPosts/FeaturedPosts'
+import RecentProjects from '../RecentProjects/RecentProjects'
 import AboutKatrina from '../../Global/AboutKatrina/AboutKatrina'
 
 // Styles
@@ -14,7 +14,10 @@ import { PostProps } from '../../../types'
 export default function FeaturedContent({ posts }: PostProps) {
   return (
     <section className={styles.content}>
-      <FeaturedPosts posts={posts} />
+      <div>
+        <h2>Recent Projects</h2>
+        <RecentProjects posts={posts} />
+      </div>
       <AboutKatrina />
     </section>
   )

@@ -20,3 +20,14 @@
     order: 0;
   }
 }
+
+.content h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 951px) {
+  .content h2 {
+    text-align: left;
+  }
+}

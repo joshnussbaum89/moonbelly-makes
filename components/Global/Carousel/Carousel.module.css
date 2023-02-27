@@ -12,10 +12,10 @@
 
 .embla__container {
   display: flex;
+  margin-bottom: 1rem;
 }
 
 .embla__slide {
-  position: relative;
   width: 100%;
   height: 350px;
   flex: 0 0 100%;
@@ -32,16 +32,20 @@
   position: relative;
 }
 
+.embla__navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 .embla .embla__prev,
 .embla .embla__next {
   cursor: not-allowed;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   width: 3rem;
   height: 3rem;
-  fill: var(--color-purple);
-  background: #cfbcff69;
+  fill: var(--color-light-purple);
+  opacity: 0.8;
+  transition: var(--transition-normal);
 }
 
 .embla .embla__prev {
@@ -56,23 +60,26 @@
 
 .embla .embla__prev.active,
 .embla .embla__next.active {
-  background: var(--color-light-purple);
   cursor: pointer;
+  fill: var(--color-purple);
+  opacity: 1;
 }
 
 .embla__dots {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
 .embla__dots button {
   width: 1.5rem;
-  height: 0.5rem;
+  height: 0.25rem;
   margin: 0 0.25rem;
   border: 0.5px solid var(--color-purple);
   border-radius: 4px;
-  background-color: #cfbcff69;
+  background-color: var(--color-white);
+  transition: var(--transition-normal);
   cursor: pointer;
 }
 

@@ -79,27 +79,29 @@ export default function Carousel({ posts }: PostProps) {
               </div>
             ))}
           </div>
-          <IoIosArrowBack
-            className={`${styles.embla__prev} ${
-              prevBtnActive && styles.active
-            }`}
-            onClick={scrollToPreviousSlide}
-          />
-          <IoIosArrowForward
-            className={`${styles.embla__next} ${
-              nextBtnActive && styles.active
-            }`}
-            onClick={scrollToNextSlide}
-          />
-        </div>
-        <div className={styles.embla__dots}>
-          {scrollSnaps.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => scrollToSlideByIndex(index)}
-              data-selected={index === selectedIndex}
+          <div className={styles.embla__navigation}>
+            <IoIosArrowBack
+              className={`${styles.embla__prev} ${
+                prevBtnActive && styles.active
+              }`}
+              onClick={scrollToPreviousSlide}
             />
-          ))}
+            <div className={styles.embla__dots}>
+              {scrollSnaps.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => scrollToSlideByIndex(index)}
+                  data-selected={index === selectedIndex}
+                />
+              ))}
+            </div>
+            <IoIosArrowForward
+              className={`${styles.embla__next} ${
+                nextBtnActive && styles.active
+              }`}
+              onClick={scrollToNextSlide}
+            />
+          </div>
         </div>
       </div>
       <div className={styles.embla__info}>

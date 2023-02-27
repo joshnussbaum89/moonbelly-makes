@@ -7,7 +7,7 @@ import client from '../../../lib/sanityClient'
 import imageUrlBuilder from '@sanity/image-url'
 
 // Styles
-import styles from './RecentPosts.module.css'
+import styles from './NewestProjects.module.css'
 
 // Types
 import { Post, PostProps } from '../../../types'
@@ -15,7 +15,7 @@ import { Post, PostProps } from '../../../types'
 /**
  * Preview cards for most recent posts on home page hero
  */
-export default function MostRecentPosts({ posts }: PostProps) {
+export default function NewestProjects({ posts }: PostProps) {
   // Get most recent posts
   const mostRecentPosts = [posts.at(0), posts.at(1), posts.at(2)] as Post[]
 
@@ -24,7 +24,7 @@ export default function MostRecentPosts({ posts }: PostProps) {
   const urlFor = (source: any) => builder.image(source)
 
   return (
-    <section className={styles.recentPostscontainer}>
+    <section className={styles.newestPostsContainer}>
       <h2>Newest Projects</h2>
       <Carousel posts={mostRecentPosts} />
       <div className={styles.desktopImagesContainer}>
