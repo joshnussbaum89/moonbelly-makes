@@ -1,4 +1,4 @@
-.topBar {
+.TopBanner {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: var(--padding-site-container-regular);
@@ -10,7 +10,7 @@
 }
 
 @media (min-width: 768px) {
-  .topBar {
+  .TopBanner {
     justify-content: space-between;
   }
 }

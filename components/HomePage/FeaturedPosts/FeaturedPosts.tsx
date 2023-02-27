@@ -8,6 +8,7 @@ import styles from './FeaturedPosts.module.css'
 
 // Types
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+import { PostProps } from '../../../types'
 
 /**
  * Preview cards for featured posts
@@ -33,26 +34,4 @@ export default function FeaturedPosts({ posts }: PostProps) {
       })}
     </div>
   )
-}
-
-// Types
-type PostProps = { posts: Post[] }
-
-interface Post {
-  _createdAt: string
-  _id: string
-  _rev: string
-  _type: string
-  _updatedAt: string
-  body: Object[]
-  category: string
-  mainImage: {
-    _type: string
-    alt: string
-    asset: Object[]
-  }
-  publishedAt: string
-  slug: { _type: string; current: string }
-  tag: []
-  title: string
 }

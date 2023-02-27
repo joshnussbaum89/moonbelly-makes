@@ -16,11 +16,43 @@ import styles from './Posts.module.css'
 
 // Types
 import { GetStaticProps, GetStaticPaths } from 'next'
-import { TypedObject } from '@portabletext/types'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+import { Post } from '../../types'
 
-// Post template
-export default function Post({ post }: { post: Post[] }) {
+interface Image {
+  _key: string
+  _type: string
+  alignment: string
+  alt: string
+  asset: {
+    _ref: string
+    _type: string
+  }
+  caption: string
+  columnLayout: string
+  crop: {
+    _type: string
+    bottom: number
+    left: number
+    right: number
+    top: number
+  }
+  hotspot: {
+    _type: string
+    height: number
+    width: number
+    x: number
+    y: number
+  }
+}
+
+interface YouTube {
+  _key: string
+  _type: string
+  url: string
+}
+
+export default function PostPageTemplate({ post }: { post: Post[] }) {
   // Build image from Sanity data
   const builder = imageUrlBuilder(sanityClient)
   const urlFor = (source: SanityImageSource) => builder.image(source)
@@ -149,58 +181,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
     revalidate: 10,
   }
-}
-
-// Types
-interface Post {
-  _createdAt: string
-  _id: string
-  _rev: string
-  _type: string
-  _updatedAt: string
-  _key: string
-  body: TypedObject[]
-  category: string
-  mainImage: {
-    _type: string
-    alt: string
-    asset: Object[]
-  }
-  publishedAt: string
-  slug: { _type: string; current: string }
-  tag: []
-  title: string
-}
-
-interface Image {
-  _key: string
-  _type: string
-  alignment: string
-  alt: string
-  asset: {
-    _ref: string
-    _type: string
-  }
-  caption: string
-  columnLayout: string
-  crop: {
-    _type: string
-    bottom: number
-    left: number
-    right: number
-    top: number
-  }
-  hotspot: {
-    _type: string
-    height: number
-    width: number
-    x: number
-    y: number
-  }
-}
-
-interface YouTube {
-  _key: string
-  _type: string
-  url: string
 }

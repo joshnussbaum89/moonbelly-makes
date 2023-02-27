@@ -3,16 +3,14 @@ import TopBarSearch from '../TopBarSearch/TopBarSearch'
 import SocialIcons from '../SocialIcons/SocialIcons'
 
 // Styles
-import styles from './TopBar.module.css'
+import styles from './TopBanner.module.css'
 
 /**
- * TopBar Component
- *
- * @returns Search bar and social icons
+ * Top bar above hero - search bar and social icons
  */
-export default function TopBar() {
+export default function TopBanner() {
   return (
-    <div className={styles.topBar}>
+    <div className={styles.TopBanner}>
       <TopBarSearch />
       <SocialIcons />
     </div>

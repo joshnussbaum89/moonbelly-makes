@@ -5,6 +5,15 @@ import Link from 'next/link'
 // Styles
 import styles from './PostPreviewCard.module.css'
 
+// Types
+interface PostPreviewCardProps {
+  imageSrc: string | undefined
+  category: string | undefined
+  title: string | undefined
+  slug: string | undefined
+  alt: string | undefined
+}
+
 /**
  * Post preview card that links to corresponding post page
  */
@@ -40,13 +49,4 @@ export default function PostPreviewCard({
       </h3>
     </div>
   )
-}
-
-// Types
-interface PostPreviewCardProps {
-  imageSrc: string | undefined
-  category: string | undefined
-  title: string | undefined
-  slug: string | undefined
-  alt: string | undefined
 }

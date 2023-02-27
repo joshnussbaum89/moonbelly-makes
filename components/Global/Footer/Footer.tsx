@@ -6,15 +6,11 @@ import SocialIcons from '../SocialIcons/SocialIcons'
 import styles from './Footer.module.css'
 
 /**
- * Footer Component
- *
- * @returns Footer to be displayed on every page
+ * Footer to be displayed on every page
  */
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      {/* TODO */}
-      {/* <section className={styles.instagram}></section> */}
       <section className={styles.info}>
         <Logo />
         <SocialIcons darkMode={true} />

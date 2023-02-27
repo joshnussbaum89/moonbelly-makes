@@ -9,6 +9,11 @@ import { getHomePagePosts } from '../lib/getHomePagePosts'
 
 // Types
 import { GetStaticProps } from 'next'
+import { Post } from '../types'
+
+interface PostProps {
+  posts: { recentPosts: Post[]; featuredPosts: Post[] }
+}
 
 /**
  * Home page
@@ -68,26 +73,4 @@ export const getStaticProps: GetStaticProps = async () => {
     },
     revalidate: 10,
   }
-}
-
-// Types
-type PostProps = { posts: { recentPosts: Post[]; featuredPosts: Post[] } }
-
-interface Post {
-  _createdAt: string
-  _id: string
-  _rev: string
-  _type: string
-  _updatedAt: string
-  body: Object[]
-  category: string
-  mainImage: {
-    _type: string
-    alt: string
-    asset: Object[]
-  }
-  publishedAt: string
-  slug: { _type: string; current: string }
-  tag: []
-  title: string
 }

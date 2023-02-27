@@ -7,6 +7,15 @@ import { ThreeDots } from 'react-loader-spinner'
 // Styles
 import styles from './OffCanvasSearch.module.css'
 
+// Types
+import { Post } from '../../../types'
+
+interface OffCanvasSearchProps {
+  mobileSearchIsActive: boolean
+  handleShowMobileSearch: () => void
+  searchRef: React.RefObject<HTMLInputElement>
+}
+
 /**
  * OffCanvasSearch mobile search component (hidden until active)
  */
@@ -151,30 +160,4 @@ export default function OffCanvasSearch({
       <TbX onClick={handleShowMobileSearch} />
     </div>
   )
-}
-
-// Types
-type OffCanvasSearchProps = {
-  mobileSearchIsActive: boolean
-  handleShowMobileSearch: () => void
-  searchRef: React.RefObject<HTMLInputElement>
-}
-
-interface Post {
-  _createdAt: string
-  _id: string
-  _rev: string
-  _type: string
-  _updatedAt: string
-  body: Object[]
-  category: string
-  mainImage: {
-    _type: string
-    alt: string
-    asset: Object[]
-  }
-  publishedAt: string
-  slug: { _type: string; current: string }
-  tag: []
-  title: string
 }

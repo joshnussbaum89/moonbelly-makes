@@ -7,7 +7,7 @@ import ContentContainer from '../components/Global/ContentContainer/ContentConta
 import { getAllDiyPosts } from '../lib/getAllDiyPosts'
 
 // Types
-import { TypedObject } from '@portabletext/types'
+import { Post } from '../types'
 
 /**
  * Diys Page
@@ -43,25 +43,4 @@ export async function getStaticProps() {
     },
     revalidate: 10,
   }
-}
-
-// Types
-interface Post {
-  _createdAt: string
-  _id: string
-  _rev: string
-  _type: string
-  _updatedAt: string
-  _key: string
-  body: TypedObject[]
-  category: string
-  mainImage: {
-    _type: string
-    alt: string
-    asset: Object[]
-  }
-  publishedAt: string
-  slug: { _type: string; current: string }
-  tag: []
-  title: string
 }

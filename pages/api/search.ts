@@ -1,5 +1,6 @@
 // Types
 import type { NextApiRequest, NextApiResponse } from 'next'
+import type { Post } from '../../types'
 
 // Helpers
 import { getAllPosts } from '../../lib/getAllPosts'
@@ -28,24 +29,4 @@ export default async function handler(
       return res.status(500).json({ error: error.message || error.toString() })
     }
   }
-}
-
-// Types
-interface Post {
-  _createdAt: string
-  _id: string
-  _rev: string
-  _type: string
-  _updatedAt: string
-  body: Object[]
-  category: string
-  mainImage: {
-    _type: string
-    alt: string
-    asset: Object[]
-  }
-  publishedAt: string
-  slug: { _type: string; current: string }
-  tag: []
-  title: string
 }

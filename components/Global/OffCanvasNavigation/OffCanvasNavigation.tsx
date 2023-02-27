@@ -10,6 +10,36 @@ import { navigationData } from '../../../lib/navigationData'
 // Styles
 import styles from './OffCanvasNavigation.module.css'
 
+// Types
+interface OffCanvasNavigationProps {
+  mobileNavIsActive: boolean
+  handleShowMobileNav: () => void
+}
+
+// Types
+export interface NavItemProps {
+  item: Item
+  handleShowMobileNav: () => void
+}
+
+export type Item =
+  | {
+      id: number
+      title: string
+      href: string
+      subNav: {
+        id: number
+        title: string
+        href: string
+      }[]
+    }
+  | {
+      id: number
+      title: string
+      href: string
+      subNav: null
+    }
+
 /**
  * OffCanvasNavigation Component (hidden until active)
  */
@@ -55,10 +85,4 @@ export default function OffCanvasNavigation({
       </div>
     </div>
   )
-}
-
-// Types
-interface OffCanvasNavigationProps {
-  mobileNavIsActive: boolean
-  handleShowMobileNav: () => void
 }

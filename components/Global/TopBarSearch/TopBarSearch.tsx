@@ -7,6 +7,9 @@ import { ThreeDots } from 'react-loader-spinner'
 // Styles
 import styles from './TopBarSearch.module.css'
 
+// Types
+import { Post } from '../../../types'
+
 /**
  * TopBarSearch Component
  */
@@ -122,24 +125,4 @@ export default function TopBarSearch() {
       <TbSearch />
     </div>
   )
-}
-
-// Types
-interface Post {
-  _createdAt: string
-  _id: string
-  _rev: string
-  _type: string
-  _updatedAt: string
-  body: Object[]
-  category: string
-  mainImage: {
-    _type: string
-    alt: string
-    asset: Object[]
-  }
-  publishedAt: string
-  slug: { _type: string; current: string }
-  tag: []
-  title: string
 }

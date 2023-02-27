@@ -6,6 +6,9 @@ import { TbChevronDown } from 'react-icons/tb'
 // Styles
 import styles from './NavItem.module.css'
 
+// Types
+import { NavItemProps } from '../OffCanvasNavigation'
+
 /**
  * Mobile NavItem component for off canvas navigation (with sub navigation)
  */
@@ -57,27 +60,3 @@ export default function NavItem({ item, handleShowMobileNav }: NavItemProps) {
     </li>
   )
 }
-
-// Types
-interface NavItemProps {
-  item: Item
-  handleShowMobileNav: () => void
-}
-
-type Item =
-  | {
-      id: number
-      title: string
-      href: string
-      subNav: {
-        id: number
-        title: string
-        href: string
-      }[]
-    }
-  | {
-      id: number
-      title: string
-      href: string
-      subNav: null
-    }

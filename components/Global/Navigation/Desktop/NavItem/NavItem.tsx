@@ -4,6 +4,9 @@ import Link from 'next/link'
 // Styles
 import styles from './NavItem.module.css'
 
+// Types
+import { NavItemProps } from '../../Navigation'
+
 export default function NavItem({ item, side }: NavItemProps) {
   return (
     <li className={styles.navItem}>
@@ -22,27 +25,3 @@ export default function NavItem({ item, side }: NavItemProps) {
     </li>
   )
 }
-
-// Types
-interface NavItemProps {
-  item: Item
-  side: string
-}
-
-type Item =
-  | {
-      id: number
-      title: string
-      href: string
-      subNav: {
-        id: number
-        title: string
-        href: string
-      }[]
-    }
-  | {
-      id: number
-      title: string
-      href: string
-      subNav: null
-    }

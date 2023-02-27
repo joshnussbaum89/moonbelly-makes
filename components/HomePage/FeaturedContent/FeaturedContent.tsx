@@ -5,6 +5,9 @@ import AboutKatrina from '../../Global/AboutKatrina/AboutKatrina'
 // Styles
 import styles from './FeaturedContent.module.css'
 
+// Types
+import { PostProps } from '../../../types'
+
 /**
  * Featured posts and side panel info
  */
@@ -15,26 +18,4 @@ export default function FeaturedContent({ posts }: PostProps) {
       <AboutKatrina />
     </section>
   )
-}
-
-// Types
-type PostProps = { posts: Post[] }
-
-interface Post {
-  _createdAt: string
-  _id: string
-  _rev: string
-  _type: string
-  _updatedAt: string
-  body: Object[]
-  category: string
-  mainImage: {
-    _type: string
-    alt: string
-    asset: Object[]
-  }
-  publishedAt: string
-  slug: { _type: string; current: string }
-  tag: []
-  title: string
 }
