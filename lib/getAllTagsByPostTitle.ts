@@ -1,7 +1,10 @@
 import client from './sanityClient'
 
 export async function getAllTagsByPostTitle(title: string) {
-  return await client.fetch(`*[_type == "post" && title == "${title}"] {
+  // Escape double quotes in title
+  const formattedTitle = title.replace(/"/g, '\\"')
+
+  return await client.fetch(`*[_type == "post" && title == "${formattedTitle}"] {
     tag[]->{
       title
     }
