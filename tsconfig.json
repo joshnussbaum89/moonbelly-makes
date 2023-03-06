@@ -14,14 +14,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "src/pages/index.tsx",
-    "src/components/Global/Navigation/Navigation.js",
-    "src/components/Global/OffCanvasSearch/OffCanvasSearch.js",
-    "src/components/Global/Navigation/Mobile/MobileNavigation.js"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/index.tsx"],
   "exclude": ["node_modules"]
 }

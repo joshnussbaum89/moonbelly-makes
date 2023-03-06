@@ -1,6 +1,7 @@
 // Components
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import imageUrlBuilder from '@sanity/image-url'
 import { PortableText } from '@portabletext/react'
 import getYouTubeId from 'get-youtube-id'
@@ -9,6 +10,7 @@ import SideBar from '../../components/Global/SideBar/SideBar'
 // Helpers
 import sanityClient from '../../lib/sanityClient'
 import { getAllPosts } from '../../lib/getAllPosts'
+import { getAllTagsByPostTitle } from '../../lib/getAllTagsByPostTitle'
 import { formatDate } from '../../lib/formatDate'
 
 // Styles
@@ -52,7 +54,18 @@ interface YouTube {
   url: string
 }
 
-export default function PostPageTemplate({ post }: { post: Post[] }) {
+// TODO: Type checking could be better here
+interface Tag {
+  title: string
+}
+
+export default function PostPageTemplate({
+  post,
+  tags,
+}: {
+  post: Post[]
+  tags: Tag[]
+}) {
   // Build image from Sanity data
   const builder = imageUrlBuilder(sanityClient)
   const urlFor = (source: SanityImageSource) => builder.image(source)
@@ -146,6 +159,24 @@ export default function PostPageTemplate({ post }: { post: Post[] }) {
           </div>
           <div className={styles.postBody}>
             <PortableText value={body} components={serializers} />
+            {tags && (
+              <>
+                <h3>Tags:</h3>
+                <div className={styles.tagContainer}>
+                  {tags.map((tag) => (
+                    <span key={tag.title}>
+                      <Link
+                        href={`/tags/${tag.title
+                          .toLowerCase()
+                          .replace(/ /g, '-')}`}
+                      >
+                        {tag.title}
+                      </Link>
+                    </span>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         </article>
         <SideBar />
@@ -175,9 +206,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // Filter post by slug
   const post = allPosts.filter((post) => post.slug.current === params?.slug)
 
+  // Get tags for post
+  const tags = await getAllTagsByPostTitle(post[0].title)
+
   return {
     props: {
       post,
+      tags: tags[0].tag,
     },
     revalidate: 10,
   }

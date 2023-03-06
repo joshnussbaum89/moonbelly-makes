@@ -200,3 +200,35 @@
   width: 100%;
   height: 100%;
 }
+
+.tagContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tagContainer span {
+  padding: 0.5rem;
+  font-size: var(--size-extra-small);
+  background-color: var(--color-light-purple);
+  border-radius: 4px;
+  transition: var(--transition-normal);
+}
+
+.tagContainer a {
+  text-decoration: none;
+}
+
+.tagContainer a:hover {
+  color: var(--color-purple);
+}
+
+@media (min-width: 768px) {
+  .tagContainer span:hover {
+    background-color: var(--color-purple);
+  }
+
+  .tagContainer span:hover a {
+    color: var(--color-white) !important;
+  }
+}
