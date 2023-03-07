@@ -54,7 +54,6 @@ interface YouTube {
   url: string
 }
 
-// TODO: Type checking could be better here
 interface Tag {
   title: string
 }
@@ -164,15 +163,14 @@ export default function PostPageTemplate({
                 <h3>Tags:</h3>
                 <div className={styles.tagContainer}>
                   {tags.map((tag) => (
-                    <span key={tag.title}>
-                      <Link
-                        href={`/tags/${tag.title
-                          .toLowerCase()
-                          .replace(/ /g, '-')}`}
-                      >
-                        {tag.title}
-                      </Link>
-                    </span>
+                    <Link
+                      key={tag.title}
+                      href={`/tags/${tag.title
+                        .toLowerCase()
+                        .replace(/ /g, '-')}`}
+                    >
+                      {tag.title}
+                    </Link>
                   ))}
                 </div>
               </>
@@ -212,7 +210,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       post,
-      tags: tags[0].tag,
+      tags: tags[0].tag as Tag[],
     },
     revalidate: 10,
   }

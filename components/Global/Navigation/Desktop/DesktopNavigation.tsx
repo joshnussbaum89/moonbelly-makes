@@ -22,7 +22,7 @@ export default function DesktopNavigation() {
         ))}
       </ul>
       {/* Logo */}
-      <Link href="/">
+      <Link href="/" aria-label="Moonbelly Logo">
         <Logo />
       </Link>
       {/* Right menu items */}
@@ -34,4 +34,3 @@ export default function DesktopNavigation() {
     </div>
   )
 }
-

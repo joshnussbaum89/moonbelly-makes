@@ -25,6 +25,7 @@ export default function SocialIcons({ darkMode = false }) {
         href="https://www.youtube.com/@moonbellymakes"
         target="_blank"
         rel="noreferrer"
+        aria-label="YouTube"
       >
         <TbBrandYoutube />
       </a>
@@ -32,16 +33,21 @@ export default function SocialIcons({ darkMode = false }) {
         href="https://instagram.com/moonbellymakes?igshid=MWI4MTIyMDE="
         target="_blank"
         rel="noreferrer"
+        aria-label="Instagram"
       >
         <TbBrandInstagram />
       </a>
-      <a href="mailto:moonbellymakes@gmail.com?subject=Contact from moonbellymakes.com">
+      <a
+        href="mailto:moonbellymakes@gmail.com?subject=Contact from moonbellymakes.com"
+        aria-label="Email"
+      >
         <TbMail />
       </a>
       <a
         href="https://www.pinterest.com/moonbellymakes/"
         target="_blank"
         rel="noreferrer"
+        aria-label="Pinterest"
       >
         <TbBrandPinterest />
       </a>

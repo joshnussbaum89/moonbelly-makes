@@ -75,8 +75,8 @@ export default function SubscribeDesktop() {
         <form action="POST" className={styles.form} onSubmit={subscribeUser}>
           <input
             type="email"
-            name="email"
-            id="email"
+            name="email-desktop"
+            id="email-desktop"
             value={emailValue}
             onChange={handleSubcribe}
             placeholder="email address..."

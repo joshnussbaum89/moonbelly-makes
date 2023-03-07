@@ -61,8 +61,8 @@ export default function SubscribeMobile() {
         <form action="POST" className={styles.form} onSubmit={subscribeUser}>
           <input
             type="email"
-            name="email"
-            id="email"
+            name="email-mobile"
+            id="email-mobile"
             value={emailValue}
             onChange={handleSubcribe}
             placeholder="email address..."

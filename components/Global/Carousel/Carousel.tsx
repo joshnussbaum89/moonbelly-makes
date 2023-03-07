@@ -92,6 +92,7 @@ export default function Carousel({ posts }: PostProps) {
                   key={index}
                   onClick={() => scrollToSlideByIndex(index)}
                   data-selected={index === selectedIndex}
+                  aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
             </div>
