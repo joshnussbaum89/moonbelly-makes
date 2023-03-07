@@ -19,7 +19,7 @@ export default function MobileNavigation({
   return (
     <div className={styles.wrapper}>
       <TbSearch onClick={handleShowMobileSearch} />
-      <Link href="/">
+      <Link href="/" aria-label="Moonbelly Logo">
         <Logo />
       </Link>
       <TbMenu2 onClick={handleShowMobileNav} />
