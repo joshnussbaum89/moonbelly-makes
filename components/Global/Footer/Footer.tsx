@@ -1,4 +1,5 @@
 // Components
+import Link from 'next/link'
 import Logo from '../Logo/Logo'
 import SocialIcons from '../SocialIcons/SocialIcons'
 
@@ -12,7 +13,9 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <section className={styles.info}>
-        <Logo />
+        <Link href="/" aria-label="Moonbelly Logo">
+          <Logo />
+        </Link>
         <SocialIcons darkMode={true} />
         <p>
           created and maintained by moonbelly makes © {new Date().getFullYear()}

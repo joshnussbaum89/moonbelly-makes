@@ -1,4 +1,5 @@
 // Components
+import Link from 'next/link'
 import Logo from '../../Logo/Logo'
 import NavItem from './NavItem/NavItem'
 
@@ -20,7 +21,9 @@ export default function DesktopNavigation() {
           <NavItem key={item.id} item={item} side="left" />
         ))}
       </ul>
-      <Logo />
+      <Link href="/" aria-label="Moonbelly Logo">
+        <Logo />
+      </Link>
       {/* Right menu items */}
       <ul className={styles.mainNav}>
         {[navigationData[2], navigationData[3]].map((item) => (
