@@ -1,0 +1,70 @@
+.linkTree {
+  padding-top: 1rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid var(--color-purple);
+  border-radius: 4px;
+  box-shadow: 0 0 0.5rem var(--color-light-purple);
+}
+
+.headshot {
+  width: 100%;
+  max-width: 150px;
+  height: 100%;
+  margin: 0 0 2rem;
+}
+
+.wrapper h1 {
+  position: relative;
+  margin-bottom: 2rem;
+  font-size: var(--size-small);
+}
+
+.wrapper h1::after {
+  position: absolute;
+  top: 1rem;
+  z-index: -1;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--color-light-green),
+    var(--color-light-purple)
+  );
+}
+
+.link {
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--color-light-purple);
+  font-size: var(--size-small);
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: var(--transition-normal);
+}
+
+.link:not(:last-of-type) {
+  margin: 0 auto 1rem;
+}
+
+@media (min-width: 768px) {
+  .link:hover {
+    color: var(--color-white);
+    background-color: var(--color-purple);
+    cursor: pointer;
+  }
+}

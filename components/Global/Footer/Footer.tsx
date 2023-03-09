@@ -17,9 +17,7 @@ export default function Footer() {
           <Logo />
         </Link>
         <SocialIcons darkMode={true} />
-        <p>
-          created and maintained by moonbelly makes © {new Date().getFullYear()}
-        </p>
+        <p>moonbelly makes © {new Date().getFullYear()}</p>
       </section>
     </footer>
   )

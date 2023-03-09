@@ -30,7 +30,7 @@ export default function SocialIcons({ darkMode = false }) {
         <TbBrandYoutube />
       </a>
       <a
-        href="https://instagram.com/moonbellymakes?igshid=MWI4MTIyMDE="
+        href="https://www.instagram.com/moonbellymakes/"
         target="_blank"
         rel="noreferrer"
         aria-label="Instagram"
