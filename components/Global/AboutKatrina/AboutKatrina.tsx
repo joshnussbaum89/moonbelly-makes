@@ -27,6 +27,7 @@ export default function AboutKatrina() {
           src={katrinaHeadshot}
           className={styles.headshot}
           quality={100}
+          sizes="50vw"
           placeholder="blur"
           alt="Katrina Atkin headshot"
         />

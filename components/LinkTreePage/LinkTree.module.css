@@ -19,7 +19,7 @@
 .headshot {
   width: 100%;
   max-width: 150px;
-  height: 100%;
+  height: auto;
   margin: 0 0 2rem;
 }
 

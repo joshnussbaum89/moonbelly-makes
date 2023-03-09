@@ -38,7 +38,9 @@ export default function LinkTree() {
         <Image
           src={headshot}
           className={styles.headshot}
+          placeholder="blur"
           alt="Katrina Atkin Headshot"
+          sizes="50vw"
         />
         <h1>@moonbellymakes</h1>
         {linkData.map((link) => (
