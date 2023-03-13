@@ -1,0 +1,14 @@
+.subscribe {
+  padding-top: 1rem;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: clamp(20rem, 25vw, 30rem);
+}
+
+.imageContainer img {
+  object-fit: cover;
+  border-radius: 0.25rem;
+}

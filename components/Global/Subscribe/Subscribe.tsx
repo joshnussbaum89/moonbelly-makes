@@ -3,12 +3,12 @@ import { useState } from 'react'
 import { ThreeDots } from 'react-loader-spinner'
 
 // Styles
-import styles from './SubscribeMobile.module.css'
+import styles from './Subscribe.module.css'
 
 /**
  * Main Subscribe Component
  */
-export default function SubscribeMobile() {
+export default function Subscribe() {
   const [emailValue, setEmailValue] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')

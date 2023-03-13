@@ -1,7 +1,7 @@
 // Components
 import Head from 'next/head'
 import NewestProjects from '../components/HomePage/NewestProjects/NewestProjects'
-import SubscribeMobile from '../components/Global/SubscribeMobile/SubscribeMobile'
+import Subscribe from '../components/Global/Subscribe/Subscribe'
 import FeaturedContent from '../components/HomePage/FeaturedContent/FeaturedContent'
 
 // Helpers
@@ -34,7 +34,7 @@ export default function Home({ posts }: PostProps) {
         <meta property="og:type" content="website" />
       </Head>
       <NewestProjects posts={posts.newestProjects} />
-      <SubscribeMobile />
+      <Subscribe />
       <FeaturedContent posts={posts.recentProjects} />
     </>
   )

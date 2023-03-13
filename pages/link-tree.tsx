@@ -13,7 +13,7 @@ export default function LinkTreePage() {
         <meta name="description" content="Moonbelly Makes Link Tree" />
         <meta property="og:title" content="Moonbelly Makes | Link Tree" />
         <meta property="og:image" content="/fabric-flowers.jpeg" />
-        <meta property="og:description" content="Moonbelly Makes Recipes" />
+        <meta property="og:description" content="Moonbelly Makes Link Tree" />
         <meta
           property="og:url"
           content="https://moonbellymakes.com/link-tree"

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import AboutKatrina from '../AboutKatrina/AboutKatrina'
 import SubscribeDesktop from '../SubscribeDesktop/SubscribeDesktop'
-import SubscribeMobile from '../SubscribeMobile/SubscribeMobile'
+import SubscribeMobile from '../Subscribe/Subscribe'
 
 // Styles
 import styles from './SideBar.module.css'

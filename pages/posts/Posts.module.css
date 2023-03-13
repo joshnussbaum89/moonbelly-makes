@@ -141,8 +141,10 @@
   text-decoration: underline;
 }
 
-.postBody a:hover {
-  color: var(--color-light-purple);
+@media (min-width: 768px) {
+  .postBody a:hover {
+    color: var(--color-light-purple);
+  }
 }
 
 .postBody blockquote {

@@ -10,23 +10,27 @@ import headshot from '../../public/katrina-headshot.png'
 export default function LinkTree() {
   const linkData = [
     {
+      id: 1,
       description: 'Website',
       url: 'https://moonbellymakes.com',
     },
     {
+      id: 2,
       description: 'YouTube',
       url: 'https://www.youtube.com/@moonbellymakes',
     },
-    // TODO: make a page for this
     {
+      id: 3,
       description: 'Newsletter Signup',
       url: 'https://moonbellymakes.com/signup',
     },
     {
+      id: 4,
       description: 'Instagram',
       url: 'https://www.instagram.com/moonbellymakes/',
     },
     {
+      id: 5,
       description: 'Pinterest',
       url: 'https://www.pinterest.com/moonbellymakes/',
     },
@@ -41,10 +45,11 @@ export default function LinkTree() {
           placeholder="blur"
           alt="Katrina Atkin Headshot"
           sizes="50vw"
+          priority
         />
         <h1>@moonbellymakes</h1>
         {linkData.map((link) => (
-          <a className={styles.link} href={link.url}>
+          <a key={link.id} className={styles.link} href={link.url}>
             <span>{link.description}</span>
           </a>
         ))}
