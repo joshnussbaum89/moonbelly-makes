@@ -67,40 +67,42 @@ export default function AboutKatrina() {
             <li>I enjoy yoga and day hikes</li>
             <li>I am a Libra sun, Pisces moon, and Scorpio rising</li>
             <li>I will choose cheesecake over regular cake any day</li>
-            <li>I live between two gorgeous lakes in the upper Midwest</li>
+            <li>I live between two gorgeous lakes in Wisconsin</li>
             <li>
-              I love Tarot (current frequent pulls are Temperance, Queen of
-              Pentacles, and 3 of Swords)
+              I love Tarot (current frequent pulls are Temperance, King of
+              Pentacles, and Ace of Wands)
             </li>
           </ul>
         </div>
         <div className={styles.philosophy}>
           <h3>Philosophy</h3>
           <p>
-            The vessel that is Moonbelly has been born from a turning and tuning
+            The project of Moonbelly Makes emerges from a turning and tuning
             into the closeness I have felt to the process of making for my whole
-            life. I have always found more of myself within my projects -
-            whether it be sewing, crocheting, cooking, baking, writing,
-            choreographing, creating installation art or stop motion films or
-            furniture, etc etc etc, these projects come from a deep and wise
-            place that I do not understand and therefore cannot explain. They
-            then emerge into this reality as a bridge that teaches me something
-            about the world and about myself, that connects me with others and
-            grounds my being. Both within process and when being witnessed, I
-            practice opening my ears and mind and heart to the truth, in
-            whatever way it chooses to show up for me.
+            life. The urge and inspiration to create comes from a deep and wise
+            place that I do not understand and therefore cannot explain, but I
+            have always found more of myself within my projects: choreographing,
+            sewing, crocheting, cooking, baking, writing, creating installation
+            art and stop motion films and furniture, etc etc etc. These projects
+            emerge into this reality as a bridge that teaches me something about
+            the world and about myself, that connects me with others and grounds
+            my being. (Both within process and when being witnessed, I practice
+            opening my ears and mind and heart to the truth, in whatever way it
+            chooses to show up for me.)
           </p>
           <p>•••</p>
           <p>
-            Another massive piece that drives my making is a purposeful attempt
-            to challenge societal understandings that suggest we are somehow
-            outside of and made of different stuff than the rest of nature. In
-            practice, that looks like blurring the line between NATURE/THE
-            COSMOS and ME - seeking out new ways to bring the natural, outside
-            world into my inside world; both into my home by incorporating
-            natural materials and themes into my projects, and into my body with
-            (always) delicious and (usually) nutrient rich dishes that work to
-            honor the land, people, and animals that nourish me and my family.
+            Another massive piece that drives my making in general and Moonbelly
+            specifically is a purposeful attempt to challenge societal
+            understandings that suggest we as humans are somehow outside of and
+            made of different stuff than the rest of nature. In practice, that
+            looks like blurring the line between NATURE and ME - seeking out new
+            ways to bring the natural, <em>outside</em> world into my{' '}
+            <em>inside</em> world; both into my home by incorporating natural
+            materials and themes into my projects, and into my body with
+            delicious and nutrient rich dishes that work to respect and honor
+            the land, people, and animals that nourish me, and my family and
+            friends.
           </p>
         </div>
       </div>
@@ -126,18 +128,18 @@ export default function AboutKatrina() {
               <strong>moon</strong>
             </span>
             , I am reminded of the cosmic vastness we are inherently a part of
-            and speeding through at nearly 500,000 mph. I am a blip of
+            and speeding through at nearly 1.3 million mph. I am a blip of
             consciousness in a sea of possibility…
           </p>
           <p>
-            Looking down to myself - to my own body and my own{' '}
+            Looking down to my own{' '}
             <span>
               <strong>belly</strong>
             </span>{' '}
-            - reminds me that <span>I AM HERE</span> in this body experiencing
-            all of this inexplicable richness. It is with this body and these
-            hands that I alchemize my thoughts into both permanent and fleeting
-            physical creations…
+            , I am reminded that <span>I AM HERE</span> in this body
+            experiencing all of this inexplicable richness. It is with this body
+            and these hands that I alchemize my thoughts into creations that can
+            be seen, felt, and heard…
           </p>
           <Image
             src={spiralIcon}

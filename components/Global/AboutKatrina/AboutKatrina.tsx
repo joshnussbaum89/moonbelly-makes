@@ -13,10 +13,7 @@ import katrinaHeadshot from '../../../public/katrina-headshot.png'
  * About Katrina section for the side panel
  */
 export default function AboutKatrina() {
-  // Connect to next router
   const router = useRouter()
-
-  // Get current path
   const currentPath = router.pathname
 
   return (
@@ -43,6 +40,9 @@ export default function AboutKatrina() {
           exchange. <em>I make to know who I am.</em>
         </p>
         <p>Thank you for visiting, I really love that you're here!</p>
+        <p>
+          <strong>💖, Katrina</strong>
+        </p>
       </div>
       <div>
         <WidgetTitle titleCopy="About Moonbelly" />
