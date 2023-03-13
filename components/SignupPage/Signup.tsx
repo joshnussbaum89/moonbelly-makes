@@ -3,11 +3,11 @@ import SubscribeWidget from '../Global/Subscribe/Subscribe'
 
 import flowers from '../../public/fabric-flowers.jpeg'
 
-import styles from './Subscribe.module.css'
+import styles from './Signup.module.css'
 
-export default function Subscribe() {
+export default function Signup() {
   return (
-    <section id="subscribe" className={styles.subscribe}>
+    <section id="signup" className={styles.signup}>
       <SubscribeWidget />
       <div className={styles.imageContainer}>
         <Image

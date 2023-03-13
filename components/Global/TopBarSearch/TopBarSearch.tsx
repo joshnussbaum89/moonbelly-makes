@@ -1,14 +1,18 @@
 // Components
 import Link from 'next/link'
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { TbSearch } from 'react-icons/tb'
 import { ThreeDots } from 'react-loader-spinner'
+import imageUrlBuilder from '@sanity/image-url'
+import sanityClient from '../../../lib/sanityClient'
 
 // Styles
 import styles from './TopBarSearch.module.css'
 
 // Types
 import { Post } from '../../../types'
+import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
 /**
  * TopBarSearch Component
@@ -20,6 +24,10 @@ export default function TopBarSearch() {
   const [searchResults, setSearchResults] = useState<{ data: Post[] }>({
     data: [],
   })
+
+  // Sanity image builder
+  const builder = imageUrlBuilder(sanityClient)
+  const urlFor = (source: SanityImageSource) => builder.image(source)
 
   // Handle search logic
   const handleSearch = (event: React.FormEvent<EventTarget>) => {
@@ -116,7 +124,15 @@ export default function TopBarSearch() {
                 href={`/posts/${result.slug.current}`}
                 onClick={handleClick}
               >
-                {result.title}
+                <div className={styles.imageContainer}>
+                  <Image
+                    src={urlFor(result.mainImage).auto('format').url()}
+                    alt={result.title}
+                    width={50}
+                    height={50}
+                  />
+                </div>
+                <p>{result.title}</p>
               </Link>
             </li>
           ))

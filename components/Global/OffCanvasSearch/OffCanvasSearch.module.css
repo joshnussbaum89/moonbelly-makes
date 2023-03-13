@@ -77,6 +77,7 @@
 }
 
 .subNav li {
+  font-size: var(--size-extra-small);
   list-style-type: none;
   transition: var(--transition-normal);
 }
@@ -95,6 +96,21 @@
 }
 
 .subNav .item a {
-  display: block;
   padding: 1rem;
+}
+
+.item .imageContainer img {
+  object-fit: cover;
+  border-radius: 0.25rem;
+}
+
+.item a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.item p {
+  margin: 1rem 0;
 }
