@@ -22,7 +22,7 @@ export default function LinkTree() {
     {
       id: 3,
       description: 'Newsletter Signup',
-      url: 'https://moonbellymakes.com/signup',
+      url: 'https://moonbellymakes.com/signup#signup',
     },
     {
       id: 4,
