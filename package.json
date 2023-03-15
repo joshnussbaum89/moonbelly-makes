@@ -11,6 +11,7 @@
   "dependencies": {
     "@portabletext/react": "^2.0.0",
     "@sanity/image-url": "^1.0.2",
+    "@vercel/analytics": "^0.1.11",
     "embla-carousel-react": "^7.0.9",
     "get-youtube-id": "^1.0.1",
     "next": "^13.2.1",
