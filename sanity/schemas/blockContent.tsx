@@ -1,7 +1,9 @@
-import React from 'react'
+import {ReactNode} from 'react'
 import {defineType, defineArrayMember} from 'sanity'
 
-const Handshake = ({children}) => <span style={{fontSize: '2rem'}}>{children}</span>
+const Handshake = ({children}: {children: ReactNode}) => (
+  <span style={{fontSize: '2rem'}}>{children}</span>
+)
 
 export default defineType({
   title: 'Block Content',
