@@ -59,7 +59,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  max-height: 500px;
+  max-height: 400px;
   width: 100%;
   z-index: 1;
   overflow: auto;
@@ -100,6 +100,7 @@
 }
 
 .item .imageContainer img {
+  display: block;
   object-fit: cover;
   border-radius: 0.25rem;
 }

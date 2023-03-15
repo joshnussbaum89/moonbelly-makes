@@ -91,6 +91,7 @@
 }
 
 .item .imageContainer img {
+  display: block;
   object-fit: cover;
   border-radius: 0.25rem;
 }
