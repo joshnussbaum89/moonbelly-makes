@@ -3,8 +3,6 @@ import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 
-const devOnlyPlugins = [visionTool()]
-
 export default defineConfig({
   name: 'default',
   title: 'Moonbelly Makes',
@@ -12,7 +10,7 @@ export default defineConfig({
   projectId: 'r2zdcffr',
   dataset: 'production',
 
-  plugins: [deskTool(), ...(isDev ? devOnlyPlugins : [])],
+  plugins: [deskTool(), visionTool()],
 
   schema: {
     types: schemaTypes,
