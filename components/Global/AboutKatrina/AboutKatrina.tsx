@@ -26,7 +26,7 @@ export default function AboutKatrina() {
           quality={100}
           sizes="50vw"
           placeholder="blur"
-          alt="Katrina Atkin headshot"
+          alt="Katrina headshot"
         />
         <p>
           <em>Hello you!</em> Welcome to Moonbelly Makes, the virtual vessel for

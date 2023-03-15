@@ -148,7 +148,7 @@ export default function OffCanvasSearch({
             height="40"
             width="40"
             wrapperClass={styles.loading}
-            ariaLabel="three-dots-loading"
+            ariaLabel="loading"
             visible={true}
           />
         ) : searchResults.data.length === 0 ? (

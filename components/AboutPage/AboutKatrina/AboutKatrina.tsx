@@ -31,7 +31,15 @@ export default function AboutKatrina() {
             <Link href={`/bake-off`}>British baking project</Link>. Basically,
             any project that I am working on ends up here, to share and to
             archive. And if you prefer to enjoy video, I have that for you too{' '}
-            <Link href={`https://www.youtube.com/@moonbellymakes`}>here</Link>.
+            <a
+              href="https://www.youtube.com/@moonbellymakes"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="YouTube"
+            >
+              here
+            </a>
+            .
           </p>
           <p>
             Feel free to explore the website, find me on Instagram or Pinterest
@@ -53,7 +61,7 @@ export default function AboutKatrina() {
             quality={100}
             placeholder="blur"
             priority
-            alt="Katrina Atkin headshot"
+            alt="Katrina headshot"
           />
         </div>
         <div className={styles.quickFacts}>

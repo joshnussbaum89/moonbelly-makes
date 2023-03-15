@@ -17,6 +17,7 @@ import { formatDate } from '../../lib/formatDate'
 import styles from './Posts.module.css'
 
 // Types
+import { ReactNode } from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 import { Post } from '../../types'
@@ -117,6 +118,11 @@ export default function PostPageTemplate({
           </div>
         )
       },
+    },
+    block: {
+      Handshake: ({ children }: { children?: ReactNode }) => (
+        <p className={styles.handshake}>{children}</p>
+      ),
     },
   }
 

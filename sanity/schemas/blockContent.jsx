@@ -1,4 +1,7 @@
+import React from 'react'
 import {defineType, defineArrayMember} from 'sanity'
+
+const Handshake = ({children}) => <span style={{fontSize: '2rem'}}>{children}</span>
 
 export default defineType({
   title: 'Block Content',
@@ -13,6 +16,11 @@ export default defineType({
         {title: 'H3', value: 'h3'},
         {title: 'H4', value: 'h4'},
         {title: 'H5', value: 'h5'},
+        {
+          title: 'Handshake',
+          value: 'Handshake',
+          component: Handshake,
+        },
         {title: 'Quote', value: 'blockquote'},
       ],
       lists: [

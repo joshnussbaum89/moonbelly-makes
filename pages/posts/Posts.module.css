@@ -224,3 +224,9 @@
     background-color: var(--color-purple);
   }
 }
+
+.postBody .handshake {
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  text-align: center;
+}
