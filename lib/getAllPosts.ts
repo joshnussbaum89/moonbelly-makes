@@ -1,6 +1,6 @@
 import client from './sanityClient'
 
-// Fetch all posts from Sanity client
+// Fetch all posts, ordered by published date
 export async function getAllPosts() {
-  return await client.fetch(`*[_type == "post"] | order(_createdAt desc)`)
+  return await client.fetch(`*[_type == "post"] | order(_publishedAt desc)`)
 }

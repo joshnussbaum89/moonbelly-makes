@@ -4,7 +4,7 @@ import PageTitle from '../components/Global/PageTitle/PageTitle'
 import ContentContainer from '../components/Global/ContentContainer/ContentContainer'
 
 // Helpers
-import { getAllDiyPosts } from '../lib/getAllDiyPosts'
+import { getPostsByCategory } from '../lib/getPostsByCategory'
 
 // Types
 import { Post } from '../types'
@@ -33,9 +33,9 @@ export default function Diys({ posts }: { posts: Post[] }) {
   )
 }
 
-// Fetch Sanity posts
+// Fetch "DIY" posts
 export async function getStaticProps() {
-  const posts = await getAllDiyPosts()
+  const posts = await getPostsByCategory('diys')
 
   return {
     props: {

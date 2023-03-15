@@ -4,7 +4,7 @@ import PageTitle from '../components/Global/PageTitle/PageTitle'
 import ContentContainer from '../components/Global/ContentContainer/ContentContainer'
 
 // Helpers
-import { getAllRecipePosts } from '../lib/getAllRecipePosts'
+import { getPostsByCategory } from '../lib/getPostsByCategory'
 
 // Types
 import { Post } from '../types'
@@ -30,9 +30,9 @@ export default function Recipes({ posts }: { posts: Post[] }) {
   )
 }
 
-// Fetch Sanity posts
+// Fetch "Recipe" posts
 export async function getStaticProps() {
-  const posts = await getAllRecipePosts()
+  const posts = await getPostsByCategory('recipes')
 
   return {
     props: {

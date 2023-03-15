@@ -4,7 +4,7 @@ import PageTitle from '../components/Global/PageTitle/PageTitle'
 import ContentContainer from '../components/Global/ContentContainer/ContentContainer'
 
 // Helpers
-import { getAllBakeOffPosts } from '../lib/getAllBakeOffPosts'
+import { getPostsByCategory } from '../lib/getPostsByCategory'
 
 // Types
 import { Post } from '../types'
@@ -30,9 +30,9 @@ export default function BakeOff({ posts }: { posts: Post[] }) {
   )
 }
 
-// Fetch Sanity posts
+// Fetch "Bake Off" posts
 export async function getStaticProps() {
-  const posts = await getAllBakeOffPosts()
+  const posts = await getPostsByCategory('bake-off')
 
   return {
     props: {

@@ -1,4 +1,4 @@
-// This file contains all universal types used in the project
+// This file contains all universal types used in this project
 import { TypedObject } from '@portabletext/types'
 
 // Posts
@@ -24,4 +24,16 @@ export interface Post {
 
 export interface PostProps {
   posts: Post[]
+}
+
+export interface SlimPost {
+  _id: string
+  category: string
+  mainImage: {
+    _type: string
+    alt: string
+    asset: Object[]
+  }
+  slug: { _type: string; current: string }
+  title: string
 }
