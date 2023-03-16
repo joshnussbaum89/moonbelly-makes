@@ -67,7 +67,17 @@ export default function SearchResults({
 
   return (
     <>
+      {posts?.length > 0 && (
+        <li className={styles.title}>
+          <span>Posts</span>
+        </li>
+      )}
       {filteredPosts}
+      {tags?.length > 0 && (
+        <li className={styles.title}>
+          <span>Tags</span>
+        </li>
+      )}
       {filteredTags}
     </>
   )
