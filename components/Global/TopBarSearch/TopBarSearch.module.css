@@ -78,5 +78,9 @@
 }
 
 .subNav .userMessage {
+  position: relative;
+  font-family: var(--font-laguna);
+  font-size: var(--size-normal);
   text-align: center;
+  margin: 1rem auto;
 }
