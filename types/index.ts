@@ -37,3 +37,13 @@ export interface SlimPost {
   slug: { _type: string; current: string }
   title: string
 }
+
+// Tags
+export interface Tag {
+  title: string
+  _createdAt: string
+  _id: string
+  _rev: string
+  _type: string
+  _updatedAt: string
+}

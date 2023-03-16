@@ -1,18 +1,14 @@
 // Components, hooks
-import Link from 'next/link'
-import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { TbSearch, TbX } from 'react-icons/tb'
 import { ThreeDots } from 'react-loader-spinner'
-import imageUrlBuilder from '@sanity/image-url'
-import sanityClient from '../../../lib/sanityClient'
+import SearchResults from '../SearchResults/SearchResults'
 
 // Styles
 import styles from './OffCanvasSearch.module.css'
 
 // Types
-import { Post } from '../../../types'
-import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+import { SlimPost, Tag } from '../../../types'
 
 interface OffCanvasSearchProps {
   mobileSearchIsActive: boolean
@@ -31,13 +27,11 @@ export default function OffCanvasSearch({
   const [isActive, setIsActive] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
-  const [searchResults, setSearchResults] = useState<{ data: Post[] }>({
-    data: [],
+  const [searchResults, setSearchResults] = useState<{
+    data: [SlimPost[], Tag[]]
+  }>({
+    data: [[], []],
   })
-
-  // Sanity image builder
-  const builder = imageUrlBuilder(sanityClient)
-  const urlFor = (source: SanityImageSource) => builder.image(source)
 
   // Handle search logic
   const handleSearch = (event: React.FormEvent<EventTarget>) => {
@@ -75,13 +69,13 @@ export default function OffCanvasSearch({
   // Reset state
   const handleClick = () => {
     setSearchQuery('')
-    setSearchResults({ data: [] })
+    setSearchResults({ data: [[], []] })
     handleShowMobileSearch()
   }
 
   useEffect(() => {
     const hideResultContainer = () => {
-      setSearchResults({ data: [] })
+      setSearchResults({ data: [[], []] })
       setIsActive(false)
     }
 
@@ -151,27 +145,15 @@ export default function OffCanvasSearch({
             ariaLabel="loading"
             visible={true}
           />
-        ) : searchResults.data.length === 0 ? (
+        ) : searchResults.data[0].length === 0 &&
+          searchResults.data[1].length === 0 ? (
           <li className={styles.userMessage}>No results...</li>
         ) : (
-          searchResults.data.map((result) => (
-            <li className={styles.item} key={result._id}>
-              <Link
-                href={`/posts/${result.slug.current}`}
-                onClick={handleClick}
-              >
-                <div className={styles.imageContainer}>
-                  <Image
-                    src={urlFor(result.mainImage).auto('format').url()}
-                    alt={result.title}
-                    width={50}
-                    height={50}
-                  />
-                </div>
-                <p>{result.title}</p>
-              </Link>
-            </li>
-          ))
+          <SearchResults
+            searchQuery={searchQuery}
+            searchResults={searchResults}
+            handleClick={handleClick}
+          />
         )}
       </ul>
       <TbX onClick={handleShowMobileSearch} />

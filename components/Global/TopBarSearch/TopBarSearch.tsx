@@ -1,18 +1,14 @@
 // Components
-import Link from 'next/link'
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { TbSearch } from 'react-icons/tb'
 import { ThreeDots } from 'react-loader-spinner'
-import imageUrlBuilder from '@sanity/image-url'
-import sanityClient from '../../../lib/sanityClient'
+import SearchResults from '../SearchResults/SearchResults'
 
 // Styles
 import styles from './TopBarSearch.module.css'
 
 // Types
-import { Post } from '../../../types'
-import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+import { SlimPost, Tag } from '../../../types'
 
 /**
  * TopBarSearch Component
@@ -21,15 +17,13 @@ export default function TopBarSearch() {
   const [isActive, setIsActive] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
-  const [searchResults, setSearchResults] = useState<{ data: Post[] }>({
-    data: [],
+  const [searchResults, setSearchResults] = useState<{
+    data: [SlimPost[], Tag[]]
+  }>({
+    data: [[], []],
   })
 
-  // Sanity image builder
-  const builder = imageUrlBuilder(sanityClient)
-  const urlFor = (source: SanityImageSource) => builder.image(source)
-
-  // Handle search logic
+  // Search logic
   const handleSearch = (event: React.FormEvent<EventTarget>) => {
     setSearchQuery((event.target as HTMLInputElement).value)
   }
@@ -65,15 +59,17 @@ export default function TopBarSearch() {
   // Reset state
   const handleClick = () => {
     setSearchQuery('')
-    setSearchResults({ data: [] })
+    setSearchResults({ data: [[], []] })
   }
 
   useEffect(() => {
-    // IF input is empty, hide result container
-    // ELSE get results
-    if (searchQuery === '') {
-      setSearchResults({ data: [] })
+    const hideResultContainer = () => {
+      setSearchResults({ data: [[], []] })
       setIsActive(false)
+    }
+
+    if (searchQuery === '') {
+      hideResultContainer()
     } else {
       fetchResults()
     }
@@ -115,27 +111,15 @@ export default function TopBarSearch() {
             ariaLabel="three-dots-loading"
             visible={true}
           />
-        ) : searchResults.data.length === 0 ? (
+        ) : searchResults.data[0].length === 0 &&
+          searchResults.data[1].length === 0 ? (
           <li className={styles.userMessage}>No results...</li>
         ) : (
-          searchResults?.data?.map((result) => (
-            <li className={styles.item} key={result._id}>
-              <Link
-                href={`/posts/${result.slug.current}`}
-                onClick={handleClick}
-              >
-                <div className={styles.imageContainer}>
-                  <Image
-                    src={urlFor(result.mainImage).auto('format').url()}
-                    alt={result.title}
-                    width={50}
-                    height={50}
-                  />
-                </div>
-                <p>{result.title}</p>
-              </Link>
-            </li>
-          ))
+          <SearchResults
+            searchQuery={searchQuery}
+            searchResults={searchResults}
+            handleClick={handleClick}
+          />
         )}
       </ul>
       <TbSearch />

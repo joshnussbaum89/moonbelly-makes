@@ -59,8 +59,8 @@
   position: absolute;
   top: 100%;
   left: 0;
-  max-height: 400px;
   width: 100%;
+  max-height: 500px;
   z-index: 1;
   overflow: auto;
   padding: 0.5rem;
@@ -84,34 +84,4 @@
 
 .subNav .userMessage {
   text-align: center;
-}
-
-.subNav .item {
-  text-align: left;
-}
-
-.subNav .item:hover {
-  background: var(--color-light-purple);
-  border-radius: 4px;
-}
-
-.subNav .item a {
-  padding: 1rem;
-}
-
-.item .imageContainer img {
-  display: block;
-  object-fit: cover;
-  border-radius: 0.25rem;
-}
-
-.item a {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-}
-
-.item p {
-  margin: 0;
 }

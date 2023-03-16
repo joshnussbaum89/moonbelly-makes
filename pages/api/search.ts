@@ -1,9 +1,10 @@
 // Types
 import type { NextApiRequest, NextApiResponse } from 'next'
-import type { SlimPost } from '../../types'
+import type { SlimPost, Tag } from '../../types'
 
 // Helpers
 import { searchAllPosts } from '../../lib/searchAllPosts'
+import { getAllTags } from '../../lib/getAllTags'
 
 // Search API route -- '/api/search'
 export default async function handler(
@@ -12,12 +13,19 @@ export default async function handler(
 ) {
   // Fetch all possible posts from Sanity
   const posts: SlimPost[] = await searchAllPosts()
+  const tags: Tag[] = await getAllTags()
 
   // Execute search from request
   const performSearch = (query: string) => {
-    return posts.filter((item: SlimPost) =>
+    const filteredPosts = posts.filter((item: SlimPost) =>
       item.title.toLowerCase().includes(query.toLowerCase())
     )
+
+    const filteredTags = tags.filter((item: Tag) =>
+      item.title.toLowerCase().includes(query.toLowerCase())
+    )
+
+    return [[...filteredPosts], [...filteredTags]]
   }
 
   try {
