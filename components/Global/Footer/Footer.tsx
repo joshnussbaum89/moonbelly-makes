@@ -17,7 +17,16 @@ export default function Footer() {
           <Logo />
         </Link>
         <SocialIcons darkMode={true} />
-        <p>moonbelly makes © {new Date().getFullYear()}</p>
+        <div>
+          <p>moonbelly makes © {new Date().getFullYear()}</p>
+          <p>
+            website by{' '}
+            <a href="https://joshnussbaum.io" target="_blank">
+              Josh Nussbaum
+            </a>{' '}
+            💜
+          </p>
+        </div>
       </section>
     </footer>
   )

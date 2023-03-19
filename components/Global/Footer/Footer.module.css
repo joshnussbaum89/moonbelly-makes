@@ -32,24 +32,39 @@
   grid-area: logo;
 }
 
-.info div {
+.info div:nth-of-type(1) {
   grid-area: icons;
 }
 
 @media (min-width: 768px) {
-  .info div {
+  .info div:nth-of-type(1) {
     justify-self: end;
   }
 }
 
-.info p {
+.info div:nth-of-type(2) {
   grid-area: copy;
   font-size: var(--size-extra-small);
   text-align: center;
 }
 
 @media (min-width: 768px) {
-  .info p {
+  .info div:nth-of-type(2) {
     text-align: left;
+  }
+}
+
+.info p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.info a {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .info a:hover {
+    color: var(--color-light-purple);
   }
 }
