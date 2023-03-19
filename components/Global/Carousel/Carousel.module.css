@@ -1,7 +1,6 @@
 .embla {
   position: relative;
   overflow: hidden;
-  border-radius: 4px;
 }
 
 @media (min-width: 768px) {
@@ -23,6 +22,7 @@
 
 .embla__slide img {
   object-fit: cover;
+  border-radius: 4px;
 }
 
 .embla__slide > a {
@@ -50,12 +50,10 @@
 
 .embla .embla__prev {
   left: 0;
-  border-radius: 0 6px 6px 0;
 }
 
 .embla .embla__next {
   right: 0;
-  border-radius: 6px 0 0 6px;
 }
 
 .embla .embla__prev.active,
