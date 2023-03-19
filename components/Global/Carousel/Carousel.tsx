@@ -2,10 +2,10 @@
 import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import useEmblaCarousel from 'embla-carousel-react'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import client from '../../../lib/sanityClient'
 import imageUrlBuilder from '@sanity/image-url'
-import useEmblaCarousel from 'embla-carousel-react'
 
 // Styles
 import styles from './Carousel.module.css'
