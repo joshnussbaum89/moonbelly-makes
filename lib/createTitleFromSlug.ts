@@ -1,5 +1,5 @@
 /**
- * Creates a title from a slug
+ * Removes dashes and capitalizes the first letter of each word
  */
 export function createTitleFromSlug(slug: string) {
   const words = slug.split('-')

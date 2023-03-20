@@ -13,16 +13,14 @@ export const highlightMatchedSearchText = (
   const parts = text.split(regex)
   const matches = text.match(regex)
 
-  return (
-    <>
-      {parts.map((part, i) => (
-        <span key={i}>
-          {part}
-          {matches && (
-            <span style={{ backgroundColor: '#daeada' }}>{matches[i]}</span>
-          )}
-        </span>
-      ))}
-    </>
-  )
+  const highlightedText = parts.map((part, i) => (
+    <span key={i}>
+      {part}
+      {matches && (
+        <span style={{ backgroundColor: '#daeada' }}>{matches[i]}</span>
+      )}
+    </span>
+  ))
+  
+  return highlightedText
 }

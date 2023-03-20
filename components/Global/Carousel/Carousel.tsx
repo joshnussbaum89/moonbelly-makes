@@ -55,6 +55,17 @@ export default function Carousel({ posts }: PostProps) {
     emblaApi.on('reInit', onSlideSelect)
   }, [emblaApi, setScrollSnaps, onSlideSelect])
 
+  const previousButtonStyles = `${styles.embla__prev} ${
+    prevBtnActive && styles.active
+  }`
+
+  const nextButtonStyles = `${styles.embla__next} ${
+    nextBtnActive && styles.active
+  }`
+
+  const activePost = posts.at(selectedIndex)
+  const formattedCategoryText = activePost?.category?.replace(/-/g, ' ')
+
   return (
     <>
       <div className={styles.embla}>
@@ -81,9 +92,7 @@ export default function Carousel({ posts }: PostProps) {
           </div>
           <div className={styles.embla__navigation}>
             <IoIosArrowBack
-              className={`${styles.embla__prev} ${
-                prevBtnActive && styles.active
-              }`}
+              className={previousButtonStyles}
               onClick={scrollToPreviousSlide}
             />
             <div className={styles.embla__dots}>
@@ -97,24 +106,19 @@ export default function Carousel({ posts }: PostProps) {
               ))}
             </div>
             <IoIosArrowForward
-              className={`${styles.embla__next} ${
-                nextBtnActive && styles.active
-              }`}
+              className={nextButtonStyles}
               onClick={scrollToNextSlide}
             />
           </div>
         </div>
       </div>
       <div className={styles.embla__info}>
-        <Link
-          href={`/${posts.at(selectedIndex)?.category}`}
-          className={styles.animatedLink}
-        >
-          {posts.at(selectedIndex)?.category?.replace(/-/g, ' ')}
+        <Link href={`/${activePost?.category}`} className={styles.animatedLink}>
+          {formattedCategoryText}
         </Link>
         <h3>
-          <Link href={`/posts/${posts.at(selectedIndex)?.slug.current}`}>
-            {posts.at(selectedIndex)?.title}
+          <Link href={`/posts/${activePost?.slug.current}`}>
+            {activePost?.title}
           </Link>
         </h3>
       </div>
