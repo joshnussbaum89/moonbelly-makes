@@ -10,6 +10,11 @@ import styles from './TopBarSearch.module.css'
 // Types
 import { SlimPost, Tag } from '../../../types'
 
+interface SearchResultsProps {
+  posts: SlimPost[]
+  tags: Tag[]
+}
+
 /**
  * TopBarSearch Component
  */
@@ -17,10 +22,9 @@ export default function TopBarSearch() {
   const [isActive, setIsActive] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
-  const [searchResults, setSearchResults] = useState<{
-    data: [SlimPost[], Tag[]]
-  }>({
-    data: [[], []],
+  const [searchResults, setSearchResults] = useState<SearchResultsProps>({
+    posts: [],
+    tags: [],
   })
 
   // Search logic
@@ -59,12 +63,12 @@ export default function TopBarSearch() {
   // Reset state
   const handleClick = () => {
     setSearchQuery('')
-    setSearchResults({ data: [[], []] })
+    setSearchResults({ posts: [], tags: [] })
   }
 
   useEffect(() => {
     const hideResultContainer = () => {
-      setSearchResults({ data: [[], []] })
+      setSearchResults({ posts: [], tags: [] })
       setIsActive(false)
     }
 
@@ -111,8 +115,8 @@ export default function TopBarSearch() {
             ariaLabel="three-dots-loading"
             visible={true}
           />
-        ) : searchResults.data[0].length === 0 &&
-          searchResults.data[1].length === 0 ? (
+        ) : searchResults.posts.length === 0 &&
+          searchResults.tags.length === 0 ? (
           <li className={styles.userMessage}>No results...</li>
         ) : (
           <SearchResults

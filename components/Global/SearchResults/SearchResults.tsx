@@ -16,7 +16,10 @@ import { SlimPost, Tag } from '../../../types'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
 interface SearchResultsProps {
-  searchResults: { data: [SlimPost[], Tag[]] }
+  searchResults: {
+    posts: SlimPost[]
+    tags: Tag[]
+  }
   searchQuery: string
   handleClick: () => void
 }
@@ -27,8 +30,7 @@ export default function SearchResults({
   searchQuery,
   handleClick,
 }: SearchResultsProps) {
-  const posts = searchResults?.data[0]
-  const tags = searchResults?.data[1]
+  const { posts, tags } = searchResults
 
   // Sanity image builder
   const builder = imageUrlBuilder(sanityClient)

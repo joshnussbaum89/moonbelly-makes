@@ -25,13 +25,16 @@ export default async function handler(
       item.title.toLowerCase().includes(query.toLowerCase())
     )
 
-    return [[...filteredPosts], [...filteredTags]]
+    return {
+      posts: filteredPosts,
+      tags: filteredTags,
+    }
   }
 
   try {
     const { query } = req.body
     const results = performSearch(query)
-    res.status(200).json({ data: results })
+    res.status(200).json(results)
   } catch (error) {
     if (error instanceof Error) {
       return res.status(500).json({ error: error.message || error.toString() })

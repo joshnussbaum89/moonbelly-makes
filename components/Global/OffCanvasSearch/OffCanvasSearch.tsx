@@ -16,6 +16,11 @@ interface OffCanvasSearchProps {
   searchRef: React.RefObject<HTMLInputElement>
 }
 
+interface SearchResultsProps {
+  posts: SlimPost[]
+  tags: Tag[]
+}
+
 /**
  * OffCanvasSearch mobile search component (hidden until active)
  */
@@ -27,10 +32,9 @@ export default function OffCanvasSearch({
   const [isActive, setIsActive] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
-  const [searchResults, setSearchResults] = useState<{
-    data: [SlimPost[], Tag[]]
-  }>({
-    data: [[], []],
+  const [searchResults, setSearchResults] = useState<SearchResultsProps>({
+    posts: [],
+    tags: [],
   })
 
   // Handle search logic
@@ -69,13 +73,13 @@ export default function OffCanvasSearch({
   // Reset state
   const handleClick = () => {
     setSearchQuery('')
-    setSearchResults({ data: [[], []] })
+    setSearchResults({ posts: [], tags: [] })
     handleShowMobileSearch()
   }
 
   useEffect(() => {
     const hideResultContainer = () => {
-      setSearchResults({ data: [[], []] })
+      setSearchResults({ posts: [], tags: [] })
       setIsActive(false)
     }
 
@@ -145,8 +149,8 @@ export default function OffCanvasSearch({
             ariaLabel="loading"
             visible={true}
           />
-        ) : searchResults.data[0].length === 0 &&
-          searchResults.data[1].length === 0 ? (
+        ) : searchResults.posts.length === 0 &&
+          searchResults.tags.length === 0 ? (
           <li className={styles.userMessage}>No results...</li>
         ) : (
           <SearchResults
