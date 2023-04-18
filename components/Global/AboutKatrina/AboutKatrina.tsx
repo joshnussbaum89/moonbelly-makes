@@ -39,7 +39,7 @@ export default function AboutKatrina() {
           I create as an act of healing, connection, expression, and energetic
           exchange. <em>I make to know who I am.</em>
         </p>
-        <p>Thank you for visiting, I really love that you're here!</p>
+        <p>Thank you for visiting, I really love that you&apos;re here!</p>
         <p>
           <strong>💖, Katrina</strong>
         </p>

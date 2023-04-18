@@ -3,7 +3,6 @@ import Router from 'next/router'
 import localFont from 'next/font/local'
 import { Be_Vietnam_Pro } from 'next/font/google'
 import { Nothing_You_Could_Do } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/react'
 import Layout from '../components/Global/Layout/Layout'
 import NProgress from 'nprogress'
 
@@ -58,7 +57,6 @@ export default function App({ Component, pageProps }: AppProps) {
       `}</style>
       <Layout>
         <Component {...pageProps} />
-        <Analytics />
       </Layout>
     </>
   )

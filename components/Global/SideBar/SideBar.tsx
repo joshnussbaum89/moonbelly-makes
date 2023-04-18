@@ -35,29 +35,29 @@ export default function SideBar() {
 
       setSidebarTop(sidebarEl.top)
     }
-  }, [])
+  }, [currentPath])
 
   // Add scroll event listener
   useEffect(() => {
     // IF user hasn't yet scrolled or current path is not a post > return
     if (!sidebarTop || !currentPath.includes('posts')) return
 
+    // Handle sticky sidebar
+    const handleIsSticky = () => {
+      const scrollTop = window.scrollY
+
+      if (scrollTop >= sidebarTop - 36) {
+        setIsSticky(true)
+      } else {
+        setIsSticky(false)
+      }
+    }
+
     window.addEventListener('scroll', handleIsSticky)
     return () => {
       window.removeEventListener('scroll', handleIsSticky)
     }
-  }, [sidebarTop])
-
-  // Handle sticky sidebar
-  const handleIsSticky = () => {
-    const scrollTop = window.scrollY
-
-    if (scrollTop >= sidebarTop - 36) {
-      setIsSticky(true)
-    } else {
-      setIsSticky(false)
-    }
-  }
+  }, [sidebarTop, currentPath])
 
   return (
     <aside

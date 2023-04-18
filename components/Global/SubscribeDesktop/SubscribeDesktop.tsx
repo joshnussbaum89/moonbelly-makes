@@ -26,7 +26,7 @@ export default function SubscribeDesktop() {
     } else {
       setIsPost(false)
     }
-  })
+  }, [router.pathname])
 
   // Handle subscribe logic
   const handleSubcribe = (event: React.FormEvent<EventTarget>) => {
@@ -69,7 +69,8 @@ export default function SubscribeDesktop() {
         <div className={styles.info}>
           <h4>Join the Community!</h4>
           <p>
-            Enter your email and I'll keep you posted with news and updates.
+            Enter your email and I&apos;ll keep you posted with news and
+            updates.
           </p>
         </div>
         <form action="POST" className={styles.form} onSubmit={subscribeUser}>

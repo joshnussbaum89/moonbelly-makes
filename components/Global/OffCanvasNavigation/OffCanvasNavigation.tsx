@@ -60,7 +60,7 @@ export default function OffCanvasNavigation({
     return () => {
       document.removeEventListener('click', handleOutsideClick)
     }
-  }, [mobileNavIsActive])
+  }, [mobileNavIsActive, handleShowMobileNav])
 
   const canvasContainerStyles = mobileNavIsActive
     ? `${styles.offCanvasContainer} ${styles.active}`

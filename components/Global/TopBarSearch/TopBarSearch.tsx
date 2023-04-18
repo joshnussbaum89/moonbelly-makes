@@ -32,34 +32,6 @@ export default function TopBarSearch() {
     setSearchQuery((event.target as HTMLInputElement).value)
   }
 
-  // 'POST' request to get search results
-  const fetchResults = async () => {
-    // Show loading spinner
-    setIsLoading(true)
-
-    try {
-      // Show results container
-      setIsActive(true)
-
-      // Fetch results
-      const response = await fetch('/api/search', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query: searchQuery }),
-      })
-
-      const data = await response.json()
-
-      // Set results to state
-      setSearchResults(data)
-    } catch (error) {
-      console.log(error)
-    }
-
-    // Hide loading spinner
-    setIsLoading(false)
-  }
-
   // Reset state
   const handleClick = () => {
     setSearchQuery('')
@@ -67,9 +39,32 @@ export default function TopBarSearch() {
   }
 
   useEffect(() => {
+    // Hide search results container
     const hideResultContainer = () => {
       setSearchResults({ posts: [], tags: [] })
       setIsActive(false)
+    }
+
+    // ['POST'] - get search results
+    const fetchResults = async () => {
+      setIsLoading(true)
+
+      try {
+        setIsActive(true)
+
+        const response = await fetch('/api/search', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query: searchQuery }),
+        })
+
+        const data = await response.json()
+
+        setSearchResults(data)
+      } catch (error) {
+        console.log(error)
+      }
+      setIsLoading(false)
     }
 
     if (searchQuery === '') {
