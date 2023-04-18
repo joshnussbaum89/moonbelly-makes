@@ -36,6 +36,10 @@
   text-align: center;
 }
 
+.postHeader h1 {
+  font-size: var(--size-large);
+}
+
 .postHeader p {
   font-size: var(--size-extra-small);
   color: var(--color-grey-text);

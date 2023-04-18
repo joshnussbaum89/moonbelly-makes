@@ -149,7 +149,7 @@ export default function PostPageTemplate({
       <div className={styles.wrapper}>
         <article className={styles.post}>
           <div className={styles.postHeader}>
-            <h2>{title}</h2>
+            <h1>{title}</h1>
             <p>{formattedDate}</p>
           </div>
           <div className={styles.imageContainer}>
