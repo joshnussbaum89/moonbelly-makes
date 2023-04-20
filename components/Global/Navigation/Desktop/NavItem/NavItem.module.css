@@ -13,8 +13,9 @@
     border-radius: 4px;
     opacity: 0;
     visibility: hidden;
-    background: var(--color-white);
+    background-color: var(--color-white);
     transition: var(--transition-normal);
+    will-change: opacity, visibility;
   }
 
   .subNav[data-side='right'] {
@@ -29,10 +30,12 @@
   .subNav li {
     list-style-type: none;
     transition: var(--transition-normal);
-  }
-  .subNav li:hover {
-    background: var(--color-light-purple);
+    background-color: none;
     border-radius: 4px;
+  }
+
+  .subNav li:hover {
+    background-color: var(--color-light-purple);
   }
 
   .subNav li a {

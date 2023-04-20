@@ -1,5 +1,6 @@
 // Components
 import Link from 'next/link'
+import SeeMoreContent from '../SeeMoreContent/SeeMoreContent'
 import Logo from '../Logo/Logo'
 import SocialIcons from '../SocialIcons/SocialIcons'
 
@@ -12,6 +13,7 @@ import styles from './Footer.module.css'
 export default function Footer() {
   return (
     <footer className={styles.footer}>
+      <SeeMoreContent />
       <section className={styles.info}>
         <Link href="/" aria-label="Moonbelly Logo">
           <Logo />

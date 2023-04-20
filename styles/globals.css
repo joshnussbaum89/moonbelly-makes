@@ -26,8 +26,8 @@
   --color-red: #ed4337;
 
   /* Transitions */
-  --transition-normal: all 0.3s ease;
-  --transition-long: all 0.5s ease;
+  --transition-normal: all 0.3s ease-in-out;
+  --transition-long: all 0.5s ease-in-out;
 }
 
 * {

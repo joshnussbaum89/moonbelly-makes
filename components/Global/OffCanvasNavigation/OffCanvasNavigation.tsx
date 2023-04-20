@@ -16,7 +16,6 @@ interface OffCanvasNavigationProps {
   handleShowMobileNav: () => void
 }
 
-// Types
 export interface NavItemProps {
   item: Item
   handleShowMobileNav: () => void

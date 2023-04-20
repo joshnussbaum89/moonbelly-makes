@@ -6,6 +6,7 @@
 
 .iconContainer a {
   display: flex;
+  will-change: transform;
 }
 
 @media (min-width: 768px) {
