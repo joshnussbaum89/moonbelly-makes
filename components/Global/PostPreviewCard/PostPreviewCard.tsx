@@ -36,8 +36,8 @@ export default function PostPreviewCard({
             sizes="(min-width: 768px) 50vw,
             (min-width: 1024px) 33vw,
             100vw"
-            fill
             alt={`${alt}`}
+            fill
           />
         </Link>
       </div>

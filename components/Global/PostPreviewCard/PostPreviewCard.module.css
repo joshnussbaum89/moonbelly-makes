@@ -11,20 +11,14 @@
 }
 
 .imageContainer {
+  position: relative;
   height: 350px;
   overflow: hidden;
   border-radius: 4px;
-
-  /* Loading animation */
-  background: linear-gradient(
-    110deg,
-    var(--color-light-purple) 0%,
-    var(--color-light-green) 50%,
-    var(--color-light-purple) 100%
+  background: radial-gradient(
+    var(--color-light-purple),
+    var(--color-light-green)
   );
-  background-size: 400%;
-  animation: loading 4s ease infinite;
-  box-shadow: inset 0 0 10rem var(--color-light-green);
 }
 
 .imageContainer > a {
