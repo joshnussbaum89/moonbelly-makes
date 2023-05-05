@@ -109,7 +109,7 @@ export default function PostPageTemplate({
             <iframe
               width="737"
               height="500"
-              src={`https://www.youtube.com/embed/${id}`}
+              src={`https://www.youtube-nocookie.com/embed/${id}`}
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
