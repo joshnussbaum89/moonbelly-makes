@@ -23,7 +23,7 @@ export default function Footer() {
           <p>moonbelly makes © {new Date().getFullYear()}</p>
           <p>
             website by{' '}
-            <a href="https://joshnussbaum.io" target="_blank">
+            <a href="https://joshnussbaumdev.com" target="_blank">
               Josh Nussbaum
             </a>{' '}
             💜
