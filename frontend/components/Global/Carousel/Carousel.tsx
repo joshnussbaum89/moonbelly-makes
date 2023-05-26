@@ -25,15 +25,9 @@ export default function Carousel({ posts }: PostProps) {
   const urlFor = (source: any) => builder.image(source)
 
   // Embla Carousel
-  const scrollToPreviousSlide = useCallback(
-    () => emblaApi && emblaApi.scrollPrev(),
-    [emblaApi]
-  )
+  const scrollToPreviousSlide = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi])
 
-  const scrollToNextSlide = useCallback(
-    () => emblaApi && emblaApi.scrollNext(),
-    [emblaApi]
-  )
+  const scrollToNextSlide = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi])
 
   const scrollToSlideByIndex = useCallback(
     (index: number) => emblaApi && emblaApi.scrollTo(index),
@@ -55,13 +49,9 @@ export default function Carousel({ posts }: PostProps) {
     emblaApi.on('reInit', onSlideSelect)
   }, [emblaApi, setScrollSnaps, onSlideSelect])
 
-  const previousButtonStyles = `${styles.embla__prev} ${
-    prevBtnActive && styles.active
-  }`
+  const previousButtonStyles = `${styles.embla__prev} ${prevBtnActive && styles.active}`
 
-  const nextButtonStyles = `${styles.embla__next} ${
-    nextBtnActive && styles.active
-  }`
+  const nextButtonStyles = `${styles.embla__next} ${nextBtnActive && styles.active}`
 
   const activePost = posts.at(selectedIndex)
   const formattedCategoryText = activePost?.category?.replace(/-/g, ' ')
@@ -75,10 +65,7 @@ export default function Carousel({ posts }: PostProps) {
               <div className={styles.embla__slide} key={post?._id}>
                 <Link href={`/posts/${post?.slug.current}`}>
                   <Image
-                    src={urlFor(post?.mainImage)
-                      .auto('format')
-                      .quality(100)
-                      .url()}
+                    src={urlFor(post?.mainImage).auto('format').quality(100).url()}
                     alt={`${post?.mainImage.alt}`}
                     priority
                     fill
@@ -91,10 +78,7 @@ export default function Carousel({ posts }: PostProps) {
             ))}
           </div>
           <div className={styles.embla__navigation}>
-            <IoIosArrowBack
-              className={previousButtonStyles}
-              onClick={scrollToPreviousSlide}
-            />
+            <IoIosArrowBack className={previousButtonStyles} onClick={scrollToPreviousSlide} />
             <div className={styles.embla__dots}>
               {scrollSnaps.map((_, index) => (
                 <button
@@ -105,10 +89,7 @@ export default function Carousel({ posts }: PostProps) {
                 />
               ))}
             </div>
-            <IoIosArrowForward
-              className={nextButtonStyles}
-              onClick={scrollToNextSlide}
-            />
+            <IoIosArrowForward className={nextButtonStyles} onClick={scrollToNextSlide} />
           </div>
         </div>
       </div>
@@ -117,9 +98,7 @@ export default function Carousel({ posts }: PostProps) {
           {formattedCategoryText}
         </Link>
         <h3>
-          <Link href={`/posts/${activePost?.slug.current}`}>
-            {activePost?.title}
-          </Link>
+          <Link href={`/posts/${activePost?.slug.current}`}>{activePost?.title}</Link>
         </h3>
       </div>
     </>
