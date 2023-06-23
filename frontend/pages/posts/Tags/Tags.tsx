@@ -10,7 +10,7 @@ export default function Tags({ tags }: { tags: Tag[] }) {
     <>
       <h3>Tags:</h3>
       <div className={styles.tagContainer}>
-        {tags.map((tag) => (
+        {tags?.map((tag) => (
           <Link
             className={styles.tag}
             key={tag.title}
