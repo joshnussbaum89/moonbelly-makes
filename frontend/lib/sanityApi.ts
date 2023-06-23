@@ -5,7 +5,9 @@ import { Tag } from '../types'
  * Fetch all posts, ordered by published date
  */
 export async function getAllPosts() {
-  return await client.fetch(`*[_type == "post"] | order(publishedAt desc)`)
+  return await client.fetch(
+    `*[_type == "post" && !(title in ["GBBO POST TEMPLATE", "RECIPE TEMPLATE"])] | order(publishedAt desc) `
+  )
 }
 
 /**
@@ -103,7 +105,7 @@ export async function getAllCommentsByPostId(id: string) {
  * Search all posts, ordered by published date
  */
 export async function searchAllPosts() {
-  return await client.fetch(`*[_type == "post"] | order(publishedAt desc) {
+  return await client.fetch(`*[_type == "post" && !(title in ["GBBO POST TEMPLATE", "RECIPE TEMPLATE"])] | order(publishedAt desc) {
     _id,
     title,
     slug,
