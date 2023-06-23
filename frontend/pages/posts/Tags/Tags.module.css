@@ -1,0 +1,22 @@
+.tagContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 4rem;
+}
+
+.tagContainer .tag {
+  padding: 0.5rem;
+  font-size: var(--size-extra-small);
+  text-decoration: none;
+  background-color: var(--color-light-purple);
+  border-radius: 4px;
+  transition: var(--transition-normal);
+}
+
+@media (min-width: 768px) {
+  .tagContainer .tag:hover {
+    color: var(--color-white);
+    background-color: var(--color-purple);
+  }
+}

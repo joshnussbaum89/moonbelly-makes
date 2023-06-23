@@ -5,7 +5,7 @@ import Image from 'next/image'
 // Helpers
 import sanityClient from '../../../lib/sanityClient'
 import imageUrlBuilder from '@sanity/image-url'
-import { highlightMatchedSearchText } from '../../../lib/highlightMatchedSearchText'
+import { highlightMatchedSearchText } from '../../../lib/strings'
 
 // Styles, images
 import styles from './SearchResults.module.css'
@@ -55,10 +55,7 @@ export default function SearchResults({
 
   const filteredTags = tags?.map((result) => (
     <li className={styles.item} key={result._id}>
-      <Link
-        href={`/tags/${result.title.toLowerCase().replaceAll(' ', '-')}`}
-        onClick={handleClick}
-      >
+      <Link href={`/tags/${result.title.toLowerCase().replaceAll(' ', '-')}`} onClick={handleClick}>
         <div className={styles.imageContainer}>
           <Image src={TagImage} alt={result.title} width={50} height={50} />
         </div>

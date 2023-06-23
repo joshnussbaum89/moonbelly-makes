@@ -5,7 +5,7 @@ import Subscribe from '../components/Global/Subscribe/Subscribe'
 import FeaturedContent from '../components/HomePage/FeaturedContent/FeaturedContent'
 
 // Helpers
-import { getHomePagePosts } from '../lib/getHomePagePosts'
+import { getHomePagePosts } from '../lib/sanityApi'
 
 // Types
 import { GetStaticProps } from 'next'
@@ -15,19 +15,13 @@ interface PostProps {
   posts: { newestProjects: Post[]; recentProjects: Post[] }
 }
 
-/**
- * Home page
- */
-export default function Home({ posts }: PostProps) {
+export default function HomePage({ posts }: PostProps) {
   return (
     <>
       <Head>
         <title>Moonbelly Makes | Decorate Your Life</title>
         <meta name="description" content="Decorate Your Life" />
-        <meta
-          property="og:title"
-          content="Moonbelly Makes | Decorate Your Life"
-        />
+        <meta property="og:title" content="Moonbelly Makes | Decorate Your Life" />
         <meta property="og:image" content="/fabric-flowers.jpeg" />
         <meta property="og:description" content="Decorate Your Life" />
         <meta property="og:url" content="https://moonbellymakes.com" />
@@ -45,15 +39,9 @@ export const getStaticProps: GetStaticProps = async () => {
   const posts = await getHomePagePosts()
 
   // Get newest posts
-  const newestDiyPost = posts
-    .filter((post: Post) => post.category === 'diys')
-    .at(0)
-  const newestRecipePost = posts
-    .filter((post: Post) => post.category === 'recipes')
-    .at(0)
-  const newestBakeOffPost = posts
-    .filter((post: Post) => post.category === 'bake-off')
-    .at(0)
+  const newestDiyPost = posts.filter((post: Post) => post.category === 'diys').at(0)
+  const newestRecipePost = posts.filter((post: Post) => post.category === 'recipes').at(0)
+  const newestBakeOffPost = posts.filter((post: Post) => post.category === 'bake-off').at(0)
 
   // Get posts without newest posts
   const postsWithoutNewest = posts.filter((post: Post) => {

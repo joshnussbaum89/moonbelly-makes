@@ -1,9 +1,11 @@
 import {defineField, defineType} from 'sanity'
+import {DocumentIcon} from '@sanity/icons'
 
 export default defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
+  icon: DocumentIcon,
   fields: [
     defineField({
       name: 'title',
@@ -95,9 +97,9 @@ export default defineType({
     prepare(selection) {
       const {title, media, date} = selection
       return {
-        title,
-        media,
-        subtitle: `${date.split('-')[1]}-${date.split('-')[2]}-${date.split('-')[0]}`, // YYYY-MM-DD --> MM-DD-YYYY
+        title: title ? title : 'Untitled',
+        media: media ? media : undefined,
+        subtitle: date ? `${date.split('-')[1]}-${date.split('-')[2]}-${date.split('-')[0]}` : '', // YYYY-MM-DD --> MM-DD-YYYY
       }
     },
   },

@@ -4,15 +4,12 @@ import PageTitle from '../components/Global/PageTitle/PageTitle'
 import ContentContainer from '../components/Global/ContentContainer/ContentContainer'
 
 // Helpers
-import { getPostsByCategory } from '../lib/getPostsByCategory'
+import { getPostsByCategory } from '../lib/sanityApi'
 
 // Types
 import { Post } from '../types'
 
-/**
- * Bake Off Page
- */
-export default function BakeOff({ posts }: { posts: Post[] }) {
+export default function BakeOffPage({ posts }: { posts: Post[] }) {
   return (
     <>
       <Head>

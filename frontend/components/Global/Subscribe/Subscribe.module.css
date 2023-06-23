@@ -69,6 +69,10 @@
   }
 }
 
+.form input::placeholder {
+  color: var(--color-grey-text);
+}
+
 .form button {
   padding: 1rem;
   background-color: var(--color-light-purple);

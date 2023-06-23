@@ -2,11 +2,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 // Subrcribe to Mailchimp Newsletter
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  const { email } = req.body
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  const { email } = req.body as { email: string }
 
   if (!email) {
     return res.status(400).json({ error: 'Email is required' })
@@ -37,13 +34,16 @@ export default async function handler(
     if (response.status >= 400) {
       return res.status(400).json({
         error: `There was an error subscribing to the newsletter. Shoot me an email at moonbellymakes@gmail.com and I'll add you to the list.`,
+        message: '',
       })
     }
 
-    return res.status(201).json({ error: '' })
+    return res
+      .status(201)
+      .json({ error: '', message: 'Success! You are now subscribed to the newsletter 🎉' })
   } catch (error) {
     if (error instanceof Error) {
-      return res.status(500).json({ error: error.message || error.toString() })
+      return res.status(500).json({ error: error.message || error.toString(), message: '' })
     }
   }
 }

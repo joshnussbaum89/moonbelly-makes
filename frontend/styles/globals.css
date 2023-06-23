@@ -24,6 +24,7 @@
   --color-green: #407d62;
   --color-light-green: #daeada;
   --color-red: #ed4337;
+  --color-yellow: #ffe87d;
 
   /* Transitions */
   --transition-normal: all 0.3s ease-in-out;
@@ -115,12 +116,14 @@ ul {
   margin: 0;
 }
 
-input {
+input,
+textarea {
   border: 1px solid var(--color-green);
   transition: var(--transition-long);
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   outline: 0;
   -webkit-appearance: none;
   -webkit-box-shadow: 0 0 0 2px var(--color-light-purple);

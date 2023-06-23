@@ -2,10 +2,8 @@
 import Head from 'next/head'
 import Error from '../components/Global/Error/Error'
 
-/**
- * 500: Server error
- */
-export default function Custom500() {
+// TODO: This isn't working at /500 for some reason
+export default function Custom500Page() {
   const errorProps = {
     title: '500: Server-side error occurred',
     body: 'Oopsie, woopsies! Something went wrong on our end.',

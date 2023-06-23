@@ -42,7 +42,7 @@
 }
 
 .offCanvasContainer input::placeholder {
-  color: var(--color-grey);
+  color: var(--color-grey-text);
 }
 
 /* Search results  */

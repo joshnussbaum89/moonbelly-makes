@@ -2,6 +2,7 @@
   margin-bottom: 3rem;
   font-size: clamp(var(--size-large), 10vw, var(--size-extra-large));
   text-align: center;
+  text-transform: capitalize;
 }
 
 @media (min-width: 768px) {

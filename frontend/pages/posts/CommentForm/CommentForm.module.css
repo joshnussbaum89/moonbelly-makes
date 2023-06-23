@@ -1,0 +1,136 @@
+.header {
+  margin-bottom: 2rem;
+}
+
+.form {
+  position: relative;
+}
+
+.form > p {
+  font-size: var(--size-small);
+  margin-bottom: 2rem;
+}
+
+.form .input,
+.form textarea,
+.form button {
+  display: block;
+  border-radius: 0.25rem;
+  width: 100%;
+  max-width: 550px;
+  padding: 1rem;
+  font-size: var(--size-small);
+  transition: var(--transition-normal);
+}
+
+.form .input::placeholder,
+.form textarea::placeholder {
+  color: var(--color-grey-text);
+}
+
+.form .input,
+.form textarea {
+  margin-bottom: 1rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-green);
+}
+
+@media (min-width: 1024px) {
+  .form .input,
+  .form textarea {
+    background-color: #fff;
+  }
+}
+
+.form label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.form textarea {
+  height: 150px;
+}
+
+.form button {
+  background-color: var(--color-light-purple);
+  border: 1px solid transparent;
+}
+
+@media (min-width: 768px) {
+  .form button {
+    max-width: 225px;
+  }
+}
+
+@media (min-width: 768px) {
+  .form button:hover {
+    color: var(--color-white);
+    background-color: var(--color-purple);
+    cursor: pointer;
+  }
+}
+
+.form button.loading {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.subscribe,
+.subscribe input,
+.subscribe label {
+  cursor: pointer;
+}
+
+.subscribe {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.subscribe input {
+  display: none;
+}
+
+.subscribe label {
+  display: inline-block;
+  position: relative;
+  padding-left: 2rem;
+  margin-right: 1rem;
+  font-size: var(--size-extra-small);
+}
+
+.subscribe label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
+  line-height: 1rem;
+  border: 1px solid var(--color-green);
+  border-radius: 0.25rem;
+  transition: var(--transition-normal);
+}
+
+.subscribe input:checked + label:before {
+  content: '\2713';
+  font-size: var(--size-extra-small);
+  background-color: var(--color-light-green);
+  color: var(--color-purple);
+  box-shadow: 0 0 0 2px var(--color-light-purple);
+}
+
+.form .error,
+.form .success {
+  font-size: var(--size-extra-small);
+}
+
+.form .error {
+  color: var(--color-red);
+}
+
+.form .success {
+  color: var(--color-green);
+}

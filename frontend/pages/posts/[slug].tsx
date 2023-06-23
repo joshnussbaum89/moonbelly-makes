@@ -1,17 +1,18 @@
 // Components
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import imageUrlBuilder from '@sanity/image-url'
 import { PortableText } from '@portabletext/react'
 import getYouTubeId from 'get-youtube-id'
+import Tags from './Tags/Tags'
+import Comments from './Comments/Comments'
+import CommentForm from './CommentForm/CommentForm'
 import SideBar from '../../components/Global/SideBar/SideBar'
 
 // Helpers
 import sanityClient from '../../lib/sanityClient'
-import { getAllPosts } from '../../lib/getAllPosts'
-import { getAllTagsByPostTitle } from '../../lib/getAllTagsByPostTitle'
-import { formatDate } from '../../lib/formatDate'
+import { getAllPosts, getAllTagsByPostTitle, getAllCommentsByPostId } from '../../lib/sanityApi'
+import { formatDate } from '../../lib/dates'
 
 // Styles
 import styles from './Posts.module.css'
@@ -20,7 +21,7 @@ import styles from './Posts.module.css'
 import { ReactNode } from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
-import { Post } from '../../types'
+import { Post, Comment } from '../../types'
 
 interface Image {
   _key: string
@@ -62,16 +63,18 @@ interface Tag {
 export default function PostPageTemplate({
   post,
   tags,
+  comments,
 }: {
   post: Post[]
   tags: Tag[]
+  comments: Comment[]
 }) {
   // Build image from Sanity data
   const builder = imageUrlBuilder(sanityClient)
   const urlFor = (source: SanityImageSource) => builder.image(source)
 
   // Grab post details
-  const { title, mainImage, body, publishedAt, slug } = post[0]
+  const { title, mainImage, body, publishedAt, slug, _id } = post[0]
   const altText = mainImage.alt ? mainImage.alt : 'Lab header image'
 
   // Format date
@@ -104,6 +107,7 @@ export default function PostPageTemplate({
       youtube: ({ value }: { value: YouTube }) => {
         const { url } = value
         const id = getYouTubeId(url)
+
         return (
           <div className={styles.youtubeContainer}>
             <iframe
@@ -130,20 +134,11 @@ export default function PostPageTemplate({
     <>
       <Head>
         <title>{`Moonbelly Makes | ${title}`}</title>
-        <meta
-          name="description"
-          content={`Moonbelly Makes blog post: ${title}`}
-        />
+        <meta name="description" content={`Moonbelly Makes blog post: ${title}`} />
         <meta property="og:title" content={`Moonbelly Makes | ${title}`} />
         <meta property="og:image" content="/fabric-flowers.jpeg" />
-        <meta
-          property="og:description"
-          content={`Moonbelly Makes blog post: ${title}`}
-        />
-        <meta
-          property="og:url"
-          content={`https://moonbellymakes.com/posts/${slug.current}`}
-        />
+        <meta property="og:description" content={`Moonbelly Makes blog post: ${title}`} />
+        <meta property="og:url" content={`https://moonbellymakes.com/posts/${slug.current}`} />
         <meta property="og:type" content="website" />
       </Head>
       <div className={styles.wrapper}>
@@ -164,24 +159,10 @@ export default function PostPageTemplate({
           </div>
           <div className={styles.postBody}>
             <PortableText value={body} components={serializers} />
-            {tags && (
-              <>
-                <h3>Tags:</h3>
-                <div className={styles.tagContainer}>
-                  {tags.map((tag) => (
-                    <Link
-                      key={tag.title}
-                      href={`/tags/${tag.title
-                        .toLowerCase()
-                        .replace(/ /g, '-')}`}
-                    >
-                      {tag.title}
-                    </Link>
-                  ))}
-                </div>
-              </>
-            )}
+            {tags && <Tags tags={tags} />}
           </div>
+          <Comments comments={comments} />
+          <CommentForm _id={_id} />
         </article>
         <SideBar />
       </div>
@@ -213,10 +194,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // Get tags for post
   const tags = await getAllTagsByPostTitle(post[0].title)
 
+  // Get comments for post
+  const comments = await getAllCommentsByPostId(post[0]._id)
+
   return {
     props: {
       post,
       tags: tags[0].tag as Tag[],
+      comments,
     },
     revalidate: 10,
   }

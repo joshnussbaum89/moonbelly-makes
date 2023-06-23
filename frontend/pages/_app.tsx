@@ -28,9 +28,6 @@ Router.events.on('routeChangeStart', () => NProgress.start())
 Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
 
-/**
- * App Component
- */
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -43,6 +40,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
         body,
         input,
+        textarea,
         button {
           font-family: var(--font-vietnam);
         }

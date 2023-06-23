@@ -4,15 +4,12 @@ import PageTitle from '../components/Global/PageTitle/PageTitle'
 import ContentContainer from '../components/Global/ContentContainer/ContentContainer'
 
 // Helpers
-import { getPostsByCategory } from '../lib/getPostsByCategory'
+import { getPostsByCategory } from '../lib/sanityApi'
 
 // Types
 import { Post } from '../types'
 
-/**
- * Recipes Page
- */
-export default function Recipes({ posts }: { posts: Post[] }) {
+export default function RecipesPage({ posts }: { posts: Post[] }) {
   return (
     <>
       <Head>

@@ -25,7 +25,7 @@
 }
 
 .searchContainer input::placeholder {
-  color: var(--color-grey);
+  color: var(--color-grey-text);
 }
 
 .searchContainer svg:not(.loading svg) {

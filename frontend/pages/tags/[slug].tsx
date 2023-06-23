@@ -3,9 +3,8 @@ import Head from 'next/head'
 import PageTitle from '../../components/Global/PageTitle/PageTitle'
 
 // Helpers
-import { getAllTags } from '../../lib/getAllTags'
-import { getAllPostsByTag } from '../../lib/getAllPostsByTag'
-import { createTitleFromSlug } from '../../lib/createTitleFromSlug'
+import { getAllTags, getAllPostsByTag } from '../../lib/sanityApi'
+import { createTitleFromSlug } from '../../lib/strings'
 import ContentContainer from '../../components/Global/ContentContainer/ContentContainer'
 
 // Types
@@ -26,13 +25,7 @@ interface Tag {
   title: string
 }
 
-export default function TagPageTemplate({
-  posts,
-  title,
-}: {
-  posts: Post[]
-  title: string
-}) {
+export default function TagPageTemplate({ posts, title }: { posts: Post[]; title: string }) {
   // Grab post details for SEO
   const { slug } = posts[0]
 
@@ -40,17 +33,11 @@ export default function TagPageTemplate({
     <>
       <Head>
         <title>{`Moonbelly Makes | ${title}`}</title>
-        <meta
-          name="description"
-          content={`Moonbelly Makes tag: ${title.toLowerCase()}`}
-        />
+        <meta name="description" content={`Moonbelly Makes tag: ${title.toLowerCase()}`} />
         <meta property="og:title" content={`Moonbelly Makes | ${title}`} />
         <meta property="og:image" content="/fabric-flowers.jpeg" />
         <meta property="og:description" content={`Moonbelly Makes ${title}`} />
-        <meta
-          property="og:url"
-          content={`https://moonbellymakes.com/tags/${slug.current}`}
-        />
+        <meta property="og:url" content={`https://moonbellymakes.com/tags/${slug.current}`} />
         <meta property="og:type" content="website" />
       </Head>
       <PageTitle text={title} />

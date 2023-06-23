@@ -4,10 +4,7 @@ import PageTitle from '../components/Global/PageTitle/PageTitle'
 import AboutKatrina from '../components/AboutPage/AboutKatrina/AboutKatrina'
 import Subscribe from '../components/Global/Subscribe/Subscribe'
 
-/**
- * About page - Information about Katrina and Moonbelly Makes
- */
-export default function About() {
+export default function AboutPage() {
   return (
     <>
       <Head>

@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { ThreeDots } from 'react-loader-spinner'
+import useMailchimp from '../../../hooks/useMailchimp'
 
 // Styles
 import styles from './SubscribeDesktop.module.css'
@@ -11,12 +12,11 @@ import styles from './SubscribeDesktop.module.css'
  */
 export default function SubscribeDesktop() {
   const [isPost, setIsPost] = useState(false)
-  const [emailValue, setEmailValue] = useState('')
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
-  const [success, setSuccess] = useState('')
 
-  // Connect to router
+  // Mailchimp
+  const { emailValue, loading, error, success, handleSubcribe, subscribeUser } = useMailchimp()
+
+  // Next Router
   const router = useRouter()
 
   // Check if user is on a post page
@@ -28,50 +28,12 @@ export default function SubscribeDesktop() {
     }
   }, [router.pathname])
 
-  // Handle subscribe logic
-  const handleSubcribe = (event: React.FormEvent<EventTarget>) => {
-    setEmailValue((event.target as HTMLInputElement).value)
-  }
-
-  // Subscribe user to newsletter
-  const subscribeUser = async (event: React.FormEvent<EventTarget>) => {
-    event.preventDefault()
-
-    // 1. Reset state
-    setError('')
-    setSuccess('')
-
-    // 2. Send a request to our API to subscribe the user
-    setLoading(true)
-    const response = await fetch('/api/subscribe', {
-      body: JSON.stringify({ email: emailValue }),
-      headers: { 'Content-Type': 'application/json' },
-      method: 'POST',
-    })
-
-    // 3. If there was an error, display updated error message to user
-    const { error } = await response.json()
-    if (error) {
-      setLoading(false)
-      setError(error)
-      return
-    }
-
-    // 4. Clear the input value and show updated success message to user
-    setLoading(false)
-    setEmailValue('')
-    setSuccess('Success! 🎉 You are now subscribed to the newsletter.')
-  }
-
   return (
     <div className={styles.subscribe} data-is-post={`${isPost}`}>
       <div className={styles.wrapper}>
         <div className={styles.info}>
           <h4>Join the Community!</h4>
-          <p>
-            Enter your email and I&apos;ll keep you posted with news and
-            updates.
-          </p>
+          <p>Enter your email and I&apos;ll keep you posted with news and updates.</p>
         </div>
         <form action="POST" className={styles.form} onSubmit={subscribeUser}>
           <input
@@ -83,11 +45,7 @@ export default function SubscribeDesktop() {
             placeholder="email address..."
             required
           />
-          <button
-            type="submit"
-            className={`${loading && styles.loading}`}
-            disabled={loading}
-          >
+          <button type="submit" className={`${loading && styles.loading}`} disabled={loading}>
             Subscribe
           </button>
           {loading && (
@@ -104,6 +62,7 @@ export default function SubscribeDesktop() {
               }}
             />
           )}
+
           {error && <p className={styles.error}>{error}</p>}
           {success && <p className={styles.success}>{success}</p>}
         </form>
