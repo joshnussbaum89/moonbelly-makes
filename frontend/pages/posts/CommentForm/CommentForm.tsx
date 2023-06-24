@@ -19,9 +19,12 @@ export default function CommentForm({ _id }: { _id: string }) {
     <>
       <h3 className={styles.header}>Leave a Comment:</h3>
       <form action="POST" className={styles.form} onSubmit={handleSubmit}>
-        <p>Your email address will not be published. Required fields are marked *</p>
+        <p>
+          Your email address will not be published. Required fields are marked{' '}
+          <span className={styles.required}>*</span>
+        </p>
         <label htmlFor="name" className={styles.label}>
-          Name *
+          Name <span className={styles.required}>*</span>
         </label>
         <input
           type="text"
@@ -35,7 +38,7 @@ export default function CommentForm({ _id }: { _id: string }) {
         />
 
         <label htmlFor="email" className={styles.label}>
-          Email: *
+          Email: <span className={styles.required}>*</span>
         </label>
         <input
           type="email"
@@ -49,7 +52,7 @@ export default function CommentForm({ _id }: { _id: string }) {
         />
 
         <label htmlFor="comment" className={styles.label}>
-          Comment: *
+          Comment: <span className={styles.required}>*</span>
         </label>
         <textarea
           name="comment"

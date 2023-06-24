@@ -36,7 +36,7 @@
   visibility: hidden;
   opacity: 0;
   padding: 0 1rem;
-  border: 2px solid transparent;
+  border-top: 2px solid transparent;
   overflow: hidden;
   transition: var(--transition-long);
 }

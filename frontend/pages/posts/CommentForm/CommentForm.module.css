@@ -47,6 +47,10 @@
   margin-bottom: 0.25rem;
 }
 
+.form span.required {
+  color: var(--color-red);
+}
+
 .form textarea {
   height: 150px;
 }
@@ -85,7 +89,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .subscribe input {
@@ -104,7 +108,8 @@
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
+  top: 50%;
+  transform: translateY(-50%);
   width: 1rem;
   height: 1rem;
   text-align: center;
