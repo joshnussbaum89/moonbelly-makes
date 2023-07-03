@@ -1,0 +1,81 @@
+.container {
+  position: fixed;
+  bottom: -100%;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  visibility: hidden;
+  opacity: 0;
+  padding: var(--padding-site-container-large);
+  background-color: var(--color-white);
+  border-top: 2px solid var(--color-purple);
+  transition: var(--transition-long);
+}
+
+.container.active {
+  bottom: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  cursor: pointer;
+}
+
+.container p {
+  margin-bottom: 0;
+}
+
+.container a {
+  display: inline-block;
+  margin-bottom: 2rem;
+  text-decoration: underline;
+  line-height: 1.5rem;
+  transition: var(--transition-normal);
+}
+
+@media (min-width: 768px) {
+  .container a:hover {
+    color: var(--color-light-purple);
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.buttonContainer button {
+  display: inline-block;
+  padding: 0.6rem;
+  font-size: var(--size-small);
+  background-color: var(--color-light-purple);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: var(--transition-normal);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .buttonContainer button:hover {
+    color: var(--color-white);
+    background-color: var(--color-purple);
+  }
+}
+
+.buttonContainer button:first-child {
+  border: 1px solid var(--color-purple);
+  background-color: var(--color-white);
+}
+
+@media (min-width: 768px) {
+  .buttonContainer button:first-child:hover {
+    color: var(--color-white);
+    background-color: var(--color-purple);
+  }
+}

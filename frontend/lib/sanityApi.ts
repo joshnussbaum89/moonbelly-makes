@@ -1,3 +1,6 @@
+// Queries only return published posts
+// Queries exclude template posts - "GBBO POST TEMPLATE" and "RECIPE TEMPLATE"
+
 import client from './sanityClient'
 import { Tag } from '../types'
 
@@ -6,7 +9,7 @@ import { Tag } from '../types'
  */
 export async function getAllPosts() {
   return await client.fetch(
-    `*[_type == "post" && !(title in ["GBBO POST TEMPLATE", "RECIPE TEMPLATE"])] | order(publishedAt desc) `
+    `*[_type == "post" && !(title in ["GBBO POST TEMPLATE", "RECIPE TEMPLATE"]) && !(_id in path("drafts.**"))] | order(publishedAt desc)`
   )
 }
 
@@ -21,7 +24,7 @@ export async function getAllTags() {
  * Fetch all home page posts, ordered by published date
  */
 export async function getHomePagePosts() {
-  return await client.fetch(`*[_type == "post"] | order(publishedAt desc)[0..8] {
+  return await client.fetch(`*[_type == "post" && !(_id in path("drafts.**"))] | order(publishedAt desc)[0..8] {
     _id,
     title,
     slug,
@@ -35,7 +38,7 @@ export async function getHomePagePosts() {
  */
 export async function getPostsByCategory(category: string) {
   return await client.fetch(
-    `*[_type == "post" && category == "${category}" && !(title in ["GBBO POST TEMPLATE", "RECIPE TEMPLATE"])] | order(publishedAt desc) {
+    `*[_type == "post" && category == "${category}" && !(title in ["GBBO POST TEMPLATE", "RECIPE TEMPLATE"]) && !(_id in path("drafts.**"))] | order(publishedAt desc) {
       _id,
       title,
       slug,
@@ -61,7 +64,7 @@ export async function getAllPostsByTag(slug: string) {
   }) as Tag
 
   const postsAssociatedWithTag =
-    await client.fetch(`*[_type == "post" && "${title}" in tag[]->title] {
+    await client.fetch(`*[_type == "post" && "${title}" in tag[]->title && !(_id in path("drafts.**"))] {
     _id,
     title,
     slug,
@@ -105,7 +108,7 @@ export async function getAllCommentsByPostId(id: string) {
  * Search all posts, ordered by published date
  */
 export async function searchAllPosts() {
-  return await client.fetch(`*[_type == "post" && !(title in ["GBBO POST TEMPLATE", "RECIPE TEMPLATE"])] | order(publishedAt desc) {
+  return await client.fetch(`*[_type == "post" && !(title in ["GBBO POST TEMPLATE", "RECIPE TEMPLATE"]) && !(_id in path("drafts.**"))] | order(publishedAt desc) {
     _id,
     title,
     slug,

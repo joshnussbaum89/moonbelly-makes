@@ -1,4 +1,5 @@
 // Components
+import { ReactNode } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import imageUrlBuilder from '@sanity/image-url'
@@ -8,6 +9,7 @@ import Tags from './Tags/Tags'
 import Comments from './Comments/Comments'
 import CommentForm from './CommentForm/CommentForm'
 import SideBar from '../../components/Global/SideBar/SideBar'
+import { useCookies } from '../../hooks/useCookies'
 
 // Helpers
 import sanityClient from '../../lib/sanityClient'
@@ -18,7 +20,6 @@ import { formatDate } from '../../lib/dates'
 import styles from './Posts.module.css'
 
 // Types
-import { ReactNode } from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 import { Post, Comment } from '../../types'
@@ -60,6 +61,43 @@ interface Tag {
   title: string
 }
 
+// Create dynamic URLs from post slug
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts: Post[] = await getAllPosts()
+
+  // Create paths for each post
+  const paths = posts.map((post) => ({
+    params: {
+      slug: post.slug.current,
+    },
+  }))
+
+  return { paths, fallback: 'blocking' }
+}
+
+// Get post props
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const allPosts: Post[] = await getAllPosts()
+
+  // Filter post by slug
+  const post = allPosts.filter((post) => post.slug.current === params?.slug)
+
+  // Get tags for post
+  const tags = await getAllTagsByPostTitle(post[0].title)
+
+  // Get comments for post
+  const comments = await getAllCommentsByPostId(post[0]._id)
+
+  return {
+    props: {
+      post,
+      tags: tags[0].tag as Tag[],
+      comments,
+    },
+    revalidate: 10,
+  }
+}
+
 export default function PostPageTemplate({
   post,
   tags,
@@ -69,6 +107,9 @@ export default function PostPageTemplate({
   tags: Tag[]
   comments: Comment[]
 }) {
+  // User cookie global state
+  const cookies = useCookies()
+
   // Build image from Sanity data
   const builder = imageUrlBuilder(sanityClient)
   const urlFor = (source: SanityImageSource) => builder.image(source)
@@ -109,17 +150,20 @@ export default function PostPageTemplate({
         const id = getYouTubeId(url)
 
         return (
-          <div className={styles.youtubeContainer}>
-            <iframe
-              width="737"
-              height="500"
-              src={`https://www.youtube-nocookie.com/embed/${id}`}
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          </div>
+          <>
+            {cookies.userAcceptedCookies && (
+              <div className={styles.youtubeContainer}>
+                <iframe
+                  width="737"
+                  height="500"
+                  src={`https://www.youtube-nocookie.com/embed/${id}`}
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            )}
+          </>
         )
       },
     },
@@ -168,41 +212,4 @@ export default function PostPageTemplate({
       </div>
     </>
   )
-}
-
-// Create dynamic URLs from post slug
-export const getStaticPaths: GetStaticPaths = async () => {
-  const posts: Post[] = await getAllPosts()
-
-  // Create paths for each post
-  const paths = posts.map((post) => ({
-    params: {
-      slug: post.slug.current,
-    },
-  }))
-
-  return { paths, fallback: 'blocking' }
-}
-
-// Get post props
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const allPosts: Post[] = await getAllPosts()
-
-  // Filter post by slug
-  const post = allPosts.filter((post) => post.slug.current === params?.slug)
-
-  // Get tags for post
-  const tags = await getAllTagsByPostTitle(post[0].title)
-
-  // Get comments for post
-  const comments = await getAllCommentsByPostId(post[0]._id)
-
-  return {
-    props: {
-      post,
-      tags: tags[0].tag as Tag[],
-      comments,
-    },
-    revalidate: 10,
-  }
 }

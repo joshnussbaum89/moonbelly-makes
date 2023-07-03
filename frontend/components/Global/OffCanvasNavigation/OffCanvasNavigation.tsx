@@ -50,6 +50,7 @@ export default function OffCanvasNavigation({
     const handleOutsideClick = (event: MouseEvent) => {
       const eventTarget = event.target as HTMLElement
       const eventTargetIsCanvas = eventTarget !== document.querySelector('body')
+
       if (mobileNavIsActive && !eventTargetIsCanvas) {
         handleShowMobileNav()
       }
@@ -62,19 +63,15 @@ export default function OffCanvasNavigation({
   }, [mobileNavIsActive, handleShowMobileNav])
 
   const canvasContainerStyles = mobileNavIsActive
-    ? `${styles.offCanvasContainer} ${styles.active}`
-    : styles.offCanvasContainer
+    ? `${styles.container} ${styles.active}`
+    : styles.container
 
   return (
     <div className={canvasContainerStyles}>
       <div className={styles.wrapper}>
         <ul>
           {navigationData.map((item) => (
-            <NavItem
-              key={item.id}
-              item={item}
-              handleShowMobileNav={handleShowMobileNav}
-            />
+            <NavItem key={item.id} item={item} handleShowMobileNav={handleShowMobileNav} />
           ))}
         </ul>
         <TbX className={styles.close} onClick={handleShowMobileNav} />

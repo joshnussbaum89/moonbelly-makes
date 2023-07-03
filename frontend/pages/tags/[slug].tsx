@@ -25,27 +25,6 @@ interface Tag {
   title: string
 }
 
-export default function TagPageTemplate({ posts, title }: { posts: Post[]; title: string }) {
-  // Grab post details for SEO
-  const { slug } = posts[0]
-
-  return (
-    <>
-      <Head>
-        <title>{`Moonbelly Makes | ${title}`}</title>
-        <meta name="description" content={`Moonbelly Makes tag: ${title.toLowerCase()}`} />
-        <meta property="og:title" content={`Moonbelly Makes | ${title}`} />
-        <meta property="og:image" content="/fabric-flowers.jpeg" />
-        <meta property="og:description" content={`Moonbelly Makes ${title}`} />
-        <meta property="og:url" content={`https://moonbellymakes.com/tags/${slug.current}`} />
-        <meta property="og:type" content="website" />
-      </Head>
-      <PageTitle text={title} />
-      <ContentContainer posts={posts} />
-    </>
-  )
-}
-
 // Create dynamic URLs from tags
 export const getStaticPaths: GetStaticPaths = async () => {
   const tags: Tag[] = await getAllTags()
@@ -74,4 +53,25 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
     revalidate: 10,
   }
+}
+
+export default function TagPageTemplate({ posts, title }: { posts: Post[]; title: string }) {
+  // Grab post details for SEO
+  const { slug } = posts[0]
+
+  return (
+    <>
+      <Head>
+        <title>{`Moonbelly Makes | ${title}`}</title>
+        <meta name="description" content={`Moonbelly Makes tag: ${title.toLowerCase()}`} />
+        <meta property="og:title" content={`Moonbelly Makes | ${title}`} />
+        <meta property="og:image" content="/fabric-flowers.jpeg" />
+        <meta property="og:description" content={`Moonbelly Makes ${title}`} />
+        <meta property="og:url" content={`https://moonbellymakes.com/tags/${slug.current}`} />
+        <meta property="og:type" content="website" />
+      </Head>
+      <PageTitle text={title} />
+      <ContentContainer posts={posts} />
+    </>
+  )
 }

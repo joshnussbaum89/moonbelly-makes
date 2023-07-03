@@ -1,4 +1,4 @@
-.offCanvasContainer {
+.container {
   position: fixed;
   top: 0;
   z-index: 1;
@@ -15,7 +15,7 @@
   transition: var(--transition-long);
 }
 
-.offCanvasContainer.active {
+.container.active {
   right: 0;
   visibility: visible;
   opacity: 1;

@@ -1,9 +1,10 @@
-// Components + packages
+// Components, hooks, packages
 import Router from 'next/router'
 import localFont from 'next/font/local'
 import { Be_Vietnam_Pro } from 'next/font/google'
 import { Nothing_You_Could_Do } from 'next/font/google'
 import Layout from '../components/Global/Layout/Layout'
+import { CookiesProvider } from '../hooks/useCookies'
 import NProgress from 'nprogress'
 
 // Styles
@@ -30,7 +31,7 @@ Router.events.on('routeChangeError', () => NProgress.done())
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <CookiesProvider>
       <style jsx global>{`
         :root {
           --font-laguna: ${laguna.style.fontFamily};
@@ -56,6 +57,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </>
+    </CookiesProvider>
   )
 }

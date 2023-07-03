@@ -1,4 +1,4 @@
-.offCanvasContainer {
+.container {
   position: fixed;
   top: -10%;
   width: 100%;
@@ -15,20 +15,20 @@
   transition: var(--transition-long);
 }
 
-.offCanvasContainer.active {
+.container.active {
   top: 0;
   height: 150px;
   visibility: visible;
   opacity: 1;
 }
 
-.offCanvasContainer svg {
+.container svg {
   width: 2.5rem;
   height: 2.5rem;
   cursor: pointer;
 }
 
-.offCanvasContainer input {
+.container input {
   width: 100%;
   padding: 1rem;
   font-size: var(--size-extra-small);
@@ -37,11 +37,11 @@
   border-radius: 0.25rem;
 }
 
-.offCanvasContainer:focus {
+.container:focus {
   transition: var(--transition-long);
 }
 
-.offCanvasContainer input::placeholder {
+.container input::placeholder {
   color: var(--color-grey-text);
 }
 

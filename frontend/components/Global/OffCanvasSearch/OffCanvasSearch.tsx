@@ -89,6 +89,7 @@ export default function OffCanvasSearch({
     const handleOutsideClick = (event: MouseEvent) => {
       const eventTarget = event.target as HTMLElement
       const eventTargetIsCanvas = eventTarget !== document.querySelector('body')
+
       if (mobileSearchIsActive && !eventTargetIsCanvas) {
         handleShowMobileSearch()
       }
@@ -102,11 +103,7 @@ export default function OffCanvasSearch({
 
   return (
     <div
-      className={
-        mobileSearchIsActive
-          ? `${styles.offCanvasContainer} ${styles.active}`
-          : styles.offCanvasContainer
-      }
+      className={mobileSearchIsActive ? `${styles.container} ${styles.active}` : styles.container}
     >
       <TbSearch />
       {/* Hide auto-complete on Chrome */}
@@ -123,19 +120,13 @@ export default function OffCanvasSearch({
         name="search"
         value={searchQuery}
         onChange={handleSearch}
-        onFocus={() => {
-          if (searchQuery !== '') setIsActive(true)
-        }}
+        onFocus={() => searchQuery !== '' && setIsActive(true)}
         onBlur={() => setIsActive(false)}
         autoComplete="off"
         placeholder="search moonbelly"
         ref={searchRef}
       />
-      <ul
-        className={
-          isActive ? `${styles.subNav} ${styles.active}` : styles.subNav
-        }
-      >
+      <ul className={isActive ? `${styles.subNav} ${styles.active}` : styles.subNav}>
         {isLoading ? (
           <ThreeDots
             height="40"
@@ -144,8 +135,7 @@ export default function OffCanvasSearch({
             ariaLabel="loading"
             visible={true}
           />
-        ) : searchResults.posts.length === 0 &&
-          searchResults.tags.length === 0 ? (
+        ) : searchResults.posts.length === 0 && searchResults.tags.length === 0 ? (
           <li className={styles.userMessage}>No results...</li>
         ) : (
           <SearchResults
