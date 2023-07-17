@@ -1,8 +1,8 @@
 .subscribe {
   margin-bottom: 4rem;
   padding: 3rem;
-  background-color: var(--color-light-green);
-  border-radius: 0.25rem;
+  background: var(--gradient-light-green);
+  border-radius: 4px;
 }
 
 .wrapper {
@@ -38,7 +38,7 @@
 
 @media (min-width: 768px) {
   .info p {
-    max-width: 390px;
+    max-width: 340px;
     margin-bottom: 0;
   }
 }
@@ -50,7 +50,7 @@
 .form input,
 .form button {
   display: block;
-  border-radius: 0.25rem;
+  border-radius: 4px;
   width: 100%;
   font-size: var(--size-extra-small);
 }

@@ -42,6 +42,11 @@ export const navigationData = [
         title: 'Snacks',
         href: '/tags/snacks',
       },
+      {
+        id: 5,
+        title: 'Salad',
+        href: '/tags/salad',
+      },
     ],
   },
   {

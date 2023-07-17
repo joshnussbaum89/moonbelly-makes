@@ -64,6 +64,7 @@
   opacity: 0;
   visibility: hidden;
   background: var(--color-white);
+  transition: var(--transition-normal);
 }
 
 .subNav.active {

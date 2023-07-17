@@ -90,8 +90,8 @@
 .quickFacts ul {
   padding: 2rem 2rem 2rem 3rem;
   color: var(--color-white);
-  background-color: var(--color-purple);
-  border-radius: 10px;
+  background: var(--gradient-purple);
+  border-radius: 12px;
 }
 
 .quickFacts li {
@@ -109,9 +109,9 @@
   max-width: 475px;
   margin: 0 auto var(--section-margin-bottom);
   padding: 1rem;
-  background-color: var(--color-light-purple);
+  background: var(--gradient-light-purple);
   border: 1px solid var(--color-purple);
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 @media (min-width: 768px) {
@@ -160,15 +160,15 @@
     margin: 1rem;
     padding: 1rem;
     font-size: var(--size-extra-small);
-    background: var(--color-white-transparent);
-    border-radius: 10px;
+    background-color: var(--color-white-transparent);
+    border-radius: 12px;
   }
 }
 
 .signatureContainer img {
   max-width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 .youtubeContainer {
@@ -178,7 +178,7 @@
   max-width: 650px;
   margin: 0 auto var(--section-margin-bottom);
   border: 1px solid var(--color-purple);
-  border-radius: 9px;
+  border-radius: 12px;
 }
 
 .youtubeContainer::after {

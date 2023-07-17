@@ -35,7 +35,7 @@ export default function CookieBanner({
       className={cookieBannerIsActive ? `${styles.container} ${styles.active}` : styles.container}
     >
       <TbX className={styles.close} onClick={handleCookies} data-cookies="accept" />
-      <h2>We Value Your Privacy</h2>
+      <h3>We Value Your Privacy</h3>
       <p>
         We use cookies to enhance your browsing experience and analyze website traffic. By clicking
         &quot;Accept Cookies,&quot; you consent to the use of cookies for third-party services such

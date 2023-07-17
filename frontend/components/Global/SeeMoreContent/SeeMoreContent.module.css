@@ -28,11 +28,7 @@
   width: 88%;
   height: 4px;
   border-radius: 4px;
-  background: linear-gradient(
-    90deg,
-    var(--color-light-green),
-    var(--color-light-purple)
-  );
+  background: var(--gradient-green-purple);
 }
 
 .buttons {

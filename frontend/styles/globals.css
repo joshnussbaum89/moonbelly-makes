@@ -1,10 +1,11 @@
 :root {
   /* Containers */
+
   --width-container: 1200px;
   --padding-site-container-regular: 1rem;
-  --padding-site-container-large: 3rem;
 
   /* Font Sizes */
+
   --size-extra-small: 1rem;
   --size-small: 1.125rem;
   --size-normal: 1.25rem;
@@ -13,6 +14,7 @@
   --size-extra-large: 2.625rem;
 
   /* Colors */
+
   --color-white: #fffaff;
   --color-white-transparent: #fffaff90;
   --color-black: #111111;
@@ -20,13 +22,46 @@
   --color-grey: #bebebe;
   --color-grey-text: #a5a5a5;
   --color-purple: #251842;
+  --color-purple-bright: #321e57;
   --color-light-purple: #cfbcff;
-  --color-green: #407d62;
+  --color-light-purple-bright: #bca3ff;
+  --color-green: #407d61;
+  --color-green-bright: #3f8867;
   --color-light-green: #daeada;
+  --color-light-green-bright: #d1e5d1;
   --color-red: #ed4337;
   --color-yellow: #ffe87d;
 
+  /* Gradients */
+
+  --gradient-green: linear-gradient(
+    to bottom right,
+    var(--color-green) 0%,
+    var(--color-green-bright) 100%
+  );
+  --gradient-light-green: linear-gradient(
+    to bottom right,
+    var(--color-light-green) 0%,
+    var(--color-light-green-bright) 100%
+  );
+  --gradient-purple: linear-gradient(
+    to bottom right,
+    var(--color-purple) 0%,
+    var(--color-purple-bright) 100%
+  );
+  --gradient-light-purple: linear-gradient(
+    to bottom right,
+    var(--color-light-purple) 0%,
+    var(--color-light-purple-bright) 100%
+  );
+  --gradient-green-purple: linear-gradient(
+    to right,
+    var(--color-light-green),
+    var(--color-light-purple)
+  );
+
   /* Transitions */
+
   --transition-normal: all 0.3s ease-in-out;
   --transition-long: all 0.5s ease-in-out;
 }
@@ -125,6 +160,7 @@ textarea {
 input:focus,
 textarea:focus {
   outline: 0;
+  appearance: none;
   -webkit-appearance: none;
   -webkit-box-shadow: 0 0 0 2px var(--color-light-purple);
   box-shadow: 0 0 0 2px var(--color-light-purple);
