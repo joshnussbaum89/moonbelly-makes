@@ -61,43 +61,6 @@ interface Tag {
   title: string
 }
 
-// Create dynamic URLs from post slug
-export const getStaticPaths: GetStaticPaths = async () => {
-  const posts: Post[] = await getAllPosts()
-
-  // Create paths for each post
-  const paths = posts.map((post) => ({
-    params: {
-      slug: post.slug.current,
-    },
-  }))
-
-  return { paths, fallback: 'blocking' }
-}
-
-// Get post props
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const allPosts: Post[] = await getAllPosts()
-
-  // Filter post by slug
-  const post = allPosts.filter((post) => post.slug.current === params?.slug)
-
-  // Get tags for post
-  const tags = await getAllTagsByPostTitle(post[0].title)
-
-  // Get comments for post
-  const comments = await getAllCommentsByPostId(post[0]._id)
-
-  return {
-    props: {
-      post,
-      tags: tags[0].tag as Tag[],
-      comments,
-    },
-    revalidate: 10,
-  }
-}
-
 export default function PostPageTemplate({
   post,
   tags,
@@ -212,4 +175,41 @@ export default function PostPageTemplate({
       </div>
     </>
   )
+}
+
+// Create dynamic URLs from post slug
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts: Post[] = await getAllPosts()
+
+  // Create paths for each post
+  const paths = posts.map((post) => ({
+    params: {
+      slug: post.slug.current,
+    },
+  }))
+
+  return { paths, fallback: 'blocking' }
+}
+
+// Get post props
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const allPosts: Post[] = await getAllPosts()
+
+  // Filter post by slug
+  const post = allPosts.filter((post) => post.slug.current === params?.slug)
+
+  // Get tags for post
+  const tags = await getAllTagsByPostTitle(post[0].title)
+
+  // Get comments for post
+  const comments = await getAllCommentsByPostId(post[0]._id)
+
+  return {
+    props: {
+      post,
+      tags: tags[0].tag as Tag[],
+      comments,
+    },
+    revalidate: 10,
+  }
 }

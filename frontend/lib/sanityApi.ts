@@ -64,7 +64,7 @@ export async function getAllPostsByTag(slug: string) {
   }) as Tag
 
   const postsAssociatedWithTag =
-    await client.fetch(`*[_type == "post" && "${title}" in tag[]->title && !(_id in path("drafts.**"))] {
+    await client.fetch(`*[_type == "post" && "${title}" in tag[]->title && !(_id in path("drafts.**"))] | order(publishedAt desc) {
     _id,
     title,
     slug,
