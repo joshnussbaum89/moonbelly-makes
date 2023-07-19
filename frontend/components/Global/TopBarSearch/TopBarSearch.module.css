@@ -1,16 +1,16 @@
-.searchContainer {
+.container {
   display: none;
 }
 
 @media (min-width: 768px) {
-  .searchContainer {
+  .container {
     position: relative;
     display: flex;
     align-items: center;
   }
 }
 
-.searchContainer input {
+.container input {
   width: 200px;
   padding: 0.5rem;
   font-size: var(--size-extra-small);
@@ -19,16 +19,16 @@
   border-radius: 1.25rem;
 }
 
-.searchContainer input:focus {
+.container input:focus {
   width: 300px;
   border-radius: 0.25rem;
 }
 
-.searchContainer input::placeholder {
+.container input::placeholder {
   color: var(--color-grey-text);
 }
 
-.searchContainer svg:not(.loading svg) {
+.container svg:not(.loading svg) {
   position: absolute;
   right: 0.5rem;
   width: 1.5rem;
@@ -50,7 +50,7 @@
   fill: var(--color-light-purple);
 }
 
-.subNav {
+.results {
   position: absolute;
   top: 3.2rem;
   left: -2px;
@@ -64,24 +64,24 @@
   opacity: 0;
   visibility: hidden;
   background: var(--color-white);
-  transition: var(--transition-normal);
 }
 
-.subNav.active {
+.results.active {
   opacity: 1;
   visibility: visible;
+  transition: opacity 0.3s ease-in-out 0.5s;
 }
 
-.subNav li {
+.results li {
   font-size: var(--size-extra-small);
   list-style-type: none;
   transition: var(--transition-normal);
 }
 
-.subNav .userMessage {
+.results .userMessage {
   position: relative;
+  margin: 1rem auto;
   font-family: var(--font-laguna);
   font-size: var(--size-normal);
   text-align: center;
-  margin: 1rem auto;
 }

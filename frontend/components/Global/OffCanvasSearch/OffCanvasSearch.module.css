@@ -15,11 +15,15 @@
   transition: var(--transition-long);
 }
 
+.container.active,
+.results.active {
+  visibility: visible;
+  opacity: 1;
+}
+
 .container.active {
   top: 0;
   height: 150px;
-  visibility: visible;
-  opacity: 1;
 }
 
 .container svg {
@@ -37,10 +41,6 @@
   border-radius: 0.25rem;
 }
 
-.container:focus {
-  transition: var(--transition-long);
-}
-
 .container input::placeholder {
   color: var(--color-grey-text);
 }
@@ -55,7 +55,7 @@
   fill: var(--color-light-purple);
 }
 
-.subNav {
+.results {
   position: absolute;
   top: 100%;
   left: 0;
@@ -71,21 +71,20 @@
   background: var(--color-white);
 }
 
-.subNav.active {
-  opacity: 1;
-  visibility: visible;
+.results.active {
+  transition: var(--transition-normal);
 }
 
-.subNav li {
+.results li {
   font-size: var(--size-extra-small);
   list-style-type: none;
   transition: var(--transition-normal);
 }
 
-.subNav .userMessage {
+.results .userMessage {
   position: relative;
+  margin: 1rem auto;
   font-family: var(--font-laguna);
   font-size: var(--size-normal);
   text-align: center;
-  margin: 1rem auto;
 }

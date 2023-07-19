@@ -1,6 +1,6 @@
-// Components
 import Head from 'next/head'
 import LinkTree from '../components/LinkTreePage/LinkTree'
+import { motion } from 'framer-motion'
 
 export default function LinkTreePage() {
   return (
@@ -14,7 +14,13 @@ export default function LinkTreePage() {
         <meta property="og:url" content="https://moonbellymakes.com/link-tree" />
         <meta property="og:type" content="website" />
       </Head>
-      <LinkTree />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ease: 'easeInOut', duration: 0.3 }}
+      >
+        <LinkTree />
+      </motion.div>
     </>
   )
 }

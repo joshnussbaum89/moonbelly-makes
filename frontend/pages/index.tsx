@@ -3,6 +3,7 @@ import Head from 'next/head'
 import NewestProjects from '../components/HomePage/NewestProjects/NewestProjects'
 import Subscribe from '../components/Global/Subscribe/Subscribe'
 import FeaturedContent from '../components/HomePage/FeaturedContent/FeaturedContent'
+import { motion } from 'framer-motion'
 
 // Helpers
 import { getHomePagePosts } from '../lib/sanityApi'
@@ -27,9 +28,15 @@ export default function HomePage({ posts }: PostProps) {
         <meta property="og:url" content="https://moonbellymakes.com" />
         <meta property="og:type" content="website" />
       </Head>
-      <NewestProjects posts={posts.newestProjects} />
-      <Subscribe />
-      <FeaturedContent posts={posts.recentProjects} />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ease: 'easeInOut', duration: 0.3 }}
+      >
+        <NewestProjects posts={posts.newestProjects} />
+        <Subscribe />
+        <FeaturedContent posts={posts.recentProjects} />
+      </motion.div>
     </>
   )
 }

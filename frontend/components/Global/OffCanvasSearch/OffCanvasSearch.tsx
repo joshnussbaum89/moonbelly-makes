@@ -126,7 +126,7 @@ export default function OffCanvasSearch({
         placeholder="search moonbelly"
         ref={searchRef}
       />
-      <ul className={isActive ? `${styles.subNav} ${styles.active}` : styles.subNav}>
+      <ul className={isActive ? `${styles.results} ${styles.active}` : styles.results}>
         {isLoading ? (
           <ThreeDots
             height="40"

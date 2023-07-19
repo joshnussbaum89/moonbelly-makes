@@ -1,6 +1,7 @@
 // Components
 import Head from 'next/head'
 import PageTitle from '../../components/Global/PageTitle/PageTitle'
+import { motion } from 'framer-motion'
 
 // Helpers
 import { getAllTags, getAllPostsByTag } from '../../lib/sanityApi'
@@ -70,8 +71,14 @@ export default function TagPageTemplate({ posts, title }: { posts: Post[]; title
         <meta property="og:url" content={`https://moonbellymakes.com/tags/${slug.current}`} />
         <meta property="og:type" content="website" />
       </Head>
-      <PageTitle text={title} />
-      <ContentContainer posts={posts} />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ease: 'easeInOut', duration: 0.3 }}
+      >
+        <PageTitle text={title} />
+        <ContentContainer posts={posts} />
+      </motion.div>
     </>
   )
 }

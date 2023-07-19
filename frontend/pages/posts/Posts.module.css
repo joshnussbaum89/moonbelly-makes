@@ -1,3 +1,14 @@
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-light-purple);
+  transform-origin: 0%;
+  z-index: 1000;
+}
+
 .wrapper {
   width: 100%;
   display: flex;

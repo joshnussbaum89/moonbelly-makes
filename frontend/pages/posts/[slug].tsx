@@ -10,6 +10,7 @@ import Comments from './Comments/Comments'
 import CommentForm from './CommentForm/CommentForm'
 import SideBar from '../../components/Global/SideBar/SideBar'
 import { useCookies } from '../../hooks/useCookies'
+import { motion, useScroll } from 'framer-motion'
 
 // Helpers
 import sanityClient from '../../lib/sanityClient'
@@ -72,6 +73,9 @@ export default function PostPageTemplate({
 }) {
   // User cookie global state
   const cookies = useCookies()
+
+  // Scroll progress
+  const { scrollYProgress } = useScroll()
 
   // Build image from Sanity data
   const builder = imageUrlBuilder(sanityClient)
@@ -148,31 +152,38 @@ export default function PostPageTemplate({
         <meta property="og:url" content={`https://moonbellymakes.com/posts/${slug.current}`} />
         <meta property="og:type" content="website" />
       </Head>
-      <div className={styles.wrapper}>
-        <article className={styles.post}>
-          <div className={styles.postHeader}>
-            <h1>{title}</h1>
-            <p>{formattedDate}</p>
-          </div>
-          <div className={styles.imageContainer}>
-            <Image
-              src={urlFor(mainImage).auto('format').quality(100).url()}
-              className={styles.image}
-              sizes="(min-width: 768px) 50vw, 100vw"
-              fill
-              alt={altText}
-              priority
-            />
-          </div>
-          <div className={styles.postBody}>
-            <PortableText value={body} components={serializers} />
-            {tags && <Tags tags={tags} />}
-          </div>
-          <Comments comments={comments} />
-          <CommentForm _id={_id} />
-        </article>
-        <SideBar />
-      </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ease: 'easeInOut', duration: 0.3 }}
+      >
+        <motion.div className={styles.progressBar} style={{ scaleX: scrollYProgress }}></motion.div>
+        <div className={styles.wrapper}>
+          <article className={styles.post}>
+            <div className={styles.postHeader}>
+              <h1>{title}</h1>
+              <p>{formattedDate}</p>
+            </div>
+            <div className={styles.imageContainer}>
+              <Image
+                src={urlFor(mainImage).auto('format').quality(100).url()}
+                className={styles.image}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                fill
+                alt={altText}
+                priority
+              />
+            </div>
+            <div className={styles.postBody}>
+              <PortableText value={body} components={serializers} />
+              {tags && <Tags tags={tags} />}
+            </div>
+            <Comments comments={comments} />
+            <CommentForm _id={_id} />
+          </article>
+          <SideBar />
+        </div>
+      </motion.div>
     </>
   )
 }

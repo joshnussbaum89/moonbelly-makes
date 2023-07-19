@@ -1,6 +1,6 @@
-// Components
 import Head from 'next/head'
 import Signup from '../components/SignupPage/Signup'
+import { motion } from 'framer-motion'
 
 export default function SignupPage() {
   return (
@@ -14,7 +14,13 @@ export default function SignupPage() {
         <meta property="og:url" content="https://moonbellymakes.com/signup" />
         <meta property="og:type" content="website" />
       </Head>
-      <Signup />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ease: 'easeInOut', duration: 0.3 }}
+      >
+        <Signup />
+      </motion.div>
     </>
   )
 }

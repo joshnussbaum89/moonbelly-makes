@@ -1,8 +1,8 @@
-// Components
 import Head from 'next/head'
 import PageTitle from '../components/Global/PageTitle/PageTitle'
 import AboutKatrina from '../components/AboutPage/AboutKatrina/AboutKatrina'
 import Subscribe from '../components/Global/Subscribe/Subscribe'
+import { motion } from 'framer-motion'
 
 export default function AboutPage() {
   return (
@@ -16,9 +16,15 @@ export default function AboutPage() {
         <meta property="og:url" content="https://moonbellymakes.com/about" />
         <meta property="og:type" content="website" />
       </Head>
-      <PageTitle text="About" />
-      <AboutKatrina />
-      <Subscribe />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ease: 'easeInOut', duration: 0.3 }}
+      >
+        <PageTitle text="About" />
+        <AboutKatrina />
+        <Subscribe />
+      </motion.div>
     </>
   )
 }

@@ -1,6 +1,7 @@
 // Components
 import Head from 'next/head'
 import Error from '../components/Global/Error/Error'
+import { motion } from 'framer-motion'
 
 export default function Custom404Page() {
   const errorProps = {
@@ -19,7 +20,13 @@ export default function Custom404Page() {
         <meta property="og:url" content="https://moonbellymakes.com/404" />
         <meta property="og:type" content="website" />
       </Head>
-      <Error title={errorProps.title} body={errorProps.body} />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ease: 'easeInOut', duration: 0.3 }}
+      >
+        <Error title={errorProps.title} body={errorProps.body} />
+      </motion.div>
     </>
   )
 }

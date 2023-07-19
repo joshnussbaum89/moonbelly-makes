@@ -2,6 +2,7 @@
 import Head from 'next/head'
 import PageTitle from '../components/Global/PageTitle/PageTitle'
 import ContentContainer from '../components/Global/ContentContainer/ContentContainer'
+import { motion } from 'framer-motion'
 
 // Helpers
 import { getPostsByCategory } from '../lib/sanityApi'
@@ -21,8 +22,14 @@ export default function DiysPage({ posts }: { posts: Post[] }) {
         <meta property="og:url" content="https://moonbellymakes.com/diys" />
         <meta property="og:type" content="website" />
       </Head>
-      <PageTitle text="DIYs" />
-      <ContentContainer posts={posts} />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ease: 'easeInOut', duration: 0.3 }}
+      >
+        <PageTitle text="DIYs" />
+        <ContentContainer posts={posts} />
+      </motion.div>
     </>
   )
 }

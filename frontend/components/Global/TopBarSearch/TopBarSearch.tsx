@@ -75,7 +75,7 @@ export default function TopBarSearch() {
   }, [searchQuery])
 
   return (
-    <div className={styles.searchContainer}>
+    <div className={styles.container}>
       {/* Hide auto-complete on Chrome */}
       <input
         type="search"
@@ -97,11 +97,7 @@ export default function TopBarSearch() {
         autoComplete="off"
         placeholder="search moonbelly"
       />
-      <ul
-        className={
-          isActive ? `${styles.subNav} ${styles.active}` : styles.subNav
-        }
-      >
+      <ul className={isActive ? `${styles.results} ${styles.active}` : styles.results}>
         {isLoading ? (
           <ThreeDots
             height="40"
@@ -110,8 +106,7 @@ export default function TopBarSearch() {
             ariaLabel="three-dots-loading"
             visible={true}
           />
-        ) : searchResults.posts.length === 0 &&
-          searchResults.tags.length === 0 ? (
+        ) : searchResults.posts.length === 0 && searchResults.tags.length === 0 ? (
           <li className={styles.userMessage}>No results...</li>
         ) : (
           <SearchResults
