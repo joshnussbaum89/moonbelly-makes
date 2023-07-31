@@ -1,5 +1,5 @@
 // Components
-import Head from 'next/head'
+import SEO from '../components/Global/SEO/SEO'
 import NewestProjects from '../components/HomePage/NewestProjects/NewestProjects'
 import Subscribe from '../components/Global/Subscribe/Subscribe'
 import FeaturedContent from '../components/HomePage/FeaturedContent/FeaturedContent'
@@ -19,15 +19,12 @@ interface PostProps {
 export default function HomePage({ posts }: PostProps) {
   return (
     <>
-      <Head>
-        <title>Moonbelly Makes | Decorate Your Life</title>
-        <meta name="description" content="Decorate Your Life" />
-        <meta property="og:title" content="Moonbelly Makes | Decorate Your Life" />
-        <meta property="og:image" content="/fabric-flowers.jpeg" />
-        <meta property="og:description" content="Decorate Your Life" />
-        <meta property="og:url" content="https://moonbellymakes.com" />
-        <meta property="og:type" content="website" />
-      </Head>
+      <SEO
+        title="Moonbelly Makes | Decorate Your Life"
+        url="https://moonbellymakes.com"
+        image="/fabric-flowers.jpeg"
+        description="Moonbelly Makes is a blog and YouTube channel dedicated to sharing DIY projects, recipes, and more."
+      />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

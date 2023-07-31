@@ -1,19 +1,16 @@
-import Head from 'next/head'
+import SEO from '../components/Global/SEO/SEO'
 import LinkTree from '../components/LinkTreePage/LinkTree'
 import { motion } from 'framer-motion'
 
 export default function LinkTreePage() {
   return (
     <>
-      <Head>
-        <title>Moonbelly Makes | Link Tree</title>
-        <meta name="description" content="Moonbelly Makes Link Tree" />
-        <meta property="og:title" content="Moonbelly Makes | Link Tree" />
-        <meta property="og:image" content="/fabric-flowers.jpeg" />
-        <meta property="og:description" content="Moonbelly Makes Link Tree" />
-        <meta property="og:url" content="https://moonbellymakes.com/link-tree" />
-        <meta property="og:type" content="website" />
-      </Head>
+      <SEO
+        title="Moonbelly Makes | Link Tree"
+        url="https://moonbellymakes.com/link-tree"
+        image="/fabric-flowers.jpeg"
+        description="Moonbelly Makes Link Tree"
+      />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

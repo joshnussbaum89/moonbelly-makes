@@ -1,10 +1,10 @@
 // Components
 import { ReactNode } from 'react'
-import Head from 'next/head'
 import Image from 'next/image'
 import imageUrlBuilder from '@sanity/image-url'
 import { PortableText } from '@portabletext/react'
 import getYouTubeId from 'get-youtube-id'
+import SEO from '../../components/Global/SEO/SEO'
 import Tags from './Tags/Tags'
 import Comments from './Comments/Comments'
 import CommentForm from './CommentForm/CommentForm'
@@ -143,15 +143,12 @@ export default function PostPageTemplate({
 
   return (
     <>
-      <Head>
-        <title>{`Moonbelly Makes | ${title}`}</title>
-        <meta name="description" content={`Moonbelly Makes blog post: ${title}`} />
-        <meta property="og:title" content={`Moonbelly Makes | ${title}`} />
-        <meta property="og:image" content="/fabric-flowers.jpeg" />
-        <meta property="og:description" content={`Moonbelly Makes blog post: ${title}`} />
-        <meta property="og:url" content={`https://moonbellymakes.com/posts/${slug.current}`} />
-        <meta property="og:type" content="website" />
-      </Head>
+      <SEO
+        title={`Moonbelly Makes | ${title}`}
+        description={`Moonbelly Makes blog post: ${title}`}
+        url={`https://moonbellymakes.com/posts/${slug.current}`}
+        image={urlFor(mainImage).auto('format').quality(100).url()}
+      />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

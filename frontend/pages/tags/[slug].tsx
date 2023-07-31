@@ -1,5 +1,5 @@
 // Components
-import Head from 'next/head'
+import SEO from '../../components/Global/SEO/SEO'
 import PageTitle from '../../components/Global/PageTitle/PageTitle'
 import { motion } from 'framer-motion'
 
@@ -62,15 +62,12 @@ export default function TagPageTemplate({ posts, title }: { posts: Post[]; title
 
   return (
     <>
-      <Head>
-        <title>{`Moonbelly Makes | ${title}`}</title>
-        <meta name="description" content={`Moonbelly Makes tag: ${title.toLowerCase()}`} />
-        <meta property="og:title" content={`Moonbelly Makes | ${title}`} />
-        <meta property="og:image" content="/fabric-flowers.jpeg" />
-        <meta property="og:description" content={`Moonbelly Makes ${title}`} />
-        <meta property="og:url" content={`https://moonbellymakes.com/tags/${slug.current}`} />
-        <meta property="og:type" content="website" />
-      </Head>
+      <SEO
+        title={`Moonbelly Makes | ${title}`}
+        url={`https://moonbellymakes.com/tags/${slug.current}`}
+        image="/fabric-flowers.jpeg"
+        description={`Moonbelly Makes tag: ${title.toLowerCase()}`}
+      />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

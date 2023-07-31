@@ -1,5 +1,5 @@
 // Components
-import Head from 'next/head'
+import SEO from '../components/Global/SEO/SEO'
 import Error from '../components/Global/Error/Error'
 import { motion } from 'framer-motion'
 
@@ -11,15 +11,12 @@ export default function Custom500Page() {
 
   return (
     <>
-      <Head>
-        <title>Moonbelly Makes | Error</title>
-        <meta name="description" content="Error" />
-        <meta property="og:title" content="Moonbelly Makes | Error" />
-        <meta property="og:image" content="/fabric-flowers.jpeg" />
-        <meta property="og:description" content="Error" />
-        <meta property="og:url" content="https://moonbellymakes.com/500" />
-        <meta property="og:type" content="website" />
-      </Head>
+      <SEO
+        title="Moonbelly Makes | Error"
+        url="https://moonbellymakes.com/500"
+        image="/fabric-flowers.jpeg"
+        description="Error"
+      />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

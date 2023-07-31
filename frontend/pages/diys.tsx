@@ -1,5 +1,5 @@
 // Components
-import Head from 'next/head'
+import SEO from '../components/Global/SEO/SEO'
 import PageTitle from '../components/Global/PageTitle/PageTitle'
 import ContentContainer from '../components/Global/ContentContainer/ContentContainer'
 import { motion } from 'framer-motion'
@@ -13,15 +13,12 @@ import { Post } from '../types'
 export default function DiysPage({ posts }: { posts: Post[] }) {
   return (
     <>
-      <Head>
-        <title>Moonbelly Makes | DIYs</title>
-        <meta name="description" content="Moonbelly Makes DIY projects" />
-        <meta property="og:title" content="Moonbelly Makes | DIYs" />
-        <meta property="og:image" content="/fabric-flowers.jpeg" />
-        <meta property="og:description" content="Moonbelly Makes DIY projects" />
-        <meta property="og:url" content="https://moonbellymakes.com/diys" />
-        <meta property="og:type" content="website" />
-      </Head>
+      <SEO
+        title="Moonbelly Makes | DIYs"
+        url="https://moonbellymakes.com/diys"
+        image="/fabric-flowers.jpeg"
+        description="Moonbelly Makes DIY projects"
+      />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

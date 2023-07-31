@@ -1,5 +1,5 @@
 // Components
-import Head from 'next/head'
+import SEO from '../components/Global/SEO/SEO'
 import PageTitle from '../components/Global/PageTitle/PageTitle'
 import ContentContainer from '../components/Global/ContentContainer/ContentContainer'
 import { motion } from 'framer-motion'
@@ -13,15 +13,12 @@ import { Post } from '../types'
 export default function RecipesPage({ posts }: { posts: Post[] }) {
   return (
     <>
-      <Head>
-        <title>Moonbelly Makes | Recipes</title>
-        <meta name="description" content="Moonbelly Makes Recipes" />
-        <meta property="og:title" content="Moonbelly Makes | Recipes" />
-        <meta property="og:image" content="/fabric-flowers.jpeg" />
-        <meta property="og:description" content="Moonbelly Makes Recipes" />
-        <meta property="og:url" content="https://moonbellymakes.com/recipes" />
-        <meta property="og:type" content="website" />
-      </Head>
+      <SEO
+        title="Moonbelly Makes | Recipes"
+        url="https://moonbellymakes.com/recipes"
+        image="/fabric-flowers.jpeg"
+        description="Moonbelly Makes Recipes"
+      />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
