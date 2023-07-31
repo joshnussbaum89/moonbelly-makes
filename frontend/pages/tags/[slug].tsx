@@ -59,14 +59,18 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export default function TagPageTemplate({ posts, title }: { posts: Post[]; title: string }) {
   // Grab post details for SEO
   const { slug } = posts[0]
+  const capitalizedTitle = title
+    .split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
 
   return (
     <>
       <SEO
-        title={`Moonbelly Makes | ${title}`}
+        title={`Moonbelly Makes | ${capitalizedTitle}`}
         url={`https://moonbellymakes.com/tags/${slug.current}`}
         image="/fabric-flowers.jpeg"
-        description={`Moonbelly Makes tag: ${title.toLowerCase()}`}
+        description={`Moonbelly Makes tag: ${title}`}
       />
       <motion.div
         initial={{ opacity: 0 }}
