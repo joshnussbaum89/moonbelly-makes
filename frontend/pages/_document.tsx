@@ -6,6 +6,7 @@ import Document, {
   DocumentContext,
   DocumentInitialProps,
 } from 'next/document'
+import Script from 'next/script'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -23,8 +24,15 @@ export default class MyDocument extends Document {
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
           <link rel="manifest" href="/site.webmanifest" />
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
-          <meta name="msapplication-TileColor" content="#ffffff" />
-          <meta name="theme-color" content="#ffffff"></meta>
+          <meta name="msapplication-TileColor" content="#fffaff" />
+          <meta name="theme-color" content="#fffaff"></meta>
+
+          {/* Google Adsense */}
+          <Script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID}`}
+            crossOrigin="anonymous"
+          />
         </Head>
         <body>
           <Main />
