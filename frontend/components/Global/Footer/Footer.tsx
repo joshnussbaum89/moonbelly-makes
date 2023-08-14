@@ -20,11 +20,11 @@ export default function Footer() {
         </Link>
         <SocialIcons darkMode={true} />
         <div>
-          <p>moonbelly makes © {new Date().getFullYear()}</p>
+          <p>Moonbelly Makes © {new Date().getFullYear()}</p>
           <p>
-            website by{' '}
-            <a href="https://joshnussbaumdev.com" target="_blank">
-              Josh Nussbaum
+            Website by{' '}
+            <a href="https://wavelandweb.com" target="_blank">
+              Wave Land Web
             </a>{' '}
             💜
           </p>

@@ -12,13 +12,7 @@ import woopsiesGif from '../../../public/middleditch-and-schwartz.gif'
 /**
  * Displays on error pages
  */
-export default function Error({
-  title,
-  body,
-}: {
-  title: string
-  body: string
-}) {
+export default function Error({ title, body }: { title: string; body: string }) {
   return (
     <section className={styles.container}>
       <PageTitle text={title} />
