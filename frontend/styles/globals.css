@@ -86,6 +86,9 @@ body {
   background-color: var(--color-white);
   color: var(--color-purple);
   overflow: auto;
+
+  /* Experimental, but fallback is default styling */
+  text-wrap: balance;
 }
 
 body[data-canvas-shown='true'] {
