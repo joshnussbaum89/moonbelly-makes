@@ -1,13 +1,10 @@
-import Link from 'next/link'
 import LegalPolicy from '../components/Global/LegalPolicy/LegalPolicy'
 
 export default function CookiePolicy() {
   return (
     <LegalPolicy type="Cookie">
-      <p>
-        This is the Cookie Policy for Moonbelly Makes, accessible from{' '}
-        <Link href="/">moonbellymakes.com</Link>
-      </p>
+      <p>Effective Date: 8/15/2023</p>
+      <p>Last Updated: 8/15/2023</p>
       <h2>What Are Cookies</h2>
       <p>
         As is common practice with almost all professional websites this site uses cookies, which
@@ -30,12 +27,7 @@ export default function CookiePolicy() {
         browser Help for how to do this). Be aware that disabling cookies will affect the
         functionality of this and many other websites that you visit. Disabling cookies will usually
         result in also disabling certain functionality and features of the this site. Therefore it
-        is recommended that you do not disable cookies. This Cookies Policy was created with the
-        help of the{' '}
-        <a href="https://www.cookiepolicygenerator.com/cookie-policy-generator/">
-          Cookies Policy Generator
-        </a>
-        .
+        is recommended that you do not disable cookies.
       </p>
       <h2>The Cookies We Set</h2>
       <ol>
@@ -59,9 +51,17 @@ export default function CookiePolicy() {
           <p>
             The Google AdSense service we use to serve advertising uses a DoubleClick cookie to
             serve more relevant ads across the web and limit the number of times that a given ad is
-            shown to you.
+            shown to you.{' '}
+            <a href="https://support.google.com/adsense/answer/3394713?hl=en" target="_blank">
+              Google AdSense privacy FAQ
+            </a>
           </p>
-          <p>For more information on Google AdSense see the official Google AdSense privacy FAQ.</p>
+        </li>
+
+        <li>
+          <p>
+            YouTube videos embedded in this site use cookies to enhance your viewing experience.
+          </p>
         </li>
       </ol>
       <h2>More Information</h2>
@@ -78,10 +78,9 @@ export default function CookiePolicy() {
         .
       </p>
       <p>
-        However if you are still looking for more information then you can contact us through our
-        preferred contact method:
+        However if you are still looking for more information then you can email us at{' '}
+        <a href="mailto:moonbellymakes@gmail.com?subject=Cookie Policy">moonbellymakes@gmail.com</a>
       </p>
-      <p>Email: moonbellymakes@gmail.com</p>
     </LegalPolicy>
   )
 }

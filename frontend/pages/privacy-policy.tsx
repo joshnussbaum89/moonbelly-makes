@@ -4,8 +4,8 @@ import LegalPolicy from '../components/Global/LegalPolicy/LegalPolicy'
 export default function PrivacyPolicy() {
   return (
     <LegalPolicy type="Privacy">
-      <p>Last Updated On 15-Aug-2023</p>
-      <p>Effective Date 15-Aug-2023</p>
+      <p>Effective Date: 8/15/2023</p>
+      <p>Last Updated: 8/15/2023</p>
       <p>
         This Privacy Policy describes the policies of Moonbelly Makes, Madison, WI 53703, United
         States of America (the), email: moonbellymakes@gmail.com, on the collection, use and
@@ -25,7 +25,7 @@ export default function PrivacyPolicy() {
       <h2>How We Use Your Information:</h2>
       <p>We will use the information that we collect about you for the following purposes:</p>
       <ol>
-        <li>Targeted advertising</li>
+        <li>Targeted advertising (Google AdSense)</li>
       </ol>
       <p>
         If we want to use your information for any other purpose, we will ask you for consent and
@@ -38,7 +38,7 @@ export default function PrivacyPolicy() {
         consent, except in limited circumstances as described below:
       </p>
       <ol>
-        <li>Ad service</li>
+        <li>YouTube video embeds (Google LLC)</li>
       </ol>
       <p>
         We require such third party&apos;s to use the personal information we transfer to them only
@@ -60,8 +60,11 @@ export default function PrivacyPolicy() {
         processing of your data, ask us to share (port) your personal information to another entity,
         withdraw any consent you provided to us to process your data, a right to lodge a complaint
         with a statutory authority and such other rights as may be relevant under applicable laws.
-        To exercise these rights, you can write to us at moonbellymakes@gmail.com. We will respond
-        to your request in accordance with applicable law.
+        To exercise these rights, you can write to us at{' '}
+        <a href="mailto:moonbellymakes@gmail.com?subject=Privacy%20Policy">
+          moonbellymakes@gmail.com
+        </a>
+        . We will respond to your request in accordance with applicable law.
       </p>
       <p>
         Do note that if you do not allow us to collect or process the required personal information
@@ -90,21 +93,14 @@ export default function PrivacyPolicy() {
         We have no control over and assume no responsibility for the content, privacy policies or
         practices of any third party sites or services.
       </p>
-      <h2>Grievance / Data Protection Officer:</h2>
+      <h2>Queries / Concerns:</h2>
       <p>
         If you have any queries or concerns about the processing of your information that is
-        available with us, you may email our Grievance Officer at Moonbelly Makes, email:
-        moonbellymakes@gmail.com. We will address your concerns in accordance with applicable law.
-      </p>
-      <p>
-        Privacy Policy generated with{' '}
-        <a
-          target="_blank"
-          href="https://www.cookieyes.com/?utm_source=PP&utm_medium=footer&utm_campaign=UW"
-        >
-          CookieYes
+        available with us, you may email us at{' '}
+        <a href="mailto:moonbellymakes@gmail.com?subject=Query%20/%20Concern%20-%20Privacy%20Policy">
+          moonbellymakes@gmail.com
         </a>
-        .
+        . We will address your concerns in accordance with applicable law.
       </p>
     </LegalPolicy>
   )
