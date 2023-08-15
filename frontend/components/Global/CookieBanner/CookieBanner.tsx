@@ -42,7 +42,7 @@ export default function CookieBanner({
         as YouTube embeds. You can manage your cookie preferences by clicking &quot;Reject
         Cookies.&quot;
       </p>
-      <a href="https://cookiepedia.co.uk/all-about-cookies" target="_blank">
+      <a href="https://www.cookiepolicygenerator.com/sample-cookies-policy/" target="_blank">
         Read more about cookies
       </a>
       <div className={styles.buttonContainer}>

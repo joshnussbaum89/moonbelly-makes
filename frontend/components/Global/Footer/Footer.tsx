@@ -28,6 +28,12 @@ export default function Footer() {
             </a>{' '}
             💜
           </p>
+          <p>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+          </p>
+          <p>
+            <Link href="/cookie-policy">Cookie Policy</Link>
+          </p>
         </div>
       </section>
     </footer>
