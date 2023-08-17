@@ -24,22 +24,6 @@ export default function Carousel({ posts }: PostProps) {
   const builder = imageUrlBuilder(client)
   const urlFor = (source: any) => builder.image(source)
 
-  // Embla Carousel
-  const scrollToPreviousSlide = useCallback(() => {
-    emblaApi && emblaApi.scrollPrev()
-  }, [emblaApi])
-
-  const scrollToNextSlide = useCallback(() => {
-    emblaApi && emblaApi.scrollNext()
-  }, [emblaApi])
-
-  const scrollToSlideByIndex = useCallback(
-    (index: number) => {
-      emblaApi && emblaApi.scrollTo(index)
-    },
-    [emblaApi]
-  )
-
   const onSlideSelect = useCallback(() => {
     if (!emblaApi) return
     setSelectedIndex(emblaApi.selectedScrollSnap())
@@ -82,18 +66,24 @@ export default function Carousel({ posts }: PostProps) {
             ))}
           </div>
           <div className={styles.embla__navigation}>
-            <IoIosArrowBack className={previousButtonStyles} onClick={scrollToPreviousSlide} />
+            <IoIosArrowBack
+              className={previousButtonStyles}
+              onClick={() => emblaApi && emblaApi.scrollPrev()}
+            />
             <div className={styles.embla__dots}>
               {scrollSnaps.map((_, index) => (
                 <button
                   key={index}
-                  onClick={() => scrollToSlideByIndex(index)}
+                  onClick={() => emblaApi && emblaApi.scrollTo(index)}
                   data-selected={index === selectedIndex}
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
             </div>
-            <IoIosArrowForward className={nextButtonStyles} onClick={scrollToNextSlide} />
+            <IoIosArrowForward
+              className={nextButtonStyles}
+              onClick={() => emblaApi && emblaApi.scrollNext()}
+            />
           </div>
         </div>
       </div>
