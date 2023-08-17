@@ -25,12 +25,18 @@ export default function Carousel({ posts }: PostProps) {
   const urlFor = (source: any) => builder.image(source)
 
   // Embla Carousel
-  const scrollToPreviousSlide = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi])
+  const scrollToPreviousSlide = useCallback(() => {
+    emblaApi && emblaApi.scrollPrev()
+  }, [emblaApi])
 
-  const scrollToNextSlide = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi])
+  const scrollToNextSlide = useCallback(() => {
+    emblaApi && emblaApi.scrollNext()
+  }, [emblaApi])
 
   const scrollToSlideByIndex = useCallback(
-    (index: number) => emblaApi && emblaApi.scrollTo(index),
+    (index: number) => {
+      emblaApi && emblaApi.scrollTo(index)
+    },
     [emblaApi]
   )
 
@@ -49,10 +55,8 @@ export default function Carousel({ posts }: PostProps) {
     emblaApi.on('reInit', onSlideSelect)
   }, [emblaApi, setScrollSnaps, onSlideSelect])
 
-  const previousButtonStyles = `${styles.embla__prev} ${prevBtnActive && styles.active}`
-
-  const nextButtonStyles = `${styles.embla__next} ${nextBtnActive && styles.active}`
-
+  const previousButtonStyles = `${styles.embla__prev} ${prevBtnActive ? styles.active : ''}`
+  const nextButtonStyles = `${styles.embla__next} ${nextBtnActive ? styles.active : ''}`
   const activePost = posts.at(selectedIndex)
   const formattedCategoryText = activePost?.category?.replace(/-/g, ' ')
 
