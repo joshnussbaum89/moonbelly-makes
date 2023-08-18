@@ -15,10 +15,7 @@
   height: 350px;
   overflow: hidden;
   border-radius: 4px;
-  background: radial-gradient(
-    var(--color-light-purple),
-    var(--color-light-green)
-  );
+  background: radial-gradient(var(--color-light-purple), var(--color-light-green));
 }
 
 .imageContainer > a {
@@ -62,7 +59,7 @@
 
 .card h3 {
   width: 75%;
-  max-width: 250px;
+  max-width: 300px;
   margin: auto;
   text-align: center;
 }
