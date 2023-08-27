@@ -28,11 +28,11 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#fffaff"></meta>
 
           {/* Google Adsense */}
-          <Script
+          <script
             async
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID}`}
             crossOrigin="anonymous"
-          />
+          ></script>
         </Head>
         <body>
           <Main />

@@ -20,6 +20,12 @@ export default function Footer() {
         </Link>
         <SocialIcons darkMode={true} />
         <div>
+          <p>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+          </p>
+          <p>
+            <Link href="/cookie-policy">Cookie Policy</Link>
+          </p>
           <p>Moonbelly Makes © {new Date().getFullYear()}</p>
           <p>
             Website by{' '}
@@ -27,12 +33,6 @@ export default function Footer() {
               Wave Land Web
             </a>{' '}
             💜
-          </p>
-          <p>
-            <Link href="/privacy-policy">Privacy Policy</Link>
-          </p>
-          <p>
-            <Link href="/cookie-policy">Cookie Policy</Link>
           </p>
         </div>
       </section>
