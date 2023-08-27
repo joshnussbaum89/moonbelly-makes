@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
   return (
     <LegalPolicy type="Privacy">
       <p>Effective Date: 8/15/2023</p>
-      <p>Last Updated: 8/15/2023</p>
+      <p>Last Updated: 8/27/2023</p>
       <p>
         This Privacy Policy describes the policies of Moonbelly Makes, Madison, WI 53703, United
         States of America (the), email: moonbellymakes@gmail.com, on the collection, use and
