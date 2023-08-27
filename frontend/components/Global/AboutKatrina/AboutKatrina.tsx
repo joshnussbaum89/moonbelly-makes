@@ -1,8 +1,9 @@
 // Components
 import Image from 'next/image'
+import { useRouter } from 'next/router'
+import { useCookies } from '../../../hooks/useCookies'
 import WidgetTitle from '../WidgetTitle/WidgetTitle'
 import AdBanner from '../AdBanner/AdBanner'
-import { useRouter } from 'next/router'
 
 // Styles
 import styles from './AboutKatrina.module.css'
@@ -16,6 +17,7 @@ import katrinaHeadshot from '../../../public/katrina-headshot.png'
 export default function AboutKatrina() {
   const router = useRouter()
   const currentPath = router.pathname
+  const cookies = useCookies()
 
   return (
     <div className={styles.container} data-path={currentPath}>
@@ -59,7 +61,7 @@ export default function AboutKatrina() {
           <strong>to live a decorated life.</strong> ✨
         </p>
       </div>
-      <AdBanner dataAdSlot="2564114503" />
+      {cookies.userAcceptedCookies && <AdBanner dataAdSlot="2564114503" />}
     </div>
   )
 }

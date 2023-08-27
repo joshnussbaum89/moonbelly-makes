@@ -39,11 +39,11 @@ export default function CookieBanner({
       <p>
         We use cookies to enhance your browsing experience and analyze website traffic. By clicking
         &quot;Accept Cookies,&quot; you consent to the use of cookies for third-party services such
-        as YouTube embeds. You can manage your cookie preferences by clicking &quot;Reject
-        Cookies.&quot;
+        as YouTube embeds. We also use cookies to personalize content and ads. You can manage your
+        cookie preferences by clicking &quot;Reject Cookies.&quot;
       </p>
-      <a href="https://www.cookiepolicygenerator.com/sample-cookies-policy/" target="_blank">
-        Read more about cookies
+      <a href="https://policies.google.com/technologies/partner-sites" target="_blank">
+        Read more about how cookies are used on this site
       </a>
       <div className={styles.buttonContainer}>
         <button onClick={handleCookies} data-cookies="reject">

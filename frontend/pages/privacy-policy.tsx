@@ -25,7 +25,15 @@ export default function PrivacyPolicy() {
       <h2>How We Use Your Information:</h2>
       <p>We will use the information that we collect about you for the following purposes:</p>
       <ol>
-        <li>Targeted advertising (Google AdSense)</li>
+        <li>
+          <a
+            href="https://policies.google.com/technologies/partner-sites"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Targeted advertising (Google AdSense)
+          </a>
+        </li>
       </ol>
       <p>
         If we want to use your information for any other purpose, we will ask you for consent and
