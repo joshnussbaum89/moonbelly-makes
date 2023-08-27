@@ -37,18 +37,14 @@ export default function CookieBanner({
       <TbX className={styles.close} onClick={handleCookies} data-cookies="accept" />
       <h3>We Value Your Privacy</h3>
       <p>
-        We use cookies to enhance your browsing experience and analyze website traffic. By clicking
-        &quot;Accept Cookies,&quot; you consent to the use of cookies for third-party services such
-        as YouTube embeds. We also use cookies to personalize content and ads. You can manage your
-        cookie preferences by clicking &quot;Reject Cookies.&quot;
+        By remaining on this site, you consent to the use of cookies for third-party services such
+        as YouTube embeds and personalized ads. If you do not consent, please navigate away from this
+        site. 
       </p>
       <a href="https://policies.google.com/technologies/partner-sites" target="_blank">
         Read more about how cookies are used on this site
       </a>
       <div className={styles.buttonContainer}>
-        <button onClick={handleCookies} data-cookies="reject">
-          Reject Cookies
-        </button>
         <button onClick={handleCookies} data-cookies="accept">
           Accept Cookies
         </button>
