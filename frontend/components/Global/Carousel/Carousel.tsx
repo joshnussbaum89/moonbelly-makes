@@ -48,28 +48,18 @@ export default function Carousel({ posts }: PostProps) {
   return (
     <div className={styles.carousel}>
       <div className={styles.slide}>
-        <AnimatePresence>
-          <motion.div
-            key={posts[currentIndex]?.slug.current}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className={styles.imageContainer}
-          >
-            <Link href={`/posts/${posts[currentIndex]?.slug.current}`}>
-              <Image
-                src={urlFor(posts[currentIndex]?.mainImage).auto('format').quality(100).url()}
-                alt={`${posts[currentIndex]?.mainImage.alt}`}
-                priority
-                fill
-                sizes="(min-width: 768px) 50vw,
-                  (min-width: 1024px) 33vw,
-                  100vw"
-              />
-            </Link>
-          </motion.div>
-        </AnimatePresence>
+        <div key={posts[currentIndex]?.slug.current} className={styles.imageContainer}>
+          <Link href={`/posts/${posts[currentIndex]?.slug.current}`}>
+            <Image
+              src={urlFor(posts[currentIndex]?.mainImage).auto('format').quality(100).url()}
+              alt={`${posts[currentIndex]?.mainImage.alt}`}
+              sizes="(min-width: 768px) 50vw,
+                (min-width: 1024px) 33vw,
+                100vw"
+              fill
+            />
+          </Link>
+        </div>
         <div className={styles.left} onClick={handlePrevious}>
           <IoIosArrowBack />
         </div>

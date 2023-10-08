@@ -15,7 +15,6 @@ export default function Signup() {
           sizes="(min-width: 768px) 50vw, 100vw"
           alt="Flower bouquet made out of fabric"
           placeholder="blur"
-          priority
           fill
         />
       </div>

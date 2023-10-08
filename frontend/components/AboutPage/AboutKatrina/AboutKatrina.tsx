@@ -61,7 +61,6 @@ export default function AboutKatrina() {
             sizes="(min-width: 768px) 50vw, 100vw"
             quality={100}
             placeholder="blur"
-            priority
             alt="Katrina headshot"
           />
         </div>

@@ -168,7 +168,6 @@ export default function PostPageTemplate({
                 sizes="(min-width: 768px) 50vw, 100vw"
                 fill
                 alt={altText}
-                priority
               />
             </div>
             <div className={styles.postBody}>

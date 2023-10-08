@@ -45,7 +45,6 @@ export default function LinkTree() {
           placeholder="blur"
           alt="Katrina Atkin Headshot"
           sizes="50vw"
-          priority
         />
         <h1>@moonbellymakes</h1>
         {linkData.map((link) => (
