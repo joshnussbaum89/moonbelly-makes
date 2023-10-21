@@ -17,7 +17,7 @@ export default function CommentForm({ _id }: { _id: string }) {
 
   return (
     <>
-      <h3 className={styles.header}>Leave a Comment:</h3>
+      <h2 className={styles.header}>Leave a Comment:</h2>
       <form action="POST" className={styles.form} onSubmit={handleSubmit}>
         <p>
           Your email address will not be published. Required fields are marked{' '}

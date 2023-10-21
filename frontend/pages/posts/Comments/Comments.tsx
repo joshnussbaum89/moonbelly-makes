@@ -7,7 +7,7 @@ import { Comment } from '../../../types'
 export default function Comments({ comments }: { comments: Comment[] }) {
   return (
     <div className={styles.comments}>
-      <h3>Comments:</h3>
+      <h2>Comments:</h2>
       <ul>
         {/* If there are no comments */}
         {comments?.length === 0 && <li>No comments yet 💅🏼</li>}
@@ -15,7 +15,7 @@ export default function Comments({ comments }: { comments: Comment[] }) {
         {/* If there are comments */}
         {comments?.map(({ _id, _createdAt, name, comment }) => (
           <li key={_id}>
-            <h4>{name}</h4>
+            <h3>{name}</h3>
             <p className={styles.comment}>{comment}</p>
             <p className={styles.date}>
               {formatDate(_createdAt)} at {formatTime(_createdAt)}

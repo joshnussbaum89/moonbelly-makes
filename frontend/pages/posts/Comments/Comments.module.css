@@ -2,11 +2,12 @@
   margin-bottom: 4rem;
 }
 
-.comments h3 {
+.comments h2 {
   margin-bottom: 2rem;
+  font-size: var(--size-medium);
 }
 
-.comments h4 {
+.comments h3 {
   font-size: var(--size-small);
   text-transform: uppercase;
 }

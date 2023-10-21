@@ -8,7 +8,7 @@ interface Tag {
 export default function Tags({ tags }: { tags: Tag[] }) {
   return (
     <>
-      <h3>Tags:</h3>
+      <h2>Tags:</h2>
       <div className={styles.tagContainer}>
         {tags?.map((tag) => (
           <Link
