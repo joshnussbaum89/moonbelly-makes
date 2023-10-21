@@ -2,7 +2,7 @@ import LegalPolicy from '../components/Global/LegalPolicy/LegalPolicy'
 
 export default function CookiePolicy() {
   return (
-    <LegalPolicy type="Cookie">
+    <LegalPolicy title="Cookie Policy">
       <p>Effective Date: 8/15/2023</p>
       <p>Last Updated: 8/15/2023</p>
       <h2>What Are Cookies</h2>
@@ -57,7 +57,6 @@ export default function CookiePolicy() {
             </a>
           </p>
         </li>
-
         <li>
           <p>
             YouTube videos embedded in this site use cookies to enhance your viewing experience.

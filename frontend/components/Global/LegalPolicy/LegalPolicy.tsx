@@ -5,25 +5,25 @@ import styles from './LegalPolicy.module.css'
 
 export default function LegalPolicy({
   children,
-  type,
+  title,
 }: {
   children: React.ReactNode
-  type: string
+  title: string
 }) {
   return (
     <div className={styles.container}>
       <SEO
-        title={`Moonbelly Makes | ${type} Policy`}
+        title={`Moonbelly Makes | ${title}`}
         url="https://moonbellymakes.com/privacy-policy"
         image="/fabric-flowers.jpeg"
-        description={`Moonbelly Makes ${type} Policy`}
+        description={`Moonbelly Makes ${title}`}
       />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ ease: 'easeInOut', duration: 0.3 }}
       >
-        <PageTitle text={`${type} Policy`} />
+        <PageTitle text={`${title}`} />
         {children}
       </motion.div>
     </div>

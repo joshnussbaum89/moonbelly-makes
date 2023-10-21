@@ -26,6 +26,9 @@ export default function Footer() {
           <p>
             <Link href="/cookie-policy">Cookie Policy</Link>
           </p>
+          <p>
+            <Link href="/affiliate-disclosure">Affiliate Disclosure</Link>
+          </p>
           <p>Moonbelly Makes © {new Date().getFullYear()}</p>
           <p>
             Website by{' '}

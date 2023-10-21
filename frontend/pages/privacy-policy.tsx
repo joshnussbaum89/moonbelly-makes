@@ -3,7 +3,7 @@ import LegalPolicy from '../components/Global/LegalPolicy/LegalPolicy'
 
 export default function PrivacyPolicy() {
   return (
-    <LegalPolicy type="Privacy">
+    <LegalPolicy title="Privacy Policy">
       <p>Effective Date: 8/15/2023</p>
       <p>Last Updated: 8/27/2023</p>
       <p>

@@ -1,6 +1,7 @@
 // Components
 import { ReactNode } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import imageUrlBuilder from '@sanity/image-url'
 import { PortableText } from '@portabletext/react'
 import getYouTubeId from 'get-youtube-id'
@@ -170,6 +171,11 @@ export default function PostPageTemplate({
                 alt={altText}
               />
             </div>
+            <p className={styles.affiliateDisclosure}>
+              * Products linked below may be affiliate links. I may receive a small commission if
+              you place an order through them (at no cost to you). For more, see our{' '}
+              <Link href="/affiliate-disclosure">Affiliate Disclosure.</Link>
+            </p>
             <div className={styles.postBody}>
               <PortableText value={body} components={serializers} />
               {tags && <Tags tags={tags} />}

@@ -76,6 +76,21 @@
   color: var(--color-grey-text);
 }
 
+.affiliateDisclosure {
+  margin-bottom: 2rem;
+  font-size: var(--size-extra-small);
+  text-align: center;
+  color: var(--color-grey-text);
+}
+
+.affiliateDisclosure a {
+  text-decoration: underline;
+}
+
+.affiliateDisclosure a:hover {
+  color: var(--color-light-purple);
+}
+
 .post > .imageContainer {
   position: relative;
   height: clamp(300px, 40vw, 500px);

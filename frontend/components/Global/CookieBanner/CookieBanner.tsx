@@ -30,6 +30,8 @@ export default function CookieBanner({
     }
   }
 
+  // TODO: add "personalized ads" to cookie banner once they are implemented
+
   return (
     <div
       className={cookieBannerIsActive ? `${styles.container} ${styles.active}` : styles.container}
@@ -38,8 +40,8 @@ export default function CookieBanner({
       <h3>We Value Your Privacy</h3>
       <p>
         By remaining on this site, you consent to the use of cookies for third-party services such
-        as YouTube embeds and personalized ads. If you do not consent, please navigate away from this
-        site. 
+        as YouTube embeds and affiliate marketing. If you do not consent, please navigate away from
+        this site.
       </p>
       <a href="https://policies.google.com/technologies/partner-sites" target="_blank">
         Read more about how cookies are used on this site
