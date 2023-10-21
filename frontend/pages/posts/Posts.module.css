@@ -122,6 +122,20 @@
   background-color: var(--color-purple);
 }
 
+/* TODO: replace headers on all posts */
+
+.postBody h2 {
+  font-size: var(--size-medium);
+}
+
+.postBody h3,
+.postBody h4 {
+  font-size: var(--size-normal);
+}
+
+/* TODO: remove h5 from grouped styles below */
+
+.postBody h2,
 .postBody h3,
 .postBody h4,
 .postBody h5,
