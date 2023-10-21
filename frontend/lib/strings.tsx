@@ -28,3 +28,10 @@ export function highlightMatchedSearchText(searchQuery: string, text: string) {
 export function createTitleFromSlug(slug: string) {
   return slug.split('-').join(' ') // 'hello-world' -> 'hello world'
 }
+
+/**
+ * Returns a slugified string
+ */
+export function createSlug(title: string) {
+  return title.toLowerCase().split(' ').join('-') // 'Hello World' -> 'hello-world'
+}
