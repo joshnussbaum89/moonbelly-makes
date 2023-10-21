@@ -42,7 +42,7 @@
 }
 
 .subNav.active {
-  height: 95px;
+  height: 135px;
   visibility: visible;
   opacity: 1;
   padding: 1rem;
@@ -50,7 +50,7 @@
 }
 
 .navItem:nth-of-type(2) .subNav.active {
-  height: 215px;
+  height: 255px;
 }
 
 .navItem:nth-of-type(3) .subNav.active {

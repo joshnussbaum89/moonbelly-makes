@@ -26,6 +26,9 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 import { Post, Comment } from '../../types'
 
+// TODO: Add a noFormatting option to Image component
+// TODO: Replace 'any' on serializers with proper types
+
 interface Image {
   _key: string
   _type: string
@@ -132,6 +135,17 @@ export default function PostPageTemplate({
               </div>
             )}
           </>
+        )
+      },
+    },
+    marks: {
+      link: ({ value, children }: any) => {
+        const { href } = value
+
+        return (
+          <a href={href} target="_blank" rel="noopener">
+            {children}
+          </a>
         )
       },
     },

@@ -15,6 +15,11 @@ export const navigationData = [
         title: 'Ink',
         href: '/tags/ink',
       },
+      {
+        id: 3,
+        title: 'Upcycled',
+        href: '/tags/upcycled',
+      },
     ],
   },
   {
@@ -46,6 +51,11 @@ export const navigationData = [
         id: 5,
         title: 'Salad',
         href: '/tags/salad',
+      },
+      {
+        id: 6,
+        title: 'Sandwiches',
+        href: '/tags/sandwiches',
       },
     ],
   },
