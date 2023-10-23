@@ -11,7 +11,7 @@
   --size-normal: 1.25rem;
   --size-medium: 1.5rem;
   --size-large: 2rem;
-  --size-extra-large: 2.625rem;
+  --size-extra-large: 2.5rem;
 
   /* Colors */
 
@@ -135,9 +135,12 @@ h3 {
   font-size: var(--size-medium);
 }
 
-h4,
-h5 {
+h4 {
   font-size: var(--size-normal);
+}
+
+h5 {
+  font-size: var(--size-small);
 }
 
 p {

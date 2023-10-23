@@ -6,10 +6,11 @@ import imageUrlBuilder from '@sanity/image-url'
 import { PortableText } from '@portabletext/react'
 import getYouTubeId from 'get-youtube-id'
 import SEO from '../../components/Global/SEO/SEO'
+import PageTitle from '../../components/Global/PageTitle/PageTitle'
+import SideBar from '../../components/Global/SideBar/SideBar'
 import Tags from './Tags/Tags'
 import Comments from './Comments/Comments'
 import CommentForm from './CommentForm/CommentForm'
-import SideBar from '../../components/Global/SideBar/SideBar'
 import { useCookies } from '../../hooks/useCookies'
 import { motion, useScroll } from 'framer-motion'
 
@@ -173,7 +174,7 @@ export default function PostPageTemplate({
         <div className={styles.wrapper}>
           <article className={styles.post}>
             <div className={styles.postHeader}>
-              <h1>{title}</h1>
+              <PageTitle text={title} />
               <p>{formattedDate}</p>
             </div>
             <div className={styles.imageContainer}>
@@ -188,7 +189,7 @@ export default function PostPageTemplate({
             <p className={styles.affiliateDisclosure}>
               * Products linked below may be affiliate links. I may receive a small commission if
               you place an order through them (at no cost to you). For more, see our{' '}
-              <Link href="/affiliate-disclosure">Affiliate Disclosure.</Link>
+              <Link href={`/affiliate-disclosure`}>Affiliate Disclosure.</Link>
             </p>
             <div className={styles.postBody}>
               <PortableText value={body} components={serializers} />

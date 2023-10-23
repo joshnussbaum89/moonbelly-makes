@@ -65,7 +65,7 @@ export default function AboutKatrina() {
           />
         </div>
         <div className={styles.quickFacts}>
-          <h3>Katrina Quick Facts</h3>
+          <h2>Katrina Quick Facts</h2>
           <ul>
             <li>I share life with my wonderful husband, Josh</li>
             <li>We live with our ridiculous cats, Jack and Pete</li>
@@ -83,7 +83,7 @@ export default function AboutKatrina() {
           </ul>
         </div>
         <div className={styles.philosophy}>
-          <h3>Philosophy</h3>
+          <h2>Philosophy</h2>
           <p>
             The project of Moonbelly Makes emerges from a turning and tuning into the closeness I
             have felt to the process of making for my whole life. The urge and inspiration to create

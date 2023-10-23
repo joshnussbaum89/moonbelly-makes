@@ -13,12 +13,12 @@
   font-size: var(--size-medium);
 }
 
-.header h2 {
+.header h3 {
   position: relative;
   font-size: var(--size-medium);
 }
 
-.header h2::after {
+.header h3::after {
   position: absolute;
   top: 1.6rem;
   left: 50%;

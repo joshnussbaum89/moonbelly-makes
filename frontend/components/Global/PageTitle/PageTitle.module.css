@@ -1,12 +1,6 @@
 .title {
-  margin-bottom: 3rem;
-  font-size: clamp(var(--size-large), 10vw, var(--size-extra-large));
+  margin-bottom: 4rem;
+  font-size: clamp(var(--size-large), 7vw, var(--size-extra-large));
   text-align: center;
   text-transform: capitalize;
-}
-
-@media (min-width: 768px) {
-  .title {
-    margin-bottom: 5rem;
-  }
 }

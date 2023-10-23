@@ -32,7 +32,7 @@ export default function SubscribeDesktop() {
     <div className={styles.subscribe} data-is-post={`${isPost}`}>
       <div className={styles.wrapper}>
         <div className={styles.info}>
-          <h4>Join the Community!</h4>
+          <h3>Join the Community!</h3>
           <p>I send out a newsletter once a month, want in?</p>
         </div>
         <form action="POST" className={styles.form} onSubmit={subscribeUser}>

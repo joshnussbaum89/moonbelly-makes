@@ -6,7 +6,7 @@
   --sub-section-margin-bottom: clamp(4rem, 8vw, 8rem);
 }
 
-.wrapper h3 {
+.wrapper h2 {
   margin-bottom: 1rem;
   text-align: center;
 }

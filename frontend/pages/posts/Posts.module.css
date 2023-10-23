@@ -48,7 +48,7 @@
 }
 
 .postHeader h1 {
-  font-size: var(--size-large);
+  margin-bottom: 0;
 }
 
 .postHeader p {
@@ -137,26 +137,16 @@
   background-color: var(--color-purple);
 }
 
-/* TODO: replace headers on all posts */
-
-.postBody h2 {
-  font-size: var(--size-medium);
-}
-
-.postBody h3,
-.postBody h4 {
-  font-size: var(--size-normal);
-}
-
-/* TODO: remove h5 from grouped styles below */
-
 .postBody h2,
 .postBody h3,
 .postBody h4,
 .postBody h5,
 .postBody p {
-  margin-top: 0;
   margin-bottom: 2rem;
+}
+
+.postBody p {
+  margin-top: 0;
 }
 
 .postBody ul,
