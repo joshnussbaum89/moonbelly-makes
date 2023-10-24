@@ -1,5 +1,6 @@
 .header {
   margin-bottom: 2rem;
+  font-size: clamp(var(--size-medium), 5vw, var(--size-large));
 }
 
 .form {

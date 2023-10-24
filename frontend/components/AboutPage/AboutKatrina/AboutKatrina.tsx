@@ -56,8 +56,6 @@ export default function AboutKatrina() {
         <div className={styles.headshot}>
           <Image
             src={katrinaHeadshot}
-            width={500}
-            height={500}
             sizes="(min-width: 768px) 50vw, 100vw"
             quality={100}
             placeholder="blur"
@@ -137,14 +135,7 @@ export default function AboutKatrina() {
             inexplicable richness. It is with this body and these hands that I alchemize my thoughts
             into creations that can be seen, felt, and heard…
           </p>
-          <Image
-            src={spiralIcon}
-            width={293}
-            height={294}
-            sizes="50vw"
-            placeholder="blur"
-            alt="Swirling spiral icon"
-          />
+          <Image src={spiralIcon} sizes="50vw" placeholder="blur" alt="Swirling spiral icon" />
         </div>
         <div className={styles.signatureContainer}>
           <div className={styles.signature}>
@@ -164,8 +155,6 @@ export default function AboutKatrina() {
           </div>
           <Image
             src={katrinaDancing}
-            width={900}
-            height={515}
             sizes="(min-width: 768px) 50vw, 100vw"
             placeholder="blur"
             alt="Katrina Atkin dancing in the park"

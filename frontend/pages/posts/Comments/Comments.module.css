@@ -4,6 +4,7 @@
 
 .comments h2 {
   margin-bottom: 2rem;
+  font-size: clamp(var(--size-medium), 5vw, var(--size-large));
 }
 
 .comments h3 {
