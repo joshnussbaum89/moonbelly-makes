@@ -8,13 +8,14 @@ function generateSiteMap(posts: Post[], tags: Tag[]) {
   return `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-        <loc>https://moonbellymakes.com</loc>
+        <loc>https://www.moonbellymakes.com/</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
       </url>
 
       ${navigationData.map(({ href }) => {
         return `
             <url>
-                <loc>${`https://moonbellymakes.com${href}`}</loc>
+                <loc>${`https://www.moonbellymakes.com${href}`}</loc>
                 <lastmod>${new Date().toISOString()}</lastmod>
             </url>
           `
@@ -23,7 +24,7 @@ function generateSiteMap(posts: Post[], tags: Tag[]) {
     ${posts.map(({ slug }) => {
       return `
         <url>
-            <loc>${`https://moonbellymakes.com/posts/${slug.current}`}</loc>
+            <loc>${`https://www.moonbellymakes.com/posts/${slug.current}`}</loc>
             <lastmod>${new Date().toISOString()}</lastmod>
         </url>
       `
@@ -35,7 +36,7 @@ function generateSiteMap(posts: Post[], tags: Tag[]) {
 
         return `
             <url>
-                <loc>${`https://moonbellymakes.com/tags/${slug}`}</loc>
+                <loc>${`https://www.moonbellymakes.com/tags/${slug}`}</loc>
                 <lastmod>${new Date().toISOString()}</lastmod>
             </url>
           `
