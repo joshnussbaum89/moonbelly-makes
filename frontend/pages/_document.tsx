@@ -6,7 +6,6 @@ import Document, {
   DocumentContext,
   DocumentInitialProps,
 } from 'next/document'
-import Script from 'next/script'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -30,7 +29,7 @@ export default class MyDocument extends Document {
           {/* Google Adsense */}
           <script
             async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID}`}
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2546457216905078"
             crossOrigin="anonymous"
           ></script>
         </Head>
