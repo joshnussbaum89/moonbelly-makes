@@ -1,7 +1,9 @@
+// Helpers
 import { navigationData } from '../lib/navigationData'
 import { getAllPosts, getAllTags } from '../lib/sanityApi'
 import { createSlug } from '../lib/strings'
 
+// Types
 import { Post, Tag } from '../types/index'
 
 function generateSiteMap(posts: Post[], tags: Tag[]) {
@@ -46,12 +48,16 @@ function generateSiteMap(posts: Post[], tags: Tag[]) {
   `
 }
 
+/** This page is used to generate the sitemap.xml file */
 function SiteMap() {
-  // getServerSideProps fetches posts and tags from Sanity
-  // and generates a sitemap.xml file with res.write
   return null
 }
 
+/**
+ * Fetches posts and tags from Sanity
+ *
+ * Generates a sitemap.xml file with res.write
+ */
 export async function getServerSideProps({ res }: any) {
   // We make an API call to gather the URLs for our site
   const posts = await getAllPosts()

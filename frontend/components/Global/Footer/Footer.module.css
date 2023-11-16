@@ -55,7 +55,7 @@
 }
 
 .info p {
-  margin: 0;
+  margin: 0 auto 0.3rem;
   font-size: 0.8rem;
 }
 

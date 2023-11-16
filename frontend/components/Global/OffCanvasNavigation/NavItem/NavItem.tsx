@@ -25,14 +25,10 @@ export default function NavItem({ item, handleShowMobileNav }: NavItemProps) {
   }
 
   // Chevron styles
-  const subNavArrowStyles = subNavIsShown
-    ? `${styles.arrow} ${styles.active}`
-    : styles.arrow
+  const subNavArrowStyles = subNavIsShown ? `${styles.arrow} ${styles.active}` : styles.arrow
 
   // Sub navigation styles
-  const subNavStyles = subNavIsShown
-    ? `${styles.subNav} ${styles.active}`
-    : styles.subNav
+  const subNavStyles = subNavIsShown ? `${styles.subNav} ${styles.active}` : styles.subNav
 
   return (
     <li className={styles.navItem}>

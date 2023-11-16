@@ -41,8 +41,16 @@
   transition: var(--transition-long);
 }
 
+/**
+* Style NavItem height here
+*
+* For now, we are adjusting the height manually. 
+* This isn't ideal and should be calculated dynamically.
+*
+*/
+
 .subNav.active {
-  height: 135px;
+  height: 150px;
   visibility: visible;
   opacity: 1;
   padding: 1rem;
@@ -50,11 +58,11 @@
 }
 
 .navItem:nth-of-type(2) .subNav.active {
-  height: 255px;
+  height: 277px;
 }
 
 .navItem:nth-of-type(3) .subNav.active {
-  height: 200px;
+  height: 222px;
 }
 
 .subNav li {
