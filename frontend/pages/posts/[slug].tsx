@@ -87,7 +87,7 @@ export default function PostPageTemplate({
   const urlFor = (source: SanityImageSource) => builder.image(source)
 
   // Grab post details
-  const { title, mainImage, body, publishedAt, slug, _id } = post[0]
+  const { title, description, mainImage, body, publishedAt, slug, _id } = post[0]
   const altText = mainImage.alt ? mainImage.alt : 'Lab header image'
 
   // Format date
@@ -161,7 +161,7 @@ export default function PostPageTemplate({
     <>
       <SEO
         title={`Moonbelly Makes | ${title}`}
-        description={`Moonbelly Makes blog post: ${title}`}
+        description={description || `Moonbelly Makes blog post: ${title}`}
         url={`https://moonbellymakes.com/posts/${slug.current}`}
         image={urlFor(mainImage).auto('format').quality(100).url()}
       />

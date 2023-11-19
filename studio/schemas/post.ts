@@ -14,6 +14,12 @@ export default defineType({
       validation: (Rule) => Rule.required().error('Please add a title'),
     }),
     defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'string',
+      validation: (Rule) => Rule.required().error('Please add a description'),
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -66,7 +72,7 @@ export default defineType({
       of: [{type: 'reference', to: {type: 'tag'}}],
       validation: (Rule) =>
         Rule.min(1).error(
-          'Tags are required for site navigation and website search functionality - please add at least one tag'
+          'Tags are required for site navigation and website search functionality - please add at least one tag',
         ),
     }),
     defineField({

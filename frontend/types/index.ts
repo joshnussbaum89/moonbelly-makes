@@ -20,6 +20,7 @@ export interface Post {
   slug: { _type: string; current: string }
   tag: []
   title: string
+  description: string
 }
 
 export interface PostProps {

@@ -70,7 +70,7 @@ export default function TagPageTemplate({ posts, title }: { posts: Post[]; title
         title={`Moonbelly Makes | ${capitalizedTitle}`}
         url={`https://moonbellymakes.com/tags/${slug.current}`}
         image="/fabric-flowers.jpeg"
-        description={`Moonbelly Makes tag: ${title}`}
+        description={`Moonbelly Makes blog posts that include the '${title}' tag.`}
       />
       <motion.div
         initial={{ opacity: 0 }}
