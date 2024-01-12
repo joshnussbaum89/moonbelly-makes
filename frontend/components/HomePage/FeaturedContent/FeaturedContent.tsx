@@ -14,11 +14,11 @@ import { PostProps } from '../../../types'
 export default function FeaturedContent({ posts }: PostProps) {
   return (
     <section className={styles.content}>
+      <AboutKatrina />
       <div>
         <h2>Recent Projects</h2>
         <RecentProjects posts={posts} />
       </div>
-      <AboutKatrina />
     </section>
   )
 }

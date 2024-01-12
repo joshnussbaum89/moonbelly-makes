@@ -1,23 +1,19 @@
 .content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4rem;
   margin-bottom: 4rem;
 }
 
 @media (min-width: 951px) {
   .content {
+    display: grid;
     grid-template-columns: 1fr 350px;
+    gap: 4rem;
+    margin-bottom: 4rem;
   }
-}
-
-.content > div:nth-child(1) {
-  order: 1;
 }
 
 @media (min-width: 951px) {
   .content > div:nth-child(1) {
-    order: 0;
+    order: 1;
   }
 }
 
