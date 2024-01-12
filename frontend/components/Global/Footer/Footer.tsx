@@ -1,4 +1,4 @@
-// Components
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import SeeMoreContent from '../SeeMoreContent/SeeMoreContent'
 import Logo from '../Logo/Logo'
@@ -11,6 +11,12 @@ import styles from './Footer.module.css'
  * Footer to be displayed on every page
  */
 export default function Footer() {
+  const [date, setDate] = useState(0)
+
+  useEffect(() => {
+    setDate(new Date().getFullYear())
+  }, [])
+
   return (
     <footer className={styles.footer}>
       <SeeMoreContent />
@@ -29,7 +35,7 @@ export default function Footer() {
           <p>
             <Link href="/affiliate-disclosure">Affiliate Disclosure</Link>
           </p>
-          <p>Moonbelly Makes © {new Date().getFullYear()}</p>
+          <p>Moonbelly Makes © {date}</p>
           <p>
             Website by{' '}
             <a href="https://wavelandweb.com" target="_blank">

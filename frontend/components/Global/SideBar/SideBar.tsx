@@ -13,7 +13,6 @@ import styles from './SideBar.module.css'
  */
 export default function SideBar() {
   const [isSticky, setIsSticky] = useState(false)
-  const [sidebarTop, setSidebarTop] = useState(0)
 
   // Connect to next router
   const router = useRouter()
@@ -26,44 +25,12 @@ export default function SideBar() {
     // IF current path is not a post > return
     if (!currentPath.includes('posts')) return
 
+    // IF user is on a post > make sidebar sticky
     setIsSticky(true)
-
-    if (typeof window !== 'undefined') {
-      const sidebarEl = document
-        .querySelector('[data-element="aside"]')
-        ?.getBoundingClientRect() as DOMRect
-
-      setSidebarTop(sidebarEl.top)
-    }
   }, [currentPath])
 
-  // Add scroll event listener
-  useEffect(() => {
-    // IF user hasn't yet scrolled or current path is not a post > return
-    if (!sidebarTop || !currentPath.includes('posts')) return
-
-    // Handle sticky sidebar
-    const handleIsSticky = () => {
-      const scrollTop = window.scrollY
-
-      if (scrollTop >= sidebarTop - 36) {
-        setIsSticky(true)
-      } else {
-        setIsSticky(false)
-      }
-    }
-
-    window.addEventListener('scroll', handleIsSticky)
-    return () => {
-      window.removeEventListener('scroll', handleIsSticky)
-    }
-  }, [sidebarTop, currentPath])
-
   return (
-    <aside
-      data-element="aside"
-      className={isSticky ? `${styles.aside} ${styles.isSticky}` : styles.aside}
-    >
+    <aside className={isSticky ? `${styles.aside} ${styles.isSticky}` : styles.aside}>
       <div className={styles.mobile}>
         <SubscribeMobile />
         <AboutKatrina />

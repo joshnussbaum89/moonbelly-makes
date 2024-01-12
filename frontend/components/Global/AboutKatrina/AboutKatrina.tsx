@@ -46,7 +46,7 @@ export default function AboutKatrina() {
           <strong>💖, Katrina</strong>
         </p>
       </div>
-      <div>
+      <div className={styles.aboutKatrinaInfo}>
         <WidgetTitle titleCopy="About Moonbelly" />
         <p>
           There are three tenderly held intentions that steer Moonbelly: to know myself and the

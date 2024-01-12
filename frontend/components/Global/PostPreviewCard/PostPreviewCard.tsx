@@ -28,7 +28,7 @@ export default function PostPreviewCard({
   const formattedCategory = category?.replace(/-/g, ' ')
 
   return (
-    <div className={styles.card}>
+    <article className={styles.card}>
       <div className={styles.imageContainer}>
         <Link href={`/posts/${slug}`}>
           <Image
@@ -47,6 +47,6 @@ export default function PostPreviewCard({
       <h3>
         <Link href={`/posts/${slug}`}>{title}</Link>
       </h3>
-    </div>
+    </article>
   )
 }
