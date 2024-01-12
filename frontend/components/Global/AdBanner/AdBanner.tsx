@@ -3,8 +3,17 @@ import { useEffect } from 'react'
 export default function AdBanner({ dataAdSlot }: { dataAdSlot: string }) {
   useEffect(() => {
     try {
-      window.adsbygoogle = window.adsbygoogle || []
-      window.adsbygoogle.push({})
+      const initializeAds = () => {
+        window.adsbygoogle = window.adsbygoogle || []
+        window.adsbygoogle.push({})
+      }
+
+      if (document.readyState === 'complete') {
+        initializeAds()
+      } else {
+        window.addEventListener('load', initializeAds)
+        return () => window.removeEventListener('load', initializeAds)
+      }
     } catch (err) {
       console.log(err)
     }
